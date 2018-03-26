@@ -18,7 +18,8 @@ Gathering Meeting" conducted by the IEEE P1800 SystemVerilog Standards
 Committee in San Jose, Bluespec, Inc. offered to donate the entire BSV
 Language for incorporation into the next revision of the SystemVerilog
 standard, but the offer did not meet the priority threshold of the
-members present. [See Bluespec's offer at: Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf]
+members present. [See Bluespec's offer at:
+https://github.com/BSVLang/Main/blob/master/Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf ]
 
 This site includes the BSV Reference Guide, which is the principal
 language definition and specification, and other open source BSV
