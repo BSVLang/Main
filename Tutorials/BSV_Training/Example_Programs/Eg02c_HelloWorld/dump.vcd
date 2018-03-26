@@ -1,0 +1,180 @@
+$date
+	Fri Aug 29 13:40:16 2014
+$end
+$version
+	Bluespec VCD dumper 2.1
+$end
+$timescale
+	1 us
+$end
+$scope module main $end
+$scope module top $end
+$var reg 1 ! CLK $end
+$var reg 1 ! CLK $end
+$var reg 1 " CAN_FIRE_RL_rl_ask $end
+$var reg 1 # CAN_FIRE_RL_rl_print_answer $end
+$var reg 1 $ RST_N $end
+$var reg 1 % WILL_FIRE_RL_rl_ask $end
+$var reg 1 & WILL_FIRE_RL_rl_print_answer $end
+$scope module deepThought $end
+$var reg 1 ! CLK $end
+$var reg 1 ' CAN_FIRE_RL_rl_think $end
+$var reg 1 ( CAN_FIRE_getAnswer $end
+$var reg 1 ) CAN_FIRE_whatIsTheAnswer $end
+$var reg 1 * RST_N $end
+$var reg 1 + WILL_FIRE_RL_rl_think $end
+$var reg 1 , WILL_FIRE_getAnswer $end
+$var reg 1 - WILL_FIRE_whatIsTheAnswer $end
+$var reg 2 . rg_state_dt__h158 $end
+$var reg 1 / EN_getAnswer $end
+$var reg 1 0 EN_whatIsTheAnswer $end
+$var reg 1 1 RDY_getAnswer $end
+$var reg 1 2 RDY_whatIsTheAnswer $end
+$var reg 32 3 getAnswer $end
+$var reg 4 6 rg_half_millenia $end
+$var reg 2 7 rg_state_dt $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+1!
+0"
+1#
+0$
+0%
+1&
+0'
+1(
+0)
+0*
+0+
+1,
+0-
+b10 .
+1/
+00
+11
+02
+b101010 3
+b0 6
+b0 7
+1"
+0#
+1%
+0&
+0(
+1)
+0,
+1-
+b0 .
+0/
+10
+01
+12
+#5
+0!
+1$
+1*
+#10
+0"
+0%
+1'
+0)
+1+
+0-
+b1 .
+00
+02
+1!
+b1 7
+#15
+0!
+#20
+1!
+b1 6
+#25
+0!
+#30
+1!
+b10 6
+#35
+0!
+#40
+1!
+b11 6
+#45
+0!
+#50
+1!
+b100 6
+#55
+0!
+#60
+1!
+b101 6
+#65
+0!
+#70
+1!
+b110 6
+#75
+0!
+#80
+1!
+b111 6
+#85
+0!
+#90
+1!
+b1000 6
+#95
+0!
+#100
+1!
+b1001 6
+#105
+0!
+#110
+1!
+b1010 6
+#115
+0!
+#120
+1!
+b1011 6
+#125
+0!
+#130
+1!
+b1100 6
+#135
+0!
+#140
+1!
+b1101 6
+#145
+0!
+#150
+1!
+b1110 6
+#155
+0!
+#160
+1!
+b1111 6
+#165
+0!
+#170
+1#
+1&
+0'
+1(
+0+
+1,
+b10 .
+1/
+11
+1!
+b10 7
+#175
+0!

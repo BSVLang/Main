@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.37 (w)1999-2012 BSI
+[*] Tue Jun 11 20:47:36 2013
+[*]
+[dumpfile] "/Users/nikhil/BsInc/Training/Bluespec_Training_2013-05/Example_Programs/Eg01a_Bubblesort/dump.vcd"
+[dumpfile_mtime] "Tue Jun 11 20:39:56 2013"
+[dumpfile_size] 5152
+[savefile] "/Users/nikhil/BsInc/Training/Bluespec_Training_2013-05/Example_Programs/Eg01a_Bubblesort/gtkwave.sav"
+[timestart] 0
+[size] 1389 457
+[pos] -1 -1
+*-4.796154 80 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 43
+[signals_width] 278
+[sst_expanded] 0
+[sst_vpaned_height] 112
+@22
++{main.top.CLK [Clock]} main.top.CLK
++{main.top.ps.EN_put [Bool]} main.top.ps.EN_put
+@24
++{main.top.ps.put_x [Int#(32)]} main.top.ps.put_x[31:0]
+@200
+-
+@23
++{main.top.ps.WILL_FIRE_RL_rl_swap_3_4 [Bool]} main.top.ps.WILL_FIRE_RL_rl_swap_3_4
+@22
++{main.top.ps.WILL_FIRE_RL_rl_swap_2_3 [Bool]} main.top.ps.WILL_FIRE_RL_rl_swap_2_3
++{main.top.ps.WILL_FIRE_RL_rl_swap_1_2 [Bool]} main.top.ps.WILL_FIRE_RL_rl_swap_1_2
++{main.top.ps.WILL_FIRE_RL_rl_swap_0_1 [Bool]} main.top.ps.WILL_FIRE_RL_rl_swap_0_1
+@200
+-
+@24
++{main.top.ps.x4 [Int#(32)]} main.top.ps.x4[31:0]
++{main.top.ps.x3 [Int#(32)]} main.top.ps.x3[31:0]
++{main.top.ps.x2 [Int#(32)]} main.top.ps.x2[31:0]
++{main.top.ps.x1 [Int#(32)]} main.top.ps.x1[31:0]
++{main.top.ps.x0 [Int#(32)]} main.top.ps.x0[31:0]
+@22
++{main.top.ps.EN_get [Bool]} main.top.ps.EN_get
+@24
++{main.top.ps.get [Int#(32)]} main.top.ps.get[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

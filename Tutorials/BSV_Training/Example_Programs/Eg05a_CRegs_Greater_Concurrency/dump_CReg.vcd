@@ -1,0 +1,282 @@
+$date
+	Mon Sep  1 20:12:52 2014
+$end
+$version
+	Bluespec VCD dumper 2.1
+$end
+$timescale
+	1 us
+$end
+$scope module main $end
+$scope module top $end
+$var reg 1 ! CLK $end
+$var reg 1 ! CLK $end
+$var reg 1 " CAN_FIRE_RL_rl_1 $end
+$var reg 1 # CAN_FIRE_RL_rl_2 $end
+$var reg 1 $ CAN_FIRE_RL_rl_step $end
+$var reg 1 % RST_N $end
+$var reg 1 & WILL_FIRE_RL_rl_1 $end
+$var reg 1 ' WILL_FIRE_RL_rl_2 $end
+$var reg 1 ( WILL_FIRE_RL_rl_step $end
+$var reg 32 ) b__h192 $end
+$var reg 32 * signed_step___d6 $end
+$var reg 32 , step $end
+$scope module ctr $end
+$var reg 1 ! CLK $end
+$var reg 1 - CAN_FIRE_count1 $end
+$var reg 1 . CAN_FIRE_count2 $end
+$var reg 1 / RST_N $end
+$var reg 1 0 WILL_FIRE_count1 $end
+$var reg 1 1 WILL_FIRE_count2 $end
+$var reg 1 2 EN_count1 $end
+$var reg 1 3 EN_count2 $end
+$var reg 1 4 RDY_count1 $end
+$var reg 1 5 RDY_count2 $end
+$var reg 32 6 count1 $end
+$var reg 32 7 count1_delta $end
+$var reg 32 8 count2 $end
+$var reg 32 9 count2_delta $end
+$var reg 32 ; crg $end
+$scope module crg $end
+$var reg 32 ; Q_OUT_0 $end
+$var reg 1 < EN_0 $end
+$var reg 32 = D_IN_0 $end
+$var reg 32 > Q_OUT_1 $end
+$var reg 1 ? EN_1 $end
+$var reg 32 @ D_IN_1 $end
+$var reg 32 A Q_OUT_2 $end
+$var reg 1 B EN_2 $end
+$var reg 32 C D_IN_2 $end
+$var reg 32 D Q_OUT_3 $end
+$var reg 1 E EN_3 $end
+$var reg 32 F D_IN_3 $end
+$var reg 32 G Q_OUT_4 $end
+$var reg 1 H EN_4 $end
+$var reg 32 I D_IN_4 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+1!
+1"
+0#
+1$
+0%
+1&
+0'
+1(
+b10101010101010101010101010101010 )
+b10101010101010101010101010101010 *
+b0 ,
+1-
+1.
+0/
+10
+01
+12
+03
+14
+15
+b10101010101010101010101010101010 6
+b10101010101010101010101010110100 7
+b0 8
+b0 9
+b10101010101010101010101010101010 ;
+1<
+b1010101010101010101010101011110 =
+b1010101010101010101010101011110 >
+0?
+b10101010101010101010101010101010 @
+b1010101010101010101010101011110 A
+0B
+b10101010101010101010101010101010 C
+b1010101010101010101010101011110 D
+0E
+b10101010101010101010101010101010 F
+b1010101010101010101010101011110 G
+0H
+b10101010101010101010101010101010 I
+b0 )
+b0 *
+b0 6
+b1010 7
+b0 ;
+b1010 =
+b1010 >
+b1010 A
+b1010 D
+b1010 G
+#5
+0!
+1%
+1/
+#10
+b1 )
+b1 *
+b1010 6
+b1011 7
+b1010 ;
+b10101 =
+b10101 >
+b10101 A
+b10101 D
+b10101 G
+1!
+b1 ,
+#15
+0!
+#20
+b10 )
+b10 *
+b10101 6
+b1100 7
+b10101 ;
+b100001 =
+b100001 >
+b100001 A
+b100001 D
+b100001 G
+1!
+b10 ,
+#25
+0!
+#30
+b11 )
+b11 *
+b100001 6
+b1101 7
+b100001 ;
+b101110 =
+b101110 >
+b101110 A
+b101110 D
+b101110 G
+1!
+b11 ,
+#35
+0!
+#40
+1#
+1'
+b100 )
+b100 *
+11
+13
+b101110 6
+b1110 7
+b111100 8
+b1 9
+b101110 ;
+b111100 =
+b111100 >
+1?
+b111101 @
+b111101 A
+b111101 D
+b111101 G
+1!
+b100 ,
+#45
+0!
+#50
+b101 )
+b101 *
+b111101 6
+b1111 7
+b1001100 8
+b0 9
+b111101 ;
+b1001100 =
+b1001100 >
+b1001100 @
+b1001100 A
+b1001100 D
+b1001100 G
+1!
+b101 ,
+#55
+0!
+#60
+b110 )
+b110 *
+b1001100 6
+b10000 7
+b1011100 8
+b11111111111111111111111111111111 9
+b1001100 ;
+b1011100 =
+b1011100 >
+b1011011 @
+b1011011 A
+b1011011 D
+b1011011 G
+1!
+b110 ,
+#65
+0!
+#70
+0"
+0&
+b111 )
+b111 *
+00
+02
+b1011011 8
+b11111111111111111111111111111110 9
+b1011011 ;
+0<
+b1011011 >
+b1011001 @
+b1011001 A
+b1011001 D
+b1011001 G
+1!
+b111 ,
+#75
+0!
+#80
+b1000 )
+b1000 *
+b1011001 8
+b11111111111111111111111111111101 9
+b1011001 ;
+b1011001 >
+b1010110 @
+b1010110 A
+b1010110 D
+b1010110 G
+1!
+b1000 ,
+#85
+0!
+#90
+b1001 )
+b1001 *
+b1010110 8
+b11111111111111111111111111111100 9
+b1010110 ;
+b1010110 >
+b1010010 @
+b1010010 A
+b1010010 D
+b1010010 G
+1!
+b1001 ,
+#95
+0!
+#100
+b1010 )
+b1010 *
+b1010010 8
+b11111111111111111111111111111011 9
+b1010010 ;
+b1010010 >
+b1001101 @
+b1001101 A
+b1001101 D
+b1001101 G
+1!
+b1010 ,
+#105
+0!
