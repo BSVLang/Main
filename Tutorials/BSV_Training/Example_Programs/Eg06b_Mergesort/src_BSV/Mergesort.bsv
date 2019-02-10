@@ -233,40 +233,38 @@ module mkMergeEngine (MergeEngine_IFC);
    // BEHAVIOR
 
    // Generate read reqs for segment 0
-   rule rl_req0 (rg_running && (rg_i0req < rg_i0_lim) && (crg_credits0[0] != 0));
+   rule rl_req0 (rg_running && (rg_i0req < rg_i0_lim) && (crg_credits0[1] != 0));
       Req_I req = Req {command:READ, addr:rg_p1 + (rg_i0req << 2), data:?, b_size:BITS32, tid:0};
       f_memReqs.enq (req);
       rg_i0req <= rg_i0req + 1;
-      crg_credits0[0] <= crg_credits0[0] - 1;
+      crg_credits0[1] <= crg_credits0[1] - 1;
       if (verbosity >= 2) $display ("%0d: Merge Engine %0d: requesting [i0req = %0d]; credits0 %0d",
-				    cur_cycle, rg_engineId, rg_i0req, crg_credits0[0]);
+				    cur_cycle, rg_engineId, rg_i0req, crg_credits0[1]);
    endrule
 
    // Receive read rsps for segment 0
    rule rl_rsp0 ((next_rsp.command == READ) && (next_rsp.tid == 0));
       f_memRsps.deq;
-      crg_credits0[1] <= crg_credits0[1] + 1;
       if (verbosity >= 2) $display ("%0d: Merge Engine %0d: response [i0rsp] = %0h, credits0 %0d",
-				    cur_cycle, rg_engineId, next_rsp.data, crg_credits0[1]);
+				    cur_cycle, rg_engineId, next_rsp.data, crg_credits0[0]);
       f_data0.enq (next_rsp.data);
    endrule
 
    // Generate read reqs for segment 1
-   rule rl_req1 (rg_running && (rg_i1req < rg_i1_lim) && (crg_credits1[0] != 0));
+   rule rl_req1 (rg_running && (rg_i1req < rg_i1_lim) && (crg_credits1[1] != 0));
       Req_I req = Req {command:READ, addr:rg_p1 + (rg_i1req << 2), data:?, b_size:BITS32, tid:1};
       f_memReqs.enq (req);
       rg_i1req <= rg_i1req + 1;
-      crg_credits1[0] <= crg_credits1[0] - 1;
+      crg_credits1[1] <= crg_credits1[1] - 1;
       if (verbosity >= 2) $display ("%0d: Merge Engine %0d: requesting [i1req = %0d]; credits1 %0d",
-				    cur_cycle, rg_engineId, rg_i1req, crg_credits1[0]);
+				    cur_cycle, rg_engineId, rg_i1req, crg_credits1[1]);
    endrule
 
    // Receive read rsps for segment 1
    rule rl_rsp1 ((next_rsp.command == READ) && (next_rsp.tid == 1));
       f_memRsps.deq;
-      crg_credits1[1] <= crg_credits1[1] + 1;
       if (verbosity >= 2) $display ("%0d: Merge Engine %0d: response [i1rsp] = %0h, credits1 %0d",
-				    cur_cycle, rg_engineId, next_rsp.data, crg_credits1[1]);
+				    cur_cycle, rg_engineId, next_rsp.data, crg_credits1[0]);
       f_data1.enq (next_rsp.data);
    endrule
 
@@ -282,11 +280,13 @@ module mkMergeEngine (MergeEngine_IFC);
 	 y = f_data0.first;
 	 f_data0.deq;
 	 rg_i0rsp <= rg_i0rsp + 1;
+	 crg_credits0[0] <= crg_credits0[0] + 1;
       end
       else begin
 	 y = f_data1.first;
 	 f_data1.deq;
 	 rg_i1rsp <= rg_i1rsp + 1;
+	 crg_credits1[0] <= crg_credits1[0] + 1;
       end
       Req_I req = Req {command:WRITE, addr:rg_p2 + (rg_j << 2), data:y, b_size:BITS32, tid:?};
       f_memReqs.enq (req);
