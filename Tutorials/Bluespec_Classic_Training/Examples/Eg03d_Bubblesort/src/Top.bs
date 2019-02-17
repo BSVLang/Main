@@ -1,0 +1,74 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Top where
+
+-- ================================================================
+-- Testbench to drive the sorting module.
+-- Feed n unsorted inputs to sorter,
+-- drain n sorted outputs and print
+-- ================================================================
+-- Bluespec lib imports
+
+import LFSR
+import Vector
+
+-- ================================================================
+-- Project imports
+
+import Utils
+import Bubblesort
+
+-- ================================================================
+-- Size of array to be sorted
+
+type N_t = 20
+type MyT = UInt  24
+
+n :: MyT
+n = fromInteger (valueOf  N_t)
+
+-- Instantiate and separately synthesize a Bubblesort module for size 'N_t'
+-- and type 'MyT'
+
+{-# verilog mkBubblesort_nt_UInt20 #-}
+
+mkBubblesort_nt_UInt20 :: Module  (Bubblesort_IFC  N_t  MyT)
+mkBubblesort_nt_UInt20 =
+    module
+        m :: Bubblesort_IFC  N_t  MyT <- mkBubblesort
+        return m
+
+-- ================================================================
+-- Top module
+
+{-# verilog mkTop #-}
+
+mkTop :: Module Empty
+mkTop =
+    module
+        rg_j1 :: Reg MyT <- mkReg 0
+        rg_j2 :: Reg MyT <- mkReg 0
+
+        -- Instantiate an 8-bit random number generator from Bluespec lib
+        lfsr :: LFSR  (Bit  8) <- mkLFSR_8
+
+        -- Instantiate the parallel sorter
+        sorter :: Bubblesort_IFC  N_t  MyT <- mkBubblesort_nt_UInt20
+
+        rules
+            "rl_feed_inputs": when (rg_j1 < n)
+	     ==> do
+                    lfsr.next
+                    let x :: MyT = unpack (zeroExtend  lfsr.value)
+                    sorter.put  x
+                    rg_j1 := rg_j1 + 1
+                    $display  "%0d: x_%0d = %0d"  cur_cycle  rg_j1  x
+
+            "rl_drain_outputs": when (rg_j2 < n)
+	     ==> do
+                    y <- sorter.get
+		    rg_j2 := rg_j2 + 1
+		    $display  "                                %0d: y_%0d = %0d"  cur_cycle  rg_j2  y
+                    if1  (rg_j2 == n-1)  $finish
+
+-- ================================================================

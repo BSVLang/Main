@@ -1,0 +1,65 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Utils where
+
+-- ================================================================
+-- Miscellaneous useful generic definitions (not app-specific)
+
+-- ================================================================
+-- Bluespec library imports
+
+import List
+
+-- ================================================================
+-- A convenience function to return the current cycle number during BSV simulations
+
+cur_cycle :: ActionValue (Bit 32)
+cur_cycle = do
+    t <- $stime
+    return (t / 10)
+
+-- ================================================================
+-- One-armed 'if' expression for use in Action contexts where the
+-- 'else' is a 'noAction'
+
+if1 :: Bool -> Action -> Action
+if1    b       a = if (b) then a else noAction
+
+-- ****************************************************************
+-- ****************************************************************
+-- ****************************************************************
+-- Functions for joining lists of rules, adding lists of rules to modules
+
+-- ================================================================
+-- Combine a list of Rules into one Rules
+
+join_rules_list :: List Rules -> Rules
+join_rules_list    rs =
+    foldr  (\rs1  rs2 -> rJoin  rs1  rs2)
+           emptyRules
+	   rs
+
+-- ================================================================
+-- Add a list of rules to the module definition,
+-- in descending urgency order.
+
+addRules_list :: List Rules -> Module Empty
+addRules_list  rs = addRules  (join_rules_list  rs)
+
+-- ================================================================
+-- Combine a list of Rules into one Rules, in descending urgency order
+
+join_rules_list_descending_urgency :: List Rules -> Rules
+join_rules_list_descending_urgency    rs =
+    foldr  (\rs1  rs2 -> rJoinDescendingUrgency  rs1  rs2)
+           emptyRules
+	   rs
+
+-- ================================================================
+-- Add a list of rules to the module definition,
+-- in descending urgency order.
+
+addRules_list_descending_urgency :: List Rules -> Module Empty
+addRules_list_descending_urgency  rs = addRules  (join_rules_list_descending_urgency  rs)
+
+-- ================================================================

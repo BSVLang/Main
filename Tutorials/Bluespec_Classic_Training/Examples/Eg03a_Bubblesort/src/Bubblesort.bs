@@ -1,0 +1,114 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Bubblesort where
+
+-- ================================================================
+-- This is one of several versions:
+--   Eg01a_Bubblesort: Sort exactly 5 'Int 32' values, serially.
+--   Eg01b_Bubblesort: Sort exactly 5 'Int 32' values, with concurrency.
+--   Eg01c_Bubblesort: Generalize from '5' to arbitrary size 'n'.
+--   Eg01d_Bubblesort: Generalize 'Int 32' to arbitrary type 't', i.e., make it polymorphic
+--   Eg01e_Bubblesort: Remove reliance on 'maxBound', by using a separate 'Valid'
+--                       bit to distinguish 'empty' entries in the vector to be sorted
+
+-- ================================================================
+-- Project imports
+
+import Utils
+
+-- ================================================================
+-- Interface definition for the sorter.
+-- Accepts a stream of 5 unsorted inputs via the put method.
+-- Returns a stream of 5 sorted outputs via the get method.
+
+interface Sort_IFC =
+    put :: (Int 32) -> Action
+    get :: ActionValue  (Int 32)
+
+-- ================================================================
+-- Module defintion for the serial bubble sorter.
+
+{-# verilog mkBubblesort #-}
+
+mkBubblesort :: Module  Sort_IFC
+mkBubblesort =
+    module
+        -- ``State'' of the sorting FSM (the sequential sorting algorithm)
+        -- We use `pc' by analogy with ``Program Counter''
+        rg_pc :: Reg  (Bit  3) <- mkReg  0
+
+        -- Count incoming and outgoing values (up to 5)
+        rg_j :: Reg (UInt  3) <- mkReg  0
+
+        -- True if there is a swap during current pass
+        rg_swapped :: Reg  Bool <- mkRegU
+
+        -- Five registers to hold the values to be sorted.
+        -- These registers are uninitialized.
+        x0 :: Reg  (Int  32) <- mkRegU
+        x1 :: Reg  (Int  32) <- mkRegU
+        x2 :: Reg  (Int  32) <- mkRegU
+        x3 :: Reg  (Int  32) <- mkRegU
+        x4 :: Reg  (Int  32) <- mkRegU
+
+        -- ----------------
+        -- RULES
+
+	rules
+            -- The following four 'swap' rules are almost identical
+            "rl_swap_0_1": when (rg_pc == 1)
+	     ==> do
+	            if1 (x0 > x1)
+		        action { x0 := x1; x1 := x0; rg_swapped := True }
+                    rg_pc := 2
+
+            "rl_swap_1_2": when (rg_pc == 2)
+	     ==> do
+	            if1 (x1 > x2)
+		        action { x1 := x2; x2 := x1; rg_swapped := True }
+                    rg_pc := 3
+
+            "rl_swap_2_3": when (rg_pc == 3)
+	     ==> do
+	            if1 (x2 > x3)
+		        action { x2 := x3; x3 := x2; rg_swapped := True }
+	            rg_pc := 4
+
+            "rl_swap_3_4": when (rg_pc == 4)
+	     ==> do
+	            if1 (x3 > x4)
+		        action { x3 := x4; x4 := x3; rg_swapped := True }
+		    rg_pc := 5
+
+            "rl_loop_or_exit": when (rg_pc == 5)
+	     ==> do
+	            if (rg_swapped) then
+		        action { rg_swapped := False; rg_pc := 1 }
+		     else
+		        rg_pc := 6
+
+        -- ----------------
+	-- INTERFACE
+
+        -- Help function used in both interface methods
+        let shift :: Int 32 -> Action
+	    shift y = action { x0 := x1; x1 := x2; x2 := x3; x3 := x4; x4 := y }
+
+        interface
+            -- Inputs: feed input values into x4
+            put x = do
+                        shift  x
+                        rg_j := rg_j + 1
+                        if1 (rg_j == 4)
+                            action { rg_pc := 1; rg_swapped := False }
+                    when (rg_pc == 0)
+
+            -- Outputs: drain by shifting them out of x0
+            get   = do
+                        shift  _
+                        rg_j := rg_j - 1
+                        if1 (rg_j == 1) (rg_pc := 0)
+                        return x0
+                    when ((rg_j /= 0) && (rg_pc == 6))
+
+-- ================================================================

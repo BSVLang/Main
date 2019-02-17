@@ -1,0 +1,60 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Top where
+
+-- ================================================================
+-- Testbench to drive the sorting module.
+-- Feed n unsorted inputs to sorter,
+-- drain n sorted outputs and print
+-- ================================================================
+-- Bluespec lib imports
+
+import LFSR
+
+-- ================================================================
+-- Project imports
+
+import Utils
+import Bubblesort
+
+-- ================================================================
+-- Size of array to be sorted
+
+n :: Int 32
+n = 5
+
+-- ================================================================
+-- Top module
+
+{-# verilog mkTop #-}
+
+mkTop :: Module  Empty
+mkTop =
+    module
+        rg_j1 :: Reg  (Int  32) <- mkReg  0
+        rg_j2 :: Reg  (Int  32) <- mkReg  0
+
+        -- Instantiate an 8-bit random number generator from Bluespec lib
+        lfsr :: LFSR (Bit  8) <- mkLFSR_8
+
+        -- Instantiate the parallel sorter
+        sorter :: Sort_IFC <- mkBubblesort
+
+        rules
+          "rl_feed_inputs": when (rg_j1 < n)
+           ==> do
+                let v :: Bit 32 = zeroExtend  lfsr.value
+                lfsr.next
+                let x :: Int  32 = unpack  v
+                sorter.put  x
+                rg_j1 := rg_j1 + 1
+                $display  "%0d: x_%0d = %0d"  cur_cycle  rg_j1  x
+
+          "rl_drain_outputs": when (rg_j2 < n)
+           ==> do
+                y <- sorter.get
+                rg_j2 := rg_j2 + 1
+                $display "                                %0d: y_%0d = %0d"  cur_cycle  rg_j2  y
+                if1 (rg_j2 == n-1)  $finish
+
+-- ================================================================

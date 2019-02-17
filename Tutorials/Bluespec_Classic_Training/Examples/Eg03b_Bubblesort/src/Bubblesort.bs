@@ -1,0 +1,213 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Bubblesort where
+
+-- ================================================================
+-- This is one of several versions:
+--   Eg01a_Bubblesort: Sort exactly 5 'Int 32' values, serially.
+--   Eg01b_Bubblesort: Sort exactly 5 'Int 32' values, with concurrency.
+--   Eg01c_Bubblesort: Generalize from '5' to arbitrary size 'n'.
+--   Eg01d_Bubblesort: Generalize 'Int 32' to arbitrary type 't', i.e., make it polymorphic
+--   Eg01e_Bubblesort: Remove reliance on 'maxBound', by using a separate 'Valid'
+--                       bit to distinguish 'empty' entries in the vector to be sorted
+
+-- ================================================================
+-- Bluespec library imports
+
+import List
+
+-- ================================================================
+-- Project imports
+
+import Utils
+
+-- ================================================================
+-- Interface definition for the sorter.
+-- Accepts a stream of 5 unsorted inputs via the put method.
+-- Returns a stream of 5 sorted outputs via the get method.
+
+interface Sort_IFC =
+    put :: Int  32 -> Action
+    get :: ActionValue (Int  32)
+
+-- ================================================================
+-- Module definition for the concurrent bubble sorter.
+
+{-# verilog mkBubblesort #-}
+
+mkBubblesort :: Module  Sort_IFC
+mkBubblesort =
+  module
+    -- Count incoming values (up to 5)
+    rg_inj :: Reg  (UInt  3) <- mkReg  0
+
+    -- Five registers to hold the values to be sorted
+    -- Note: 'maxBound' is largest 'Int  32'; we assume none of the
+    -- actual values to be sorted have this value.
+    x0 :: Reg  (Int  32) <- mkReg  maxBound
+    x1 :: Reg  (Int  32) <- mkReg  maxBound
+    x2 :: Reg  (Int  32) <- mkReg  maxBound
+    x3 :: Reg  (Int  32) <- mkReg  maxBound
+    x4 :: Reg  (Int  32) <- mkReg  maxBound
+
+    -- Test if array is sorted
+    let done :: Bool
+        done = ((rg_inj == 5) && (x0 <= x1) && (x1 <= x2) && (x2 <= x3) && (x3 <= x4))
+
+    -- ================================================================
+    -- Below are several different optional styles defining the 'rules' for this module.
+    -- Try each option by defining one of the cpp macros OPTION1/2/...
+    -- Specifically, give bsc a flag like this:    -Xcpp '-D OPTION1'
+    --     which tells bsc to run the cpp preprocessor with the given macro.
+
+    -- ================================================================
+#ifdef OPTION1
+    -- Just use the syntactic shortcut where a top-level explicit 'rules'
+    -- directly adds rules to the module definition.
+    -- You will see several 'urgency' warnings from the compiler
+    -- picking a priority between these rules.
+
+    rules
+        "rl_swap_0_1": when  (x0 > x1) ==> do
+            x0 := x1
+            x1 := x0
+
+        "rl_swap_1_2": when  (x1 > x2) ==> do
+            x1 := x2
+            x2 := x1
+
+        "rl_swap_2_3": when  (x2 > x3) ==> do
+            x2 := x3
+            x3 := x2
+
+        "rl_swap_3_4": when  (x3 > x4) ==> do
+            x3 := x4
+            x4 := x3
+#endif
+
+    -- ================================================================
+#ifdef OPTION2
+    -- Eliminates 'urgency' compiler warnings in option 1
+    -- Emphasizes that the 'rules ...' construct is just an expression, of type 'Rules',
+    -- that can be manipulated and combined with functions, just like other expressions.
+
+    -- Define each rule as a value (of type 'Rules') and bind it to a variable 'rl_swap_I_J'
+
+    let rl_swap_0_1 :: Rules
+        rl_swap_0_1 = rules
+                        when  (x0 > x1) ==> do
+                            x0 := x1
+                            x1 := x0
+
+        rl_swap_1_2 :: Rules
+        rl_swap_1_2 = rules
+                        when  (x1 > x2) ==> do
+                            x1 := x2
+                            x2 := x1
+
+        rl_swap_2_3 :: Rules
+        rl_swap_2_3 = rules
+                        when  (x2 > x3) ==> do
+                            x2 := x3
+                            x3 := x2
+
+        rl_swap_3_4 :: Rules
+        rl_swap_3_4 = rules
+                        when  (x3 > x4) ==> do
+                            x3 := x4
+                            x4 := x3
+
+        -- Combine the rules into a single 'Rules' value
+        allRules :: Rules
+        allRules = (rJoinDescendingUrgency
+                       (rJoinDescendingUrgency  rl_swap_0_1  rl_swap_1_2)
+                       (rJoinDescendingUrgency  rl_swap_2_3  rl_swap_3_4))
+
+    -- Add the rules to the module definition
+    addRules allRules
+
+#endif
+
+    -- ================================================================
+#ifdef OPTION3
+    -- A variation on option 2, here using 'rJoinDescendingUrgency'
+    -- as an infix operator on Rules-expression arguments.
+    -- The single back-quotes convert the identifier 'rJoinDescendingUrgency'
+    -- into an infix operator.
+    addRules (
+          rules
+                when  (x0 > x1) ==> do
+                    x0 := x1
+                    x1 := x0
+
+     `rJoinDescendingUrgency`
+
+          rules
+                when  (x1 > x2) ==> do
+                    x1 := x2
+                    x2 := x1
+
+     `rJoinDescendingUrgency`
+
+          rules
+                when  (x2 > x3) ==> do
+                    x2 := x3
+                    x3 := x2
+
+     `rJoinDescendingUrgency`
+
+          rules
+                when  (x3 > x4) ==> do
+                    x3 := x4
+                    x4 := x3
+     )
+#endif
+
+    -- ================================================================
+#ifdef OPTION4
+    -- A variation, here using 'addRules_list_descending_urgency' function defined
+    -- in 'Utils.bs' to capture the design pattern of the previous options.
+
+    addRules_list_descending_urgency
+        (rules  when  (x0 > x1) ==> do
+                    x0 := x1
+                    x1 := x0
+         :>                                         -- Infix 'cons' for lists
+         rules  when  (x1 > x2) ==> do
+                    x1 := x2
+                    x2 := x1
+
+         :>
+         rules  when  (x2 > x3) ==> do
+                    x2 := x3
+                    x3 := x2
+         :>
+         rules  when  (x3 > x4) ==> do
+                    x3 := x4
+                    x4 := x3
+         :>
+         Nil)                                       -- The empty list
+#endif
+
+    -- ================================================================
+    -- INTERFACE
+
+    interface
+        -- Inputs: feed input values into x4
+        put x = do
+                    x4 := x
+                    rg_inj := rg_inj + 1
+                when ((rg_inj < 5) && (x4 == maxBound))
+
+        -- Outputs: drain by shifting them out of x0
+        get = do
+                x0 := x1
+                x1 := x2
+                x2 := x3
+                x3 := x4
+                x4 := maxBound
+                if1 (x1 == maxBound) (rg_inj := 0)
+                return x0
+              when  done
+
+-- ================================================================

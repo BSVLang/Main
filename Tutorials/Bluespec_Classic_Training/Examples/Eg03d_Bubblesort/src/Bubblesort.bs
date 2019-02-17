@@ -1,0 +1,97 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Bubblesort where
+
+-- ================================================================
+-- This is one of several versions:
+--   Eg01a_Bubblesort: Sort exactly 5 'Int 32' values, serially.
+--   Eg01b_Bubblesort: Sort exactly 5 'Int 32' values, with concurrency.
+--   Eg01c_Bubblesort: Generalize from '5' to arbitrary size 'n'.
+--   Eg01d_Bubblesort: Generalize 'Int 32' to arbitrary type 't', i.e., make it polymorphic
+--   Eg01e_Bubblesort: Remove reliance on 'maxBound', by using a separate 'Valid'
+--                       bit to distinguish 'empty' entries in the vector to be sorted
+
+-- ================================================================
+-- BSV lib imports
+
+import List
+import Vector
+
+-- ================================================================
+-- Project imports
+
+import Utils
+
+-- ================================================================
+-- Interface definition for the parallel sorter
+-- Accepts a stream of n_t unsorted inputs via the put method
+-- Returns a stream of n_t sorted outputs via the get method
+
+interface (Bubblesort_IFC :: # -> * -> *)  n_t  t =
+   put :: t -> Action
+   get :: ActionValue  t
+
+-- ================================================================
+-- Module def for the parallel sorter
+-- Note: we cannot provide a 'verilog' attribute for separate synthesis
+-- because it is polymorphic in n_t.
+
+mkBubblesort :: (Bits  t  wt,                -- ensures 't' has a hardware bit representation
+                 Ord  t,                     -- ensures 't' has the '<=' comparison operator
+                 Eq  t,                      -- ensures 't' has the '==' comparison operator
+                 Bounded  t)                 -- ensures 't' has a 'maxBound' element
+                 =>
+                 Module (Bubblesort_IFC  n_t  t)
+mkBubblesort =
+  module
+    -- Constant values derived from the type n_t
+    let  n    :: Integer = valueOf  n_t
+         jMax :: Integer = n - 1
+
+    -- Count incoming values (up to n)
+    rg_inj :: Reg  (UInt  16) <- mkReg  0
+
+    -- A vector of registers to hold the values being sorted
+    -- Note: 'maxBound' is largest 't'; we assume none of the
+    -- actual values to be sorted have this value.
+    xs :: Vector  n_t  (Reg  t) <- replicateM  (mkReg  maxBound)
+
+    -- Test if array is sorted
+    let done :: Bool
+        done = (   (rg_inj == fromInteger  n)
+	        && (List.all (\i -> ((xs !! i)._read <= (xs !! (i+1))._read))
+		             (List.upto  0  (n - 2))))
+
+        -- Function to generate rule to swap xs[i] and xs[i+1] if unordered
+        gen_swap_rule :: Integer -> Rules
+        gen_swap_rule  i = let
+                               xs_i        = xs !! i
+                               xs_i_plus_1 = xs !! (i+1)
+                           in
+                               rules
+                                 "rl_swap_i": when (xs_i > xs_i_plus_1)
+                                  ==> do
+                                          xs_i        := xs_i_plus_1
+                                          xs_i_plus_1 := xs_i
+
+    -- Add the rules to the module in descending urgency order
+    addRules_list_descending_urgency  (List.map  gen_swap_rule  (List.upto  0  (n - 2)))
+
+    -- ----------------
+    -- INTERFACE
+
+    interface
+        -- Inputs: feed input values into xs [jMax]
+        put x =  do
+                    xs !! jMax := x
+                    rg_inj := rg_inj + 1
+		 when ((rg_inj < fromInteger(n)) && ((xs !! jMax)._read == maxBound))
+
+        -- Outputs: drain by shifting them out of x0
+        get =    do
+                     writeVReg  xs  (shiftInAtN  (readVReg  xs)  maxBound)
+                     if1  ((xs !! 1)._read == maxBound)  (rg_inj := 0)
+                     return (xs !! 0)._read
+		 when done
+
+-- ================================================================
