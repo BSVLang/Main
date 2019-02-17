@@ -114,7 +114,8 @@ mkTop =
         when (rg_step == 1) ==> do
             _  <- cpu_core.cpu_reset_server.response.get
             _  <- uart.server_reset.response.get
-            cpu_core.set_verbosity  0  0
+            cpu_core.set_verbosity  0  0            -- for debugging
+	    soc_fabric.set_verbosity  0             -- for debugging
             rg_step := 2
 
 -- ================================================================

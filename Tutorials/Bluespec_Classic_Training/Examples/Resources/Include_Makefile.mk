@@ -38,10 +38,13 @@ RESOURCES_DIR ?= $(DISTRO)/Resources
 TOPFILE   ?= src/Top.bs
 TOPMODULE ?= mkTop
 
-BSC_COMP_FLAGS = -elab  -keep-fires  -aggressive-conditions  -no-warn-action-shadowing  -check-assert\
-			$(BSC_COMP_FLAG1)  $(BSC_COMP_FLAG2)  $(BSC_COMP_FLAG3) -cpp
-BSC_LINK_FLAGS = -keep-fires
-BSC_PATHS = -p src:$(RESOURCES_DIR):%/Prelude:%/Libraries
+BSC_COMP_FLAGS += -keep-fires  -aggressive-conditions  -no-warn-action-shadowing  -check-assert  -no-show-timestamps -cpp \
+		+RTS -K128M -RTS  -show-range-conflict \
+		$(BSC_COMP_FLAG1)  $(BSC_COMP_FLAG2)  $(BSC_COMP_FLAG3)
+
+BSC_LINK_FLAGS += -keep-fires
+
+BSC_PATHS = -p $(BSC_PATH1)src:$(RESOURCES_DIR):%/Prelude:%/Libraries
 
 .PHONY: help
 help:
@@ -58,8 +61,8 @@ help:
 	@echo "        b_compile       Compile for Bluesim"
 	@echo "        b_link          Link a Bluesim executable"
 	@echo "        b_sim           Run the Bluesim simulation executable"
-	@echo "                            (generates VCD file; remove -V flag to suppress VCD gen)"
 	@echo "        b_all           Convenience for make compile link simulate"
+	@echo "        b_sim_vcd       Run the Bluesim simulation executable and generate VCD"
 	@echo ""
 	@echo "    Verilog generation and Verilog sim:"
 	@echo "        v_compile       Compile for Verilog (Verilog files generated in verilog_RTL/)"
@@ -67,7 +70,7 @@ help:
 	@echo "                            (current simulator:" $(V_SIM) " (redefine V_SIM for other Verilog simulators)"
 	@echo "        v_sim           Run the Verilog simulation executable"
 	@echo "        v_all           Convenience for make verilog v_link v_sim"
-	@echo "                            (generates VCD file; remove +bscvcd flag to suppress VCD gen)"
+	@echo "        v_sim_vcd       Run the Verilog simulation executable and dump VCD"
 	@echo ""
 	@echo "    clean               Delete intermediate files in build_b_sim/ and build_v/ dirs"
 	@echo "    full_clean          Delete all but this Makefile"
@@ -99,8 +102,14 @@ b_link:
 .PHONY: b_sim
 b_sim:
 	@echo Bluesim simulation ...
-	./$(B_SIM_EXE)  -V
+	./$(B_SIM_EXE)
 	@echo Bluesim simulation finished
+
+.PHONY: b_sim_vcd
+b_sim_vcd:
+	@echo Bluesim simulation and dumping VCD in dump.vcd ...
+	./$(B_SIM_EXE)  -V
+	@echo Bluesim simulation and dumping VCD in dump.vcd finished
 
 # ----------------------------------------------------------------
 # Verilog compile/link/sim
@@ -131,8 +140,14 @@ v_link:  build_v  verilog_RTL
 .PHONY: v_sim
 v_sim:
 	@echo Verilog simulation...
-	./$(V_SIM_EXE)  +bscvcd
+	./$(V_SIM_EXE)
 	@echo Verilog simulation finished
+
+.PHONY: v_sim_vcd
+v_sim_vcd:
+	@echo Verilog simulation and dumping VCD in dump.vcd ...
+	./$(V_SIM_EXE)  +bscvcd
+	@echo Verilog simulation and dumping VCD in dump.vcd finished
 
 # ----------------------------------------------------------------
 

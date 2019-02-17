@@ -58,6 +58,11 @@ mkSoC_Fabric =
                 && (addr < soc_map.m_mem0_controller_addr_lim)) then
                 (True, fromInteger mem0_controller_target_num)
 
+            -- UART 0
+            else if (   (soc_map.m_uart_0_addr_base <= addr)
+                     && (addr < soc_map.m_uart_0_addr_lim)) then
+                (True, fromInteger uart_0_target_num)
+
             -- Accelerator 0
             else if (   (soc_map.m_accel_0_addr_base <= addr)
                      && (addr < soc_map.m_accel_0_addr_lim)) then
