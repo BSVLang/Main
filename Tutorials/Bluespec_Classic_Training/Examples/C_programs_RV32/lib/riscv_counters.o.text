@@ -1,0 +1,299 @@
+
+lib/riscv_counters.o:     file format elf32-littleriscv
+lib/riscv_counters.o
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000009c  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  000000d0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  000000d0  2**0
+                  ALLOC
+  3 .debug_info   000009a8  00000000  00000000  000000d0  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  4 .debug_abbrev 000001ed  00000000  00000000  00000a78  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000020  00000000  00000000  00000c65  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_line   000001f3  00000000  00000000  00000c85  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_str    00000537  00000000  00000000  00000e78  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .comment      00000012  00000000  00000000  000013af  2**0
+                  CONTENTS, READONLY
+  9 .debug_frame  00000070  00000000  00000000  000013c4  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    df *ABS*	00000000 riscv_counters.c
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .data	00000000 .data
+00000000 l    d  .bss	00000000 .bss
+00000000 l       .text	00000000 .L0 
+00000000 l       .text	00000000 .L0 
+0000000c l       .text	00000000 .L0 
+00000018 l       .text	00000000 .L0 
+00000020 l       .text	00000000 .L0 
+00000034 l       .text	00000000 .L0 
+00000034 l       .text	00000000 .L0 
+00000034 l       .text	00000000 .L0 
+00000040 l       .text	00000000 .L0 
+0000004c l       .text	00000000 .L0 
+00000054 l       .text	00000000 .L0 
+00000068 l       .text	00000000 .L0 
+00000068 l       .text	00000000 .L0 
+00000068 l       .text	00000000 .L0 
+00000074 l       .text	00000000 .L0 
+00000080 l       .text	00000000 .L0 
+00000088 l       .text	00000000 .L0 
+0000009c l       .text	00000000 .L0 
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+0000009c l       .text	00000000 .L0 
+00000000 l       .debug_frame	00000000 .L0 
+00000000 l       .debug_abbrev	00000000 .Ldebug_abbrev0
+00000375 l       .debug_str	00000000 .LASF125
+00000166 l       .debug_str	00000000 .LASF126
+000002c1 l       .debug_str	00000000 .LASF127
+00000000 l       .text	00000000 .Ltext0
+0000009c l       .text	00000000 .Letext0
+00000000 l       .debug_line	00000000 .Ldebug_line0
+000000ca l       .debug_str	00000000 .LASF0
+00000315 l       .debug_str	00000000 .LASF1
+00000331 l       .debug_str	00000000 .LASF2
+0000020e l       .debug_str	00000000 .LASF3
+0000010f l       .debug_str	00000000 .LASF4
+000001ef l       .debug_str	00000000 .LASF5
+000000bc l       .debug_str	00000000 .LASF6
+000002b6 l       .debug_str	00000000 .LASF10
+00000061 l       .debug_str	00000000 .LASF7
+000001cb l       .debug_str	00000000 .LASF8
+00000280 l       .debug_str	00000000 .LASF9
+00000303 l       .debug_str	00000000 .LASF11
+000002af l       .debug_str	00000000 .LASF12
+00000429 l       .debug_str	00000000 .LASF13
+000004b7 l       .debug_str	00000000 .LASF14
+00000251 l       .debug_str	00000000 .LASF15
+0000024b l       .debug_str	00000000 .LASF16
+000001d8 l       .debug_str	00000000 .LASF17
+00000407 l       .debug_str	00000000 .LASF18
+0000040f l       .debug_str	00000000 .LASF19
+00000359 l       .debug_str	00000000 .LASF20
+0000018e l       .debug_str	00000000 .LASF21
+0000046d l       .debug_str	00000000 .LASF22
+0000019f l       .debug_str	00000000 .LASF27
+0000044c l       .debug_str	00000000 .LASF23
+000003f2 l       .debug_str	00000000 .LASF24
+00000188 l       .debug_str	00000000 .LASF25
+000004a2 l       .debug_str	00000000 .LASF26
+000001c6 l       .debug_str	00000000 .LASF28
+000000b3 l       .debug_str	00000000 .LASF29
+0000043d l       .debug_str	00000000 .LASF30
+000000e2 l       .debug_str	00000000 .LASF31
+00000522 l       .debug_str	00000000 .LASF32
+00000293 l       .debug_str	00000000 .LASF33
+0000026d l       .debug_str	00000000 .LASF34
+000004a7 l       .debug_str	00000000 .LASF35
+0000033b l       .debug_str	00000000 .LASF36
+000004e2 l       .debug_str	00000000 .LASF37
+000000f1 l       .debug_str	00000000 .LASF38
+0000017b l       .debug_str	00000000 .LASF39
+00000000 l       .debug_str	00000000 .LASF40
+0000045f l       .debug_str	00000000 .LASF41
+0000011f l       .debug_str	00000000 .LASF42
+0000029c l       .debug_str	00000000 .LASF43
+000003c2 l       .debug_str	00000000 .LASF44
+00000183 l       .debug_str	00000000 .LASF45
+00000345 l       .debug_str	00000000 .LASF46
+000000dc l       .debug_str	00000000 .LASF47
+00000019 l       .debug_str	00000000 .LASF48
+00000364 l       .debug_str	00000000 .LASF49
+00000118 l       .debug_str	00000000 .LASF50
+00000201 l       .debug_str	00000000 .LASF51
+00000082 l       .debug_str	00000000 .LASF52
+000000ff l       .debug_str	00000000 .LASF53
+000001b6 l       .debug_str	00000000 .LASF54
+00000266 l       .debug_str	00000000 .LASF55
+00000417 l       .debug_str	00000000 .LASF56
+000004fc l       .debug_str	00000000 .LASF57
+000000d6 l       .debug_str	00000000 .LASF58
+000004d4 l       .debug_str	00000000 .LASF59
+0000012e l       .debug_str	00000000 .LASF60
+0000013f l       .debug_str	00000000 .LASF61
+0000003b l       .debug_str	00000000 .LASF62
+00000258 l       .debug_str	00000000 .LASF63
+0000036c l       .debug_str	00000000 .LASF64
+0000025e l       .debug_str	00000000 .LASF65
+000003fa l       .debug_str	00000000 .LASF66
+00000431 l       .debug_str	00000000 .LASF67
+00000127 l       .debug_str	00000000 .LASF68
+000001df l       .debug_str	00000000 .LASF69
+00000197 l       .debug_str	00000000 .LASF70
+000003bd l       .debug_str	00000000 .LASF71
+00000027 l       .debug_str	00000000 .LASF72
+000003d9 l       .debug_str	00000000 .LASF73
+000003c7 l       .debug_str	00000000 .LASF74
+000002a4 l       .debug_str	00000000 .LASF75
+000003cf l       .debug_str	00000000 .LASF76
+00000243 l       .debug_str	00000000 .LASF77
+000001bc l       .debug_str	00000000 .LASF78
+00000516 l       .debug_str	00000000 .LASF79
+000002ee l       .debug_str	00000000 .LASF80
+000001e7 l       .debug_str	00000000 .LASF81
+00000137 l       .debug_str	00000000 .LASF82
+00000323 l       .debug_str	00000000 .LASF83
+00000221 l       .debug_str	00000000 .LASF84
+000004ca l       .debug_str	00000000 .LASF85
+00000107 l       .debug_str	00000000 .LASF86
+000000ec l       .debug_str	00000000 .LASF87
+00000438 l       .debug_str	00000000 .LASF88
+00000352 l       .debug_str	00000000 .LASF89
+000004b1 l       .debug_str	00000000 .LASF90
+00000207 l       .debug_str	00000000 .LASF91
+0000034c l       .debug_str	00000000 .LASF92
+0000001f l       .debug_str	00000000 .LASF93
+00000401 l       .debug_str	00000000 .LASF94
+00000446 l       .debug_str	00000000 .LASF95
+00000468 l       .debug_str	00000000 .LASF96
+00000495 l       .debug_str	00000000 .LASF97
+00000452 l       .debug_str	00000000 .LASF98
+00000236 l       .debug_str	00000000 .LASF99
+000004ed l       .debug_str	00000000 .LASF100
+000001a7 l       .debug_str	00000000 .LASF101
+0000052c l       .debug_str	00000000 .LASF102
+00000503 l       .debug_str	00000000 .LASF103
+000003b0 l       .debug_str	00000000 .LASF104
+00000508 l       .debug_str	00000000 .LASF105
+000000a5 l       .debug_str	00000000 .LASF106
+000004c0 l       .debug_str	00000000 .LASF107
+0000022a l       .debug_str	00000000 .LASF108
+00000475 l       .debug_str	00000000 .LASF109
+00000158 l       .debug_str	00000000 .LASF110
+00000096 l       .debug_str	00000000 .LASF111
+00000147 l       .debug_str	00000000 .LASF112
+00000041 l       .debug_str	00000000 .LASF113
+00000050 l       .debug_str	00000000 .LASF114
+00000328 l       .debug_str	00000000 .LASF115
+0000028c l       .debug_str	00000000 .LASF116
+00000277 l       .debug_str	00000000 .LASF117
+000004da l       .debug_str	00000000 .LASF118
+0000008b l       .debug_str	00000000 .LASF128
+0000041d l       .debug_str	00000000 .LASF119
+00000482 l       .debug_str	00000000 .LASF120
+00000032 l       .debug_str	00000000 .LASF121
+0000000c l       .debug_str	00000000 .LASF122
+00000068 l       .text	00000000 .LFB5
+0000009c l       .text	00000000 .LFE5
+0000051b l       .debug_str	00000000 .LASF124
+00000078 l       .debug_str	00000000 .LASF123
+00000034 l       .text	00000000 .LFB4
+00000068 l       .text	00000000 .LFE4
+000002f8 l       .debug_str	00000000 .LASF129
+00000000 l       .text	00000000 .LFB3
+00000034 l       .text	00000000 .LFE3
+00000000 l       .debug_info	00000000 .Ldebug_info0
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 g     F .text	00000034 read_cycle
+00000034 g     F .text	00000034 read_time
+00000068 g     F .text	00000034 read_instret
+
+
+
+Disassembly of section .text:
+
+00000000 <read_cycle>:
+// The following are interfaces to inline RISC-V assembly instructions
+//     RDCYCLE, RDTIME, RDINSTRET
+// For all of them, the result is left in v0 (= x2) per calling convention
+
+uint64_t  read_cycle (void)
+{
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+
+0000000c <.L0 >:
+    uint64_t result;
+
+    asm volatile ("RDCYCLE %0" : "=r" (result));
+   c:	c00027f3          	rdcycle	a5
+  10:	fef42423          	sw	a5,-24(s0)
+  14:	ff042623          	sw	a6,-20(s0)
+
+00000018 <.L0 >:
+    return result;
+  18:	fe842783          	lw	a5,-24(s0)
+  1c:	fec42803          	lw	a6,-20(s0)
+
+00000020 <.L0 >:
+}
+  20:	00078513          	mv	a0,a5
+  24:	00080593          	mv	a1,a6
+  28:	01c12403          	lw	s0,28(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+00000034 <read_time>:
+
+uint64_t  read_time (void)
+{
+  34:	fe010113          	addi	sp,sp,-32
+  38:	00812e23          	sw	s0,28(sp)
+  3c:	02010413          	addi	s0,sp,32
+
+00000040 <.L0 >:
+    uint64_t result;
+
+    asm volatile ("RDTIME %0" : "=r" (result));
+  40:	c01027f3          	rdtime	a5
+  44:	fef42423          	sw	a5,-24(s0)
+  48:	ff042623          	sw	a6,-20(s0)
+
+0000004c <.L0 >:
+    return result;
+  4c:	fe842783          	lw	a5,-24(s0)
+  50:	fec42803          	lw	a6,-20(s0)
+
+00000054 <.L0 >:
+}
+  54:	00078513          	mv	a0,a5
+  58:	00080593          	mv	a1,a6
+  5c:	01c12403          	lw	s0,28(sp)
+  60:	02010113          	addi	sp,sp,32
+  64:	00008067          	ret
+
+00000068 <read_instret>:
+
+uint64_t  read_instret (void)
+{
+  68:	fe010113          	addi	sp,sp,-32
+  6c:	00812e23          	sw	s0,28(sp)
+  70:	02010413          	addi	s0,sp,32
+
+00000074 <.L0 >:
+    uint64_t result;
+
+    asm volatile ("RDINSTRET %0" : "=r" (result));
+  74:	c02027f3          	rdinstret	a5
+  78:	fef42423          	sw	a5,-24(s0)
+  7c:	ff042623          	sw	a6,-20(s0)
+
+00000080 <.L0 >:
+    return result;
+  80:	fe842783          	lw	a5,-24(s0)
+  84:	fec42803          	lw	a6,-20(s0)
+
+00000088 <.L0 >:
+}
+  88:	00078513          	mv	a0,a5
+  8c:	00080593          	mv	a1,a6
+  90:	01c12403          	lw	s0,28(sp)
+  94:	02010113          	addi	sp,sp,32
+  98:	00008067          	ret

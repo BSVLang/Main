@@ -1,0 +1,1248 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+                              ./lib/syscalls.o (__divdi3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+                              ./lib/syscalls.o (__moddi3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o) (__clz_tab)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o (atexit)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-errno.o)
+                              ./lib/syscalls.o (__errno)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o (exit)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fini.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o (__libc_fini_array)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o) (_global_impure_ptr)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-init.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o (__libc_init_array)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memset.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o (memset)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o)
+                              /tmp/ccT9oWv3.o (printf)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+                              /tmp/ccT9oWv3.o (puts)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strlen.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o) (strlen)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o) (_vfprintf_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__swsetup_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__atexit.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o) (__register_exitproc)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__call_atexit.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o) (__call_exitprocs)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fflush.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (_fflush_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o) (__sinit)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (_free_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o) (__sfvwrite_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fwalk.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o) (_fwalk)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (_ldtoa_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (_localeconv_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o) (__global_locale)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o) (__smakebuf_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (_malloc_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mbtowc_r.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o) (__ascii_mbtowc)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memchr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (memchr)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memcpy.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o) (memcpy)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memmove.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o) (memmove)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mlock.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o) (__malloc_lock)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o) (_Balloc)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reallocr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o) (_realloc_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o) (_sbrk_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (frexp)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o) (sprintf)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o) (__sread)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o) (strcmp)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o) (strcpy)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (strncpy)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o) (_svfprintf_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__sprint_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wctomb_r.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o) (__ascii_wctomb)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-writer.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o) (_write_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-callocr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o) (_calloc_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-closer.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o) (_close_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o) (_ctype_)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fclose.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o) (_fclose_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o) (_fputwc_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fstatr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o) (_fstat_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-isattyr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o) (_isatty_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-lseekr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o) (_lseek_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-readr.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o) (_read_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o) (errno)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o) (__ssprint_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wbuf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o) (__swbuf_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wcrtomb.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o) (_wcrtomb_r)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a(_exit.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o) (_exit)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__udivdi3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__umoddi3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o) (__divdf3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o) (__muldf3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__eqtf2)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__gttf2)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__lttf2)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__multf3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__subtf3)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__fixtfsi)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__floatsitf)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__extenddftf2)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o) (__trunctfdf2)
+/home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                              /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o) (__clzsi2)
+
+Allocating common symbols
+Common symbol       size              file
+
+errno               0x4               /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ./lib/syscalls.o
+LOAD ./lib/riscv_counters.o
+LOAD ./lib/ns16550.o
+Address of section .text-segment set to 0x80000000
+LOAD /tmp/ccT9oWv3.o
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libm.a
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a
+START GROUP
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a
+END GROUP
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x10000))
+                0x0000000080000074                . = (SEGMENT_START ("text-segment", 0x10000) + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.dyn       0x0000000080000074        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x0000000080000074        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT_NONE(.init))
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000080000074    0x11494
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000080000074       0x48 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o
+                0x0000000080000074                _start
+                0x00000000800000b8                _init
+                0x00000000800000b8                _fini
+ .text          0x00000000800000bc       0xcc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .text          0x0000000080000188      0x4ec ./lib/syscalls.o
+                0x0000000080000188                read
+                0x0000000080000214                write
+                0x0000000080000280                gettimeofday
+                0x000000008000037c                sleep
+                0x0000000080000428                _sbrk
+                0x0000000080000464                _write
+                0x00000000800004d0                _close
+                0x000000008000050c                _lseek
+                0x0000000080000550                _read
+                0x0000000080000594                _fstat
+                0x00000000800005d4                _isatty
+                0x0000000080000610                _kill
+                0x0000000080000650                _getpid
+ .text          0x0000000080000674       0x9c ./lib/riscv_counters.o
+                0x0000000080000674                read_cycle
+                0x00000000800006a8                read_time
+                0x00000000800006dc                read_instret
+ .text          0x0000000080000710      0x1e4 ./lib/ns16550.o
+                0x00000000800007e8                ns16550_rxready
+                0x0000000080000820                ns16550_rxchar
+                0x0000000080000868                ns16550_txchar
+                0x00000000800008bc                ns16550_flush
+ .text          0x00000000800008f4      0x10c /tmp/ccT9oWv3.o
+                0x00000000800008f4                print
+                0x00000000800009d0                main
+ .text          0x0000000080000a00      0x480 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+                0x0000000080000a00                __divdi3
+ .text          0x0000000080000e80      0x458 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+                0x0000000080000e80                __moddi3
+ .text          0x00000000800012d8        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .text          0x00000000800012d8       0x14 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o)
+                0x00000000800012d8                atexit
+ .text          0x00000000800012ec        0xc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-errno.o)
+                0x00000000800012ec                __errno
+ .text          0x00000000800012f8       0x34 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o)
+                0x00000000800012f8                exit
+ .text          0x000000008000132c       0x5c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fini.o)
+                0x000000008000132c                __libc_fini_array
+ .text          0x0000000080001388        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x0000000080001388       0xa8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-init.o)
+                0x0000000080001388                __libc_init_array
+ .text          0x0000000080001430       0xdc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memset.o)
+                0x0000000080001430                memset
+ .text          0x000000008000150c       0x90 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o)
+                0x000000008000150c                _printf_r
+                0x000000008000154c                printf
+ .text          0x000000008000159c       0xd8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+                0x000000008000159c                _puts_r
+                0x0000000080001664                puts
+ .text          0x0000000080001674       0x1c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strlen.o)
+                0x0000000080001674                strlen
+ .text          0x0000000080001690     0x2080 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+                0x0000000080001690                _vfprintf_r
+                0x000000008000363c                vfprintf
+ .text          0x0000000080003710      0x138 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o)
+                0x0000000080003710                __swsetup_r
+ .text          0x0000000080003848       0x80 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__atexit.o)
+                0x0000000080003848                __register_exitproc
+ .text          0x00000000800038c8      0x110 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__call_atexit.o)
+                0x00000000800038c8                __call_exitprocs
+ .text          0x00000000800039d8      0x288 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fflush.o)
+                0x00000000800039d8                __sflush_r
+                0x0000000080003be0                _fflush_r
+                0x0000000080003c38                fflush
+ .text          0x0000000080003c60      0x2c4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o)
+                0x0000000080003cf0                _cleanup_r
+                0x0000000080003d04                __sfmoreglue
+                0x0000000080003d70                _cleanup
+                0x0000000080003d7c                __sinit
+                0x0000000080003e00                __sfp
+                0x0000000080003eec                __sfp_lock_acquire
+                0x0000000080003ef0                __sfp_lock_release
+                0x0000000080003ef4                __sinit_lock_acquire
+                0x0000000080003ef8                __sinit_lock_release
+                0x0000000080003efc                __fp_lock_all
+                0x0000000080003f10                __fp_unlock_all
+ .text          0x0000000080003f24      0x364 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o)
+                0x0000000080003f24                _malloc_trim_r
+                0x0000000080004034                _free_r
+ .text          0x0000000080004288      0x460 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o)
+                0x0000000080004288                __sfvwrite_r
+ .text          0x00000000800046e8      0x154 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fwalk.o)
+                0x00000000800046e8                _fwalk
+                0x0000000080004788                _fwalk_reent
+ .text          0x000000008000483c     0x1f80 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+                0x0000000080005b60                _ldtoa_r
+                0x0000000080006758                _ldcheck
+ .text          0x00000000800067bc       0x40 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o)
+                0x00000000800067bc                __localeconv_l
+                0x00000000800067c4                _localeconv_r
+                0x00000000800067e0                localeconv
+ .text          0x00000000800067fc       0xd0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+                0x00000000800067fc                _setlocale_r
+                0x0000000080006878                __locale_mb_cur_max
+                0x0000000080006894                __locale_ctype_ptr_l
+                0x000000008000689c                __locale_ctype_ptr
+                0x00000000800068b8                setlocale
+ .text          0x00000000800068cc      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o)
+                0x00000000800068cc                __swhatbuf_r
+                0x0000000080006968                __smakebuf_r
+ .text          0x0000000080006a58      0x664 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000080006a58                _malloc_r
+ .text          0x00000000800070bc       0x78 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mbtowc_r.o)
+                0x00000000800070bc                _mbtowc_r
+                0x00000000800070d8                __ascii_mbtowc
+ .text          0x0000000080007134       0x24 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memchr.o)
+                0x0000000080007134                memchr
+ .text          0x0000000080007158       0xd8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000000080007158                memcpy
+ .text          0x0000000080007230       0x5c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memmove.o)
+                0x0000000080007230                memmove
+ .text          0x000000008000728c        0x8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mlock.o)
+                0x000000008000728c                __malloc_lock
+                0x0000000080007290                __malloc_unlock
+ .text          0x0000000080007294      0xe7c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+                0x0000000080007294                _Balloc
+                0x000000008000733c                _Bfree
+                0x0000000080007360                __multadd
+                0x000000008000745c                __s2b
+                0x0000000080007568                __hi0bits
+                0x00000000800075d8                __lo0bits
+                0x0000000080007688                __i2b
+                0x00000000800076bc                __multiply
+                0x000000008000787c                __pow5mult
+                0x0000000080007978                __lshift
+                0x0000000080007ab4                __mcmp
+                0x0000000080007b08                __mdiff
+                0x0000000080007c78                __ulp
+                0x0000000080007cd4                __b2d
+                0x0000000080007dd8                __d2b
+                0x0000000080007f14                __ratio
+                0x0000000080007fd0                _mprec_log10
+                0x0000000080008058                __copybits
+                0x00000000800080a8                __any_on
+ .text          0x0000000080008110      0x544 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reallocr.o)
+                0x0000000080008110                _realloc_r
+ .text          0x0000000080008654       0x44 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o)
+                0x0000000080008654                _sbrk_r
+ .text          0x0000000080008698       0xb4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+                0x0000000080008698                frexp
+ .text          0x000000008000874c       0xd8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o)
+                0x000000008000874c                _sprintf_r
+                0x00000000800087b0                sprintf
+ .text          0x0000000080008824      0x13c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o)
+                0x0000000080008824                __sread
+                0x0000000080008874                __seofread
+                0x000000008000887c                __swrite
+                0x0000000080008900                __sseek
+                0x0000000080008958                __sclose
+ .text          0x0000000080008960      0x17c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+                0x0000000080008960                strcmp
+ .text          0x0000000080008adc       0x1c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+                0x0000000080008adc                strcpy
+ .text          0x0000000080008af8       0x38 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+                0x0000000080008af8                strncpy
+ .text          0x0000000080008b30     0x1f50 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+                0x0000000080008b30                _svfprintf_r
+ .text          0x000000008000aa80      0xe68 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+                0x000000008000aa80                __sprint_r
+                0x000000008000ab7c                _vfiprintf_r
+                0x000000008000b814                vfiprintf
+ .text          0x000000008000b8e8       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wctomb_r.o)
+                0x000000008000b8e8                _wctomb_r
+                0x000000008000b904                __ascii_wctomb
+ .text          0x000000008000b934       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-writer.o)
+                0x000000008000b934                _write_r
+ .text          0x000000008000b980       0x9c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-callocr.o)
+                0x000000008000b980                _calloc_r
+ .text          0x000000008000ba1c       0x44 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-closer.o)
+                0x000000008000ba1c                _close_r
+ .text          0x000000008000ba60        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+ .text          0x000000008000ba60       0xec /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fclose.o)
+                0x000000008000ba60                _fclose_r
+                0x000000008000bb3c                fclose
+ .text          0x000000008000bb4c      0x198 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o)
+                0x000000008000bb4c                __fputwc
+                0x000000008000bc60                _fputwc_r
+                0x000000008000bc8c                fputwc
+ .text          0x000000008000bce4       0x48 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fstatr.o)
+                0x000000008000bce4                _fstat_r
+ .text          0x000000008000bd2c       0x44 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-isattyr.o)
+                0x000000008000bd2c                _isatty_r
+ .text          0x000000008000bd70       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-lseekr.o)
+                0x000000008000bd70                _lseek_r
+ .text          0x000000008000bdbc       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-readr.o)
+                0x000000008000bdbc                _read_r
+ .text          0x000000008000be08      0x154 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+                0x000000008000be08                cleanup_glue
+                0x000000008000be48                _reclaim_reent
+ .text          0x000000008000bf5c      0xe04 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+                0x000000008000bf5c                __ssprint_r
+                0x000000008000c124                _svfiprintf_r
+ .text          0x000000008000cd60      0x144 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wbuf.o)
+                0x000000008000cd60                __swbuf_r
+                0x000000008000ce90                __swbuf
+ .text          0x000000008000cea4       0x9c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wcrtomb.o)
+                0x000000008000cea4                _wcrtomb_r
+                0x000000008000cf28                wcrtomb
+ .text          0x000000008000cf40        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a(_exit.o)
+                0x000000008000cf40                _exit
+ .text          0x000000008000cf44      0x434 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+                0x000000008000cf44                __udivdi3
+ .text          0x000000008000d378      0x410 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+                0x000000008000d378                __umoddi3
+ .text          0x000000008000d788      0x6d4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+                0x000000008000d788                __divdf3
+ .text          0x000000008000de5c      0x5c4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                0x000000008000de5c                __muldf3
+ .text          0x000000008000e420       0xcc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+                0x000000008000e420                __eqtf2
+                0x000000008000e420                __netf2
+ .text          0x000000008000e4ec      0x148 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+                0x000000008000e4ec                __getf2
+                0x000000008000e4ec                __gttf2
+ .text          0x000000008000e634      0x148 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+                0x000000008000e634                __letf2
+                0x000000008000e634                __lttf2
+ .text          0x000000008000e77c     0x100c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+                0x000000008000e77c                __multf3
+ .text          0x000000008000f788     0x1518 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+                0x000000008000f788                __subtf3
+ .text          0x0000000080010ca0      0x150 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+                0x0000000080010ca0                __fixtfsi
+ .text          0x0000000080010df0      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+                0x0000000080010df0                __floatsitf
+ .text          0x0000000080010f7c      0x20c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+                0x0000000080010f7c                __extenddftf2
+ .text          0x0000000080011188      0x334 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+                0x0000000080011188                __trunctfdf2
+ .text          0x00000000800114bc       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                0x00000000800114bc                __clzsi2
+ .text          0x0000000080011508        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata         0x0000000080011508      0xd2c
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000080011508       0x49 /tmp/ccT9oWv3.o
+ *fill*         0x0000000080011551        0x3 
+ .rodata        0x0000000080011554      0x100 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+                0x0000000080011554                __clz_tab
+ .rodata.str1.4
+                0x0000000080011654        0x2 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+ *fill*         0x0000000080011656        0x2 
+ .rodata        0x0000000080011658      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+ .rodata.str1.4
+                0x00000000800117e4       0x3a /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+ *fill*         0x000000008001181e        0x2 
+ .rodata        0x0000000080011820      0x254 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+ .rodata.str1.4
+                0x0000000080011a74       0x28 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+ .rodata.str1.4
+                0x0000000080011a9c       0x10 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+                                         0x12 (size before relaxing)
+ *fill*         0x0000000080011aac        0x4 
+ .rodata        0x0000000080011ab0      0x128 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+                0x0000000080011ac0                __mprec_tens
+                0x0000000080011b88                __mprec_tinytens
+                0x0000000080011bb0                __mprec_bigtens
+ .rodata        0x0000000080011bd8      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+ .rodata.str1.4
+                0x0000000080011d64       0x3a /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+ .rodata        0x0000000080011d64      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata.str1.4
+                0x0000000080011ef0       0x25 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata        0x0000000080011ef0      0x101 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+                0x0000000080011ef0                _ctype_
+ *fill*         0x0000000080011ff1        0x3 
+ .rodata        0x0000000080011ff4      0x18c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+ .rodata.str1.4
+                0x0000000080012180       0x25 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+ .rodata        0x0000000080012180       0x3c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .rodata        0x00000000800121bc       0x3c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .rodata        0x00000000800121f8       0x3c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000080013000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame       0x0000000080013000       0x68
+ *(.eh_frame)
+ .eh_frame      0x0000000080013000        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .eh_frame      0x0000000080013000       0x28 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .eh_frame      0x0000000080013028       0x14 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000008001303c       0x14 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000080013050       0x14 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000080013064        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata          0x0000000080013068        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000080013068        0x0
+                0x0000000080013068                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                0x0000000080013068                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000080013068        0x8
+                0x0000000080013068                PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000080013068        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .init_array    0x000000008001306c        0x4 ./lib/ns16550.o
+                0x0000000080013070                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000080013070        0x4
+                0x0000000080013070                PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000080013070        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+                0x0000000080013074                PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+                0x0000000080013074                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000080013078      0x99c
+                0x0000000080013078                __DATA_BEGIN__ = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .data          0x0000000080013078        0x0 ./lib/startup.o
+ .data          0x0000000080013078        0x0 ./lib/syscalls.o
+ .data          0x0000000080013078        0x0 ./lib/riscv_counters.o
+ .data          0x0000000080013078        0x0 ./lib/ns16550.o
+ .data          0x0000000080013078        0x0 /tmp/ccT9oWv3.o
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-errno.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o)
+ .data          0x0000000080013078        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fini.o)
+ .data          0x0000000080013078      0x428 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-init.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memset.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__atexit.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fflush.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fwalk.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+ .data          0x00000000800134a0        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o)
+ .data          0x00000000800134a0      0x16c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+                0x00000000800134a0                __global_locale
+ .data          0x000000008001360c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o)
+ .data          0x000000008001360c      0x408 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                0x000000008001360c                __malloc_av_
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mbtowc_r.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memchr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mlock.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reallocr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wctomb_r.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-writer.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-callocr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-closer.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fclose.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fstatr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-isattyr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-lseekr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-readr.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wbuf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wcrtomb.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a(_exit.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .data          0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+
+.tm_clone_table
+                0x0000000080013a14        0x0
+ .tm_clone_table
+                0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .tm_clone_table
+                0x0000000080013a14        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata          0x0000000080013a18       0x30
+                0x0000000080013a18                __SDATA_BEGIN__ = .
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ .srodata.cst8  0x0000000080013a18       0x10 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+ .srodata.cst8  0x0000000080013a28        0x8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+ .srodata       0x0000000080013a30        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+                0x0000000080013a30                _global_impure_ptr
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0000000080013a34        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+                0x0000000080013a34                __dso_handle
+ .sdata         0x0000000080013a38        0x4 ./lib/ns16550.o
+ .sdata         0x0000000080013a3c        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+                0x0000000080013a3c                _impure_ptr
+ .sdata         0x0000000080013a40        0x8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000080013a40                __malloc_sbrk_base
+                0x0000000080013a44                __malloc_trim_threshold
+                0x0000000080013a48                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000080013a48                . = .
+                0x0000000080013a48                __bss_start = .
+
+.sbss           0x0000000080013a48       0x10
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000080013a48        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+                0x0000000080013a48                _PathLocale
+ .sbss          0x0000000080013a4c        0xc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000080013a4c                __malloc_max_total_mem
+                0x0000000080013a50                __malloc_max_sbrked_mem
+                0x0000000080013a54                __malloc_top_pad
+ *(.scommon)
+
+.bss            0x0000000080013a58       0x48
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000080013a58        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o
+ .bss           0x0000000080013a58       0x1c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+ .bss           0x0000000080013a74        0x0 ./lib/startup.o
+ .bss           0x0000000080013a74        0x0 ./lib/syscalls.o
+ .bss           0x0000000080013a74        0x0 ./lib/riscv_counters.o
+ .bss           0x0000000080013a74        0x0 ./lib/ns16550.o
+ .bss           0x0000000080013a74        0x0 /tmp/ccT9oWv3.o
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-errno.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fini.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-init.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memset.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__atexit.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fflush.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fwalk.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+ .bss           0x0000000080013a74        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o)
+ .bss           0x0000000080013a74       0x28 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000080013a74                __malloc_current_mallinfo
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mbtowc_r.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memchr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mlock.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reallocr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wctomb_r.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-writer.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-callocr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-closer.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fclose.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fstatr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-isattyr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-lseekr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-readr.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wbuf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wcrtomb.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a(_exit.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .bss           0x0000000080013a9c        0x0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+ *(COMMON)
+ COMMON         0x0000000080013a9c        0x4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+                0x0000000080013a9c                errno
+                0x0000000080013aa0                . = ALIGN ((. != 0x0)?0x4:0x1)
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/crt0.o
+LOAD /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+
+.startup        0x0000000080000000       0x28
+ startup.o(.text)
+ .text          0x0000000080000000       0x28 ./lib/startup.o
+                0x0000000080000000                _reset
+                0x0000000080000028                . = ALIGN (0x4)
+                0x0000000080000028                . = SEGMENT_START ("ldata-segment", .)
+                0x0000000080000028                . = ALIGN (0x4)
+                0x0000000080000028                __BSS_END__ = .
+                0x0000000080013878                __global_pointer$ = MIN ((__SDATA_BEGIN__ + 0x800), MAX ((__DATA_BEGIN__ + 0x800), (__BSS_END__ - 0x800)))
+                0x0000000080000028                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x0000000080000028                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtbegin.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 ./lib/syscalls.o
+ .comment       0x0000000000000011       0x12 ./lib/riscv_counters.o
+ .comment       0x0000000000000011       0x12 ./lib/ns16550.o
+ .comment       0x0000000000000011       0x12 /tmp/ccT9oWv3.o
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-atexit.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-errno.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-exit.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fini.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-init.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-printf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-puts.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfprintf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wsetup.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__atexit.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fflush.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-findfp.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-freer.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fvwrite.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fwalk.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ldtoa.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-localeconv.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-locale.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-makebuf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mallocr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mbtowc_r.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memchr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memcpy.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mlock.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-mprec.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reallocr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sbrkr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-s_frexp.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-sprintf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-stdio.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfprintf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wctomb_r.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-writer.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-callocr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-closer.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-ctype_.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fclose.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fputwc.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-fstatr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-isattyr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-lseekr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-readr.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-reent.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-svfiprintf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wbuf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-wcrtomb.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/../../../../riscv32-unknown-elf/lib/libnosys.a(_exit.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+ .comment       0x0000000000000011       0x12 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x2b8
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 ./lib/startup.o
+ .debug_aranges
+                0x0000000000000020       0x20 ./lib/syscalls.o
+ .debug_aranges
+                0x0000000000000040       0x20 ./lib/riscv_counters.o
+ .debug_aranges
+                0x0000000000000060       0x20 ./lib/ns16550.o
+ .debug_aranges
+                0x0000000000000080       0x20 /tmp/ccT9oWv3.o
+ .debug_aranges
+                0x00000000000000a0       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_aranges
+                0x00000000000000c0       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_aranges
+                0x00000000000000e0       0x18 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .debug_aranges
+                0x00000000000000f8       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x0000000000000118       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_aranges
+                0x0000000000000138       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_aranges
+                0x0000000000000158       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_aranges
+                0x0000000000000178       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_aranges
+                0x0000000000000198       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_aranges
+                0x00000000000001b8       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_aranges
+                0x00000000000001d8       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_aranges
+                0x00000000000001f8       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_aranges
+                0x0000000000000218       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_aranges
+                0x0000000000000238       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_aranges
+                0x0000000000000258       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_aranges
+                0x0000000000000278       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_aranges
+                0x0000000000000298       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0xcac2
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x26 ./lib/startup.o
+ .debug_info    0x0000000000000026      0xd2c ./lib/syscalls.o
+ .debug_info    0x0000000000000d52      0x9a8 ./lib/riscv_counters.o
+ .debug_info    0x00000000000016fa      0x3e4 ./lib/ns16550.o
+ .debug_info    0x0000000000001ade      0x976 /tmp/ccT9oWv3.o
+ .debug_info    0x0000000000002454     0x1250 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_info    0x00000000000036a4     0x12a5 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_info    0x0000000000004949      0xb3f /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .debug_info    0x0000000000005488     0x121a /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_info    0x00000000000066a2     0x1278 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_info    0x000000000000791a      0x730 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_info    0x000000000000804a      0x768 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_info    0x00000000000087b2      0x298 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_info    0x0000000000008a4a      0x294 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_info    0x0000000000008cde      0x294 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_info    0x0000000000008f72     0x126c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_info    0x000000000000a1de      0xd83 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_info    0x000000000000af61      0x2c5 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_info    0x000000000000b226      0x3c6 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_info    0x000000000000b5ec      0x3ef /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_info    0x000000000000b9db      0x53b /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_info    0x000000000000bf16      0xbac /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_abbrev   0x0000000000000000     0x297f
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x14 ./lib/startup.o
+ .debug_abbrev  0x0000000000000014      0x27d ./lib/syscalls.o
+ .debug_abbrev  0x0000000000000291      0x1ed ./lib/riscv_counters.o
+ .debug_abbrev  0x000000000000047e      0x15e ./lib/ns16550.o
+ .debug_abbrev  0x00000000000005dc      0x1ee /tmp/ccT9oWv3.o
+ .debug_abbrev  0x00000000000007ca      0x2e4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x0000000000000aae      0x2ef /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_abbrev  0x0000000000000d9d      0x1e8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .debug_abbrev  0x0000000000000f85      0x2cc /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000000000001251      0x2e8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_abbrev  0x0000000000001539      0x187 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_abbrev  0x00000000000016c0      0x18e /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_abbrev  0x000000000000184e      0x18b /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_abbrev  0x00000000000019d9      0x19e /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_abbrev  0x0000000000001b77      0x19e /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_abbrev  0x0000000000001d15      0x1a8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_abbrev  0x0000000000001ebd      0x1bd /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_abbrev  0x000000000000207a      0x1ac /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_abbrev  0x0000000000002226      0x1b5 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_abbrev  0x00000000000023db      0x1ab /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_abbrev  0x0000000000002586      0x1b7 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_abbrev  0x000000000000273d      0x242 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_line     0x0000000000000000     0xa902
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000       0x6c ./lib/startup.o
+ .debug_line    0x000000000000006c      0x51f ./lib/syscalls.o
+ .debug_line    0x000000000000058b      0x1f3 ./lib/riscv_counters.o
+ .debug_line    0x000000000000077e      0x29c ./lib/ns16550.o
+ .debug_line    0x0000000000000a1a      0x1bf /tmp/ccT9oWv3.o
+ .debug_line    0x0000000000000bd9      0x979 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_line    0x0000000000001552      0x9f9 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_line    0x0000000000001f4b      0x20c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+ .debug_line    0x0000000000002157      0x8d0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_line    0x0000000000002a27      0x980 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_line    0x00000000000033a7      0xe29 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_line    0x00000000000041d0      0xc0a /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_line    0x0000000000004dda      0x2a4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_line    0x000000000000507e      0x369 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_line    0x00000000000053e7      0x369 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_line    0x0000000000005750     0x1e4f /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_line    0x000000000000759f     0x216c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_line    0x000000000000970b      0x2af /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_line    0x00000000000099ba      0x2de /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_line    0x0000000000009c98      0x460 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_line    0x000000000000a0f8      0x57c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_line    0x000000000000a674      0x28e /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_frame    0x0000000000000000      0x628
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x1e8 ./lib/syscalls.o
+ .debug_frame   0x00000000000001e8       0x70 ./lib/riscv_counters.o
+ .debug_frame   0x0000000000000258       0xb0 ./lib/ns16550.o
+ .debug_frame   0x0000000000000308       0x58 /tmp/ccT9oWv3.o
+ .debug_frame   0x0000000000000360       0x54 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_frame   0x00000000000003b4       0x54 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_frame   0x0000000000000408       0x2c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_frame   0x0000000000000434       0x2c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_frame   0x0000000000000460       0x2c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_frame   0x000000000000048c       0x64 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_frame   0x00000000000004f0       0x4c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_frame   0x000000000000053c       0x2c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_frame   0x0000000000000568       0x3c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_frame   0x00000000000005a4       0x38 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_frame   0x00000000000005dc       0x2c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_frame   0x0000000000000608       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_str      0x0000000000000000     0x161d
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0x49 ./lib/startup.o
+ .debug_str     0x0000000000000049      0x548 ./lib/syscalls.o
+                                        0x604 (size before relaxing)
+ .debug_str     0x0000000000000591       0x42 ./lib/riscv_counters.o
+                                        0x537 (size before relaxing)
+ .debug_str     0x00000000000005d3      0x24b ./lib/ns16550.o
+                                        0x348 (size before relaxing)
+ .debug_str     0x000000000000081e       0x19 /tmp/ccT9oWv3.o
+                                        0x4fe (size before relaxing)
+ .debug_str     0x0000000000000837      0x33c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+                                        0x80e (size before relaxing)
+ .debug_str     0x0000000000000b73        0x9 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+                                        0x80e (size before relaxing)
+ .debug_str     0x0000000000000b7c       0x93 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clz.o)
+                                        0x756 (size before relaxing)
+ .debug_str     0x0000000000000c0f        0xa /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+                                        0x80f (size before relaxing)
+ .debug_str     0x0000000000000c19        0xa /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+                                        0x80f (size before relaxing)
+ .debug_str     0x0000000000000c23      0x20c /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+                                        0x3dd (size before relaxing)
+ .debug_str     0x0000000000000e2f      0x15b /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+                                        0x435 (size before relaxing)
+ .debug_str     0x0000000000000f8a       0x87 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+                                        0x232 (size before relaxing)
+ .debug_str     0x0000000000001011       0x58 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+                                        0x256 (size before relaxing)
+ .debug_str     0x0000000000001069       0x34 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+                                        0x256 (size before relaxing)
+ .debug_str     0x000000000000109d      0x295 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+                                        0x5bc (size before relaxing)
+ .debug_str     0x0000000000001332      0x177 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+                                        0x489 (size before relaxing)
+ .debug_str     0x00000000000014a9       0x4b /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+                                        0x29a (size before relaxing)
+ .debug_str     0x00000000000014f4       0x69 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+                                        0x361 (size before relaxing)
+ .debug_str     0x000000000000155d       0x4d /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+                                        0x2ae (size before relaxing)
+ .debug_str     0x00000000000015aa       0x6a /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+                                        0x3e5 (size before relaxing)
+ .debug_str     0x0000000000001614        0x9 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+                                        0x773 (size before relaxing)
+
+.debug_loc      0x0000000000000000    0x10c57
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x96d /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_loc     0x000000000000096d      0xa27 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_loc     0x0000000000001394      0xbd0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_loc     0x0000000000001f64      0x969 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_loc     0x00000000000028cd     0x1124 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_loc     0x00000000000039f1      0xdc4 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_loc     0x00000000000047b5       0x87 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_loc     0x000000000000483c       0xea /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_loc     0x0000000000004926       0xea /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_loc     0x0000000000004a10     0x8fad /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_loc     0x000000000000d9bd     0x22d7 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_loc     0x000000000000fc94      0x302 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_loc     0x000000000000ff96      0x1f8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_loc     0x000000000001018e      0x417 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_loc     0x00000000000105a5      0x647 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_loc     0x0000000000010bec       0x6b /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000     0x1510
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0xe8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_divdi3.o)
+ .debug_ranges  0x00000000000000e8       0xc0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_moddi3.o)
+ .debug_ranges  0x00000000000001a8      0x100 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_udivdi3.o)
+ .debug_ranges  0x00000000000002a8       0xd0 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_umoddi3.o)
+ .debug_ranges  0x0000000000000378      0x198 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(divdf3.o)
+ .debug_ranges  0x0000000000000510      0x1e8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(muldf3.o)
+ .debug_ranges  0x00000000000006f8       0x58 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(eqtf2.o)
+ .debug_ranges  0x0000000000000750       0x68 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(getf2.o)
+ .debug_ranges  0x00000000000007b8       0x68 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(letf2.o)
+ .debug_ranges  0x0000000000000820      0x760 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(multf3.o)
+ .debug_ranges  0x0000000000000f80      0x360 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(subtf3.o)
+ .debug_ranges  0x00000000000012e0       0x40 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(fixtfsi.o)
+ .debug_ranges  0x0000000000001320       0x60 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(floatsitf.o)
+ .debug_ranges  0x0000000000001380       0x98 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(extenddftf2.o)
+ .debug_ranges  0x0000000000001418       0xd8 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(trunctfdf2.o)
+ .debug_ranges  0x00000000000014f0       0x20 /home/nikhil/Projects/RISCV/Toolchain/RV32IMA/riscv/bin/../lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(_clzsi2.o)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(print/print elf32-littleriscv)

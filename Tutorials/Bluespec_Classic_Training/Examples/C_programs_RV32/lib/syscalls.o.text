@@ -1,0 +1,1187 @@
+
+lib/syscalls.o:     file format elf32-littleriscv
+lib/syscalls.o
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000052c  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000560  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000560  2**0
+                  ALLOC
+  3 .debug_info   00000d2c  00000000  00000000  00000560  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  4 .debug_abbrev 0000027d  00000000  00000000  0000128c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000020  00000000  00000000  00001509  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_line   0000051f  00000000  00000000  00001529  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_str    00000604  00000000  00000000  00001a48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .comment      00000012  00000000  00000000  0000204c  2**0
+                  CONTENTS, READONLY
+  9 .debug_frame  000001e8  00000000  00000000  00002060  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    df *ABS*	00000000 syscalls.c
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .data	00000000 .data
+00000000 l    d  .bss	00000000 .bss
+00000000 l       .text	00000000 .L0 
+00000000 l       .text	00000000 .L0 
+00000010 l       .text	00000000 .L0 
+0000001c l       .text	00000000 .L0 
+00000024 l       .text	00000000 .L0 
+0000002c l       .text	00000000 .L0 
+00000030 l       .text	00000000 .L0 
+00000034 l       .text	00000000 .L0 
+00000040 l       .text	00000000 .L0 
+0000004c l       .text	00000000 .L0 
+00000054 l       .text	00000000 .L0 
+00000060 l       .text	00000000 .L0 
+0000006c l       .text	00000000 .L0 
+00000070 l       .text	00000000 .L0 
+0000007c l       .text	00000000 .L0 
+00000080 l       .text	00000000 .L0 
+00000088 l       .text	00000000 .L0 
+00000094 l       .text	00000000 .L0 
+00000094 l       .text	00000000 .L0 
+00000094 l       .text	00000000 .L0 
+000000a4 l       .text	00000000 .L0 
+000000b0 l       .text	00000000 .L0 
+000000b4 l       .text	00000000 .L0 
+000000b8 l       .text	00000000 .L0 
+000000c4 l       .text	00000000 .L0 
+000000c8 l       .text	00000000 .L0 
+000000d4 l       .text	00000000 .L0 
+000000e0 l       .text	00000000 .L0 
+000000ec l       .text	00000000 .L0 
+000000f0 l       .text	00000000 .L0 
+000000f8 l       .text	00000000 .L0 
+00000104 l       .text	00000000 .L0 
+00000104 l       .text	00000000 .L0 
+00000104 l       .text	00000000 .L0 
+00000114 l       .text	00000000 .L0 
+0000011c l       .text	00000000 .L0 
+00000124 l       .text	00000000 .L0 
+00000134 l       .text	00000000 .L0 
+00000140 l       .text	00000000 .L0 
+00000148 l       .text	00000000 .L0 
+00000154 l       .text	00000000 .L0 
+00000164 l       .text	00000000 .L0 
+00000190 l       .text	00000000 .L0 
+0000019c l       .text	00000000 .L0 
+000001c8 l       .text	00000000 .L0 
+000001e8 l       .text	00000000 .L0 
+000001f4 l       .text	00000000 .L0 
+000001f8 l       .text	00000000 .L0 
+00000200 l       .text	00000000 .L0 
+0000020c l       .text	00000000 .L0 
+0000020c l       .text	00000000 .L0 
+0000020c l       .text	00000000 .L0 
+00000224 l       .text	00000000 .L0 
+00000228 l       .text	00000000 .L0 
+0000023c l       .text	00000000 .L0 
+00000244 l       .text	00000000 .L0 
+00000254 l       .text	00000000 .L0 
+00000258 l       .text	00000000 .L0 
+0000026c l       .text	00000000 .L0 
+00000274 l       .text	00000000 .L0 
+00000280 l       .text	00000000 .L0 
+000002a0 l       .text	00000000 .L0 
+000002a4 l       .text	00000000 .L0 
+000002ac l       .text	00000000 .L0 
+000002c0 l       .text	00000000 .L0 
+000002c0 l       .text	00000000 .L0 
+000002c0 l       .text	00000000 .L0 
+000002d0 l       .text	00000000 .L0 
+000002d4 l       .text	00000000 .L0 
+000002e0 l       .text	00000000 .L0 
+000002e8 l       .text	00000000 .L0 
+000002ec l       .text	00000000 .L0 
+000002f4 l       .text	00000000 .L0 
+00000300 l       .text	00000000 .L0 
+00000300 l       .text	00000000 .L0 
+00000300 l       .text	00000000 .L0 
+00000310 l       .text	00000000 .L0 
+0000031c l       .text	00000000 .L0 
+00000320 l       .text	00000000 .L0 
+00000324 l       .text	00000000 .L0 
+00000330 l       .text	00000000 .L0 
+00000334 l       .text	00000000 .L0 
+00000340 l       .text	00000000 .L0 
+0000034c l       .text	00000000 .L0 
+00000358 l       .text	00000000 .L0 
+0000035c l       .text	00000000 .L0 
+00000364 l       .text	00000000 .L0 
+00000370 l       .text	00000000 .L0 
+00000370 l       .text	00000000 .L0 
+00000370 l       .text	00000000 .L0 
+00000380 l       .text	00000000 .L0 
+00000384 l       .text	00000000 .L0 
+00000390 l       .text	00000000 .L0 
+00000398 l       .text	00000000 .L0 
+0000039c l       .text	00000000 .L0 
+000003a4 l       .text	00000000 .L0 
+000003b0 l       .text	00000000 .L0 
+000003b0 l       .text	00000000 .L0 
+000003b0 l       .text	00000000 .L0 
+000003c0 l       .text	00000000 .L0 
+000003cc l       .text	00000000 .L0 
+000003d8 l       .text	00000000 .L0 
+000003e0 l       .text	00000000 .L0 
+000003e4 l       .text	00000000 .L0 
+000003ec l       .text	00000000 .L0 
+000003f8 l       .text	00000000 .L0 
+000003f8 l       .text	00000000 .L0 
+000003f8 l       .text	00000000 .L0 
+00000404 l       .text	00000000 .L0 
+00000408 l       .text	00000000 .L0 
+00000414 l       .text	00000000 .L0 
+00000420 l       .text	00000000 .L0 
+00000428 l       .text	00000000 .L0 
+0000042c l       .text	00000000 .L0 
+00000434 l       .text	00000000 .L0 
+00000440 l       .text	00000000 .L0 
+00000440 l       .text	00000000 .L0 
+00000440 l       .text	00000000 .L0 
+00000450 l       .text	00000000 .L0 
+00000458 l       .text	00000000 .L0 
+00000464 l       .text	00000000 .L0 
+0000046c l       .text	00000000 .L0 
+00000470 l       .text	00000000 .L0 
+00000478 l       .text	00000000 .L0 
+00000484 l       .text	00000000 .L0 
+00000484 l       .text	00000000 .L0 
+00000484 l       .text	00000000 .L0 
+00000494 l       .text	00000000 .L0 
+00000498 l       .text	00000000 .L0 
+000004a4 l       .text	00000000 .L0 
+000004ac l       .text	00000000 .L0 
+000004b0 l       .text	00000000 .L0 
+000004b8 l       .text	00000000 .L0 
+000004c4 l       .text	00000000 .L0 
+000004c4 l       .text	00000000 .L0 
+000004c4 l       .text	00000000 .L0 
+000004d4 l       .text	00000000 .L0 
+000004dc l       .text	00000000 .L0 
+000004e8 l       .text	00000000 .L0 
+000004f0 l       .text	00000000 .L0 
+000004f4 l       .text	00000000 .L0 
+000004fc l       .text	00000000 .L0 
+00000508 l       .text	00000000 .L0 
+00000508 l       .text	00000000 .L0 
+00000508 l       .text	00000000 .L0 
+00000518 l       .text	00000000 .L0 
+0000051c l       .text	00000000 .L0 
+0000052c l       .text	00000000 .L0 
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+0000052c l       .text	00000000 .L0 
+00000000 l       .debug_frame	00000000 .L0 
+0000002c l       .text	00000000 .L2
+00000080 l       .text	00000000 .L3
+00000060 l       .text	00000000 .L4
+0000007c l       .text	00000000 .L5
+00000034 l       .text	00000000 .L6
+000000e0 l       .text	00000000 .L8
+000000b8 l       .text	00000000 .L9
+000001f4 l       .text	00000000 .L12
+0000026c l       .text	00000000 .L15
+00000258 l       .text	00000000 .L16
+000002a0 l       .text	00000000 .L19
+0000034c l       .text	00000000 .L23
+00000324 l       .text	00000000 .L24
+00000000 l       .debug_abbrev	00000000 .Ldebug_abbrev0
+000000d2 l       .debug_str	00000000 .LASF153
+000003cc l       .debug_str	00000000 .LASF154
+00000481 l       .debug_str	00000000 .LASF155
+00000000 l       .text	00000000 .Ltext0
+0000052c l       .text	00000000 .Letext0
+00000000 l       .debug_line	00000000 .Ldebug_line0
+0000004a l       .debug_str	00000000 .LASF0
+000002db l       .debug_str	00000000 .LASF1
+00000364 l       .debug_str	00000000 .LASF2
+00000537 l       .debug_str	00000000 .LASF3
+000004c2 l       .debug_str	00000000 .LASF4
+000003a6 l       .debug_str	00000000 .LASF5
+0000054a l       .debug_str	00000000 .LASF6
+000003c3 l       .debug_str	00000000 .LASF7
+00000468 l       .debug_str	00000000 .LASF8
+00000155 l       .debug_str	00000000 .LASF9
+00000385 l       .debug_str	00000000 .LASF10
+0000007d l       .debug_str	00000000 .LASF11
+00000582 l       .debug_str	00000000 .LASF12
+000000ab l       .debug_str	00000000 .LASF13
+0000052e l       .debug_str	00000000 .LASF14
+000005fd l       .debug_str	00000000 .LASF15
+0000028f l       .debug_str	00000000 .LASF16
+000003ec l       .debug_str	00000000 .LASF17
+0000011f l       .debug_str	00000000 .LASF18
+00000211 l       .debug_str	00000000 .LASF19
+0000032c l       .debug_str	00000000 .LASF20
+00000281 l       .debug_str	00000000 .LASF21
+000004e2 l       .debug_str	00000000 .LASF22
+0000024a l       .debug_str	00000000 .LASF23
+00000305 l       .debug_str	00000000 .LASF24
+000000c0 l       .debug_str	00000000 .LASF29
+000001d9 l       .debug_str	00000000 .LASF25
+0000043b l       .debug_str	00000000 .LASF26
+000003e0 l       .debug_str	00000000 .LASF27
+00000181 l       .debug_str	00000000 .LASF28
+00000456 l       .debug_str	00000000 .LASF30
+000001bc l       .debug_str	00000000 .LASF31
+00000127 l       .debug_str	00000000 .LASF32
+00000115 l       .debug_str	00000000 .LASF33
+0000024f l       .debug_str	00000000 .LASF34
+0000035b l       .debug_str	00000000 .LASF35
+00000406 l       .debug_str	00000000 .LASF36
+000000c8 l       .debug_str	00000000 .LASF37
+000001c5 l       .debug_str	00000000 .LASF38
+0000033f l       .debug_str	00000000 .LASF39
+0000000c l       .debug_str	00000000 .LASF40
+00000337 l       .debug_str	00000000 .LASF41
+000004ae l       .debug_str	00000000 .LASF42
+00000573 l       .debug_str	00000000 .LASF43
+000005bd l       .debug_str	00000000 .LASF44
+00000395 l       .debug_str	00000000 .LASF45
+000001d4 l       .debug_str	00000000 .LASF46
+000000b3 l       .debug_str	00000000 .LASF47
+000004f6 l       .debug_str	00000000 .LASF48
+000002ef l       .debug_str	00000000 .LASF49
+0000057c l       .debug_str	00000000 .LASF50
+00000179 l       .debug_str	00000000 .LASF51
+00000065 l       .debug_str	00000000 .LASF52
+0000031c l       .debug_str	00000000 .LASF53
+0000005c l       .debug_str	00000000 .LASF54
+000000b8 l       .debug_str	00000000 .LASF55
+0000008f l       .debug_str	00000000 .LASF56
+00000378 l       .debug_str	00000000 .LASF57
+000005e6 l       .debug_str	00000000 .LASF58
+000002a2 l       .debug_str	00000000 .LASF59
+0000019c l       .debug_str	00000000 .LASF60
+00000589 l       .debug_str	00000000 .LASF61
+0000044d l       .debug_str	00000000 .LASF62
+00000194 l       .debug_str	00000000 .LASF63
+000003e6 l       .debug_str	00000000 .LASF64
+0000045b l       .debug_str	00000000 .LASF65
+0000039d l       .debug_str	00000000 .LASF66
+000005b5 l       .debug_str	00000000 .LASF67
+00000543 l       .debug_str	00000000 .LASF68
+0000006c l       .debug_str	00000000 .LASF69
+000002c5 l       .debug_str	00000000 .LASF70
+000000a3 l       .debug_str	00000000 .LASF71
+000005ec l       .debug_str	00000000 .LASF72
+000001cf l       .debug_str	00000000 .LASF73
+000001a2 l       .debug_str	00000000 .LASF74
+0000059c l       .debug_str	00000000 .LASF75
+00000526 l       .debug_str	00000000 .LASF76
+000002a9 l       .debug_str	00000000 .LASF77
+00000322 l       .debug_str	00000000 .LASF78
+0000010d l       .debug_str	00000000 .LASF79
+0000014b l       .debug_str	00000000 .LASF80
+00000219 l       .debug_str	00000000 .LASF81
+000002f5 l       .debug_str	00000000 .LASF82
+00000433 l       .debug_str	00000000 .LASF83
+000004ba l       .debug_str	00000000 .LASF84
+0000042e l       .debug_str	00000000 .LASF85
+00000278 l       .debug_str	00000000 .LASF86
+0000025f l       .debug_str	00000000 .LASF87
+00000503 l       .debug_str	00000000 .LASF88
+000003db l       .debug_str	00000000 .LASF89
+0000018d l       .debug_str	00000000 .LASF90
+000004fd l       .debug_str	00000000 .LASF91
+0000047a l       .debug_str	00000000 .LASF92
+00000295 l       .debug_str	00000000 .LASF93
+00000143 l       .debug_str	00000000 .LASF94
+000005c5 l       .debug_str	00000000 .LASF95
+000002ff l       .debug_str	00000000 .LASF96
+000004dd l       .debug_str	00000000 .LASF97
+0000058f l       .debug_str	00000000 .LASF98
+0000050b l       .debug_str	00000000 .LASF99
+0000016c l       .debug_str	00000000 .LASF100
+00000410 l       .debug_str	00000000 .LASF101
+000002cc l       .debug_str	00000000 .LASF102
+000005cb l       .debug_str	00000000 .LASF103
+00000039 l       .debug_str	00000000 .LASF104
+00000235 l       .debug_str	00000000 .LASF105
+00000518 l       .debug_str	00000000 .LASF106
+00000024 l       .debug_str	00000000 .LASF107
+00000443 l       .debug_str	00000000 .LASF108
+0000003e l       .debug_str	00000000 .LASF109
+000004d0 l       .debug_str	00000000 .LASF110
+00000095 l       .debug_str	00000000 .LASF111
+00000269 l       .debug_str	00000000 .LASF112
+000001f1 l       .debug_str	00000000 .LASF113
+0000030d l       .debug_str	00000000 .LASF114
+00000224 l       .debug_str	00000000 .LASF115
+00000352 l       .debug_str	00000000 .LASF116
+0000013c l       .debug_str	00000000 .LASF117
+000005f4 l       .debug_str	00000000 .LASF118
+0000041f l       .debug_str	00000000 .LASF119
+000005d6 l       .debug_str	00000000 .LASF136
+00000130 l       .debug_str	00000000 .LASF120
+000003f3 l       .debug_str	00000000 .LASF121
+0000055d l       .debug_str	00000000 .LASF122
+00000073 l       .debug_str	00000000 .LASF123
+00000000 l       .debug_str	00000000 .LASF124
+0000029b l       .debug_str	00000000 .LASF125
+000001ad l       .debug_str	00000000 .LASF126
+00000461 l       .debug_str	00000000 .LASF127
+000001df l       .debug_str	00000000 .LASF128
+000002b4 l       .debug_str	00000000 .LASF129
+0000001a l       .debug_str	00000000 .LASF130
+00000209 l       .debug_str	00000000 .LASF131
+00000242 l       .debug_str	00000000 .LASF132
+00000508 l       .text	00000000 .LFB28
+0000052c l       .text	00000000 .LFE28
+00000259 l       .debug_str	00000000 .LASF133
+000004c4 l       .text	00000000 .LFB27
+00000508 l       .text	00000000 .LFE27
+00000370 l       .debug_str	00000000 .LASF134
+00000484 l       .text	00000000 .LFB26
+000004c4 l       .text	00000000 .LFE26
+00000427 l       .debug_str	00000000 .LASF135
+00000440 l       .text	00000000 .LFB25
+00000484 l       .text	00000000 .LFE25
+000003bd l       .debug_str	00000000 .LASF137
+00000032 l       .debug_str	00000000 .LASF138
+000003f8 l       .text	00000000 .LFB24
+00000440 l       .text	00000000 .LFE24
+0000021e l       .debug_str	00000000 .LASF139
+000002be l       .debug_str	00000000 .LASF140
+000003b0 l       .text	00000000 .LFB23
+000003f8 l       .text	00000000 .LFE23
+000001b5 l       .debug_str	00000000 .LASF141
+00000202 l       .debug_str	00000000 .LASF142
+00000370 l       .text	00000000 .LFB22
+000003b0 l       .text	00000000 .LFE22
+00000300 l       .text	00000000 .LFB21
+00000370 l       .text	00000000 .LFE21
+0000028a l       .debug_str	00000000 .LASF143
+00000057 l       .debug_str	00000000 .LASF148
+0000037f l       .debug_str	00000000 .LASF144
+000002c0 l       .text	00000000 .LFB20
+00000300 l       .text	00000000 .LFE20
+00000186 l       .debug_str	00000000 .LASF145
+000004f0 l       .debug_str	00000000 .LASF146
+0000020c l       .text	00000000 .LFB19
+000002c0 l       .text	00000000 .LFE19
+0000034a l       .debug_str	00000000 .LASF147
+000003b0 l       .debug_str	00000000 .LASF149
+00000104 l       .text	00000000 .LFB18
+0000020c l       .text	00000000 .LFE18
+0000056a l       .debug_str	00000000 .LASF150
+000001e7 l       .debug_str	00000000 .LASF151
+00000124 l       .text	00000000 .LBB2
+000001f4 l       .text	00000000 .LBE2
+000002e9 l       .debug_str	00000000 .LASF152
+00000094 l       .text	00000000 .LFB17
+00000104 l       .text	00000000 .LFE17
+000005e1 l       .debug_str	00000000 .LASF156
+00000000 l       .text	00000000 .LFB16
+00000094 l       .text	00000000 .LFE16
+00000000 l       .debug_info	00000000 .Ldebug_info0
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 g     F .text	00000094 read
+00000000         *UND*	00000000 ns16550_rxchar
+00000000         *UND*	00000000 ns16550_rxready
+00000094 g     F .text	00000070 write
+00000000         *UND*	00000000 ns16550_txchar
+00000000         *UND*	00000000 __divdi3
+00000000         *UND*	00000000 __moddi3
+00000104 g     F .text	00000108 gettimeofday
+0000020c g     F .text	000000b4 sleep
+000002c0 g     F .text	00000040 _sbrk
+00000000         *UND*	00000000 __errno
+00000300 g     F .text	00000070 _write
+00000370 g     F .text	00000040 _close
+000003b0 g     F .text	00000048 _lseek
+000003f8 g     F .text	00000048 _read
+00000440 g     F .text	00000044 _fstat
+00000484 g     F .text	00000040 _isatty
+000004c4 g     F .text	00000044 _kill
+00000508 g     F .text	00000024 _getpid
+
+
+
+Disassembly of section .text:
+
+00000000 <read>:
+#include <sys/time.h>
+#include "ns16550.h"
+
+#ifndef __linux__
+
+int read(int file, char *ptr, int len) {
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+
+0000001c <.L0 >:
+  int todo;
+  if(len == 0)
+  1c:	fd442783          	lw	a5,-44(s0)
+  20:	00079663          	bnez	a5,2c <.L0 >
+			20: R_RISCV_BRANCH	.L2
+
+00000024 <.L0 >:
+    return 0;
+  24:	00000793          	li	a5,0
+  28:	0580006f          	j	80 <.L0 >
+			28: R_RISCV_JAL	.L3
+
+0000002c <.L0 >:
+#ifdef CONSOLE_UART
+  todo = 0;
+  2c:	fe042623          	sw	zero,-20(s0)
+
+00000030 <.L0 >:
+  while (ns16550_rxready() && (todo < len)) {
+  30:	0300006f          	j	60 <.L0 >
+			30: R_RISCV_JAL	.L4
+
+00000034 <.L0 >:
+    *ptr++ = ns16550_rxchar();
+  34:	00000097          	auipc	ra,0x0
+			34: R_RISCV_CALL	ns16550_rxchar
+			34: R_RISCV_RELAX	*ABS*
+  38:	000080e7          	jalr	ra # 34 <.L0 >
+  3c:	00050693          	mv	a3,a0
+
+00000040 <.L0 >:
+  40:	fd842783          	lw	a5,-40(s0)
+  44:	00178713          	addi	a4,a5,1
+  48:	fce42c23          	sw	a4,-40(s0)
+
+0000004c <.L0 >:
+  4c:	0ff6f713          	andi	a4,a3,255
+  50:	00e78023          	sb	a4,0(a5)
+
+00000054 <.L0 >:
+    todo++;
+  54:	fec42783          	lw	a5,-20(s0)
+  58:	00178793          	addi	a5,a5,1
+  5c:	fef42623          	sw	a5,-20(s0)
+
+00000060 <.L0 >:
+  while (ns16550_rxready() && (todo < len)) {
+  60:	00000097          	auipc	ra,0x0
+			60: R_RISCV_CALL	ns16550_rxready
+			60: R_RISCV_RELAX	*ABS*
+  64:	000080e7          	jalr	ra # 60 <.L0 >
+  68:	00050793          	mv	a5,a0
+
+0000006c <.L0 >:
+  6c:	00078863          	beqz	a5,7c <.L0 >
+			6c: R_RISCV_BRANCH	.L5
+
+00000070 <.L0 >:
+  70:	fec42703          	lw	a4,-20(s0)
+  74:	fd442783          	lw	a5,-44(s0)
+  78:	faf74ee3          	blt	a4,a5,34 <.L0 >
+			78: R_RISCV_BRANCH	.L6
+
+0000007c <.L0 >:
+  }
+#endif
+  return todo;
+  7c:	fec42783          	lw	a5,-20(s0)
+
+00000080 <.L0 >:
+}
+  80:	00078513          	mv	a0,a5
+  84:	02c12083          	lw	ra,44(sp)
+
+00000088 <.L0 >:
+  88:	02812403          	lw	s0,40(sp)
+  8c:	03010113          	addi	sp,sp,48
+  90:	00008067          	ret
+
+00000094 <write>:
+
+int write(int file, char *ptr, int len) {
+  94:	fd010113          	addi	sp,sp,-48
+  98:	02112623          	sw	ra,44(sp)
+  9c:	02812423          	sw	s0,40(sp)
+  a0:	03010413          	addi	s0,sp,48
+
+000000a4 <.L0 >:
+  a4:	fca42e23          	sw	a0,-36(s0)
+  a8:	fcb42c23          	sw	a1,-40(s0)
+  ac:	fcc42a23          	sw	a2,-44(s0)
+
+000000b0 <.L0 >:
+  int todo;
+
+#ifdef CONSOLE_UART
+  for (todo = 0; todo < len; todo++) {
+  b0:	fe042623          	sw	zero,-20(s0)
+
+000000b4 <.L0 >:
+  b4:	02c0006f          	j	e0 <.L0 >
+			b4: R_RISCV_JAL	.L8
+
+000000b8 <.L0 >:
+    ns16550_txchar (*ptr++);
+  b8:	fd842783          	lw	a5,-40(s0)
+  bc:	00178713          	addi	a4,a5,1
+  c0:	fce42c23          	sw	a4,-40(s0)
+
+000000c4 <.L0 >:
+  c4:	0007c783          	lbu	a5,0(a5)
+
+000000c8 <.L0 >:
+  c8:	00078513          	mv	a0,a5
+  cc:	00000097          	auipc	ra,0x0
+			cc: R_RISCV_CALL	ns16550_txchar
+			cc: R_RISCV_RELAX	*ABS*
+  d0:	000080e7          	jalr	ra # cc <.L0 +0x4>
+
+000000d4 <.L0 >:
+  for (todo = 0; todo < len; todo++) {
+  d4:	fec42783          	lw	a5,-20(s0)
+  d8:	00178793          	addi	a5,a5,1
+  dc:	fef42623          	sw	a5,-20(s0)
+
+000000e0 <.L0 >:
+  e0:	fec42703          	lw	a4,-20(s0)
+  e4:	fd442783          	lw	a5,-44(s0)
+  e8:	fcf748e3          	blt	a4,a5,b8 <.L0 >
+			e8: R_RISCV_BRANCH	.L9
+
+000000ec <.L0 >:
+  }
+#endif
+  return len;
+  ec:	fd442783          	lw	a5,-44(s0)
+
+000000f0 <.L0 >:
+}
+  f0:	00078513          	mv	a0,a5
+  f4:	02c12083          	lw	ra,44(sp)
+
+000000f8 <.L0 >:
+  f8:	02812403          	lw	s0,40(sp)
+  fc:	03010113          	addi	sp,sp,48
+ 100:	00008067          	ret
+
+00000104 <gettimeofday>:
+
+#define CLOCK_PERIOD  (100000000)
+
+int gettimeofday(struct timeval *ptimeval, void *ptimezone)
+{
+ 104:	fd010113          	addi	sp,sp,-48
+ 108:	02112623          	sw	ra,44(sp)
+ 10c:	02812423          	sw	s0,40(sp)
+ 110:	03010413          	addi	s0,sp,48
+
+00000114 <.L0 >:
+ 114:	fca42e23          	sw	a0,-36(s0)
+ 118:	fcb42c23          	sw	a1,-40(s0)
+
+0000011c <.L0 >:
+    if (ptimeval)
+ 11c:	fdc42603          	lw	a2,-36(s0)
+ 120:	0c060a63          	beqz	a2,1f4 <.L0 >
+			120: R_RISCV_BRANCH	.L12
+
+00000124 <.L0 >:
+#if __riscv_xlen == 64
+	asm ("rdtime %0" : "=r" (tv));
+#else
+	unsigned int tvh;
+	unsigned int tvl;
+	asm ("rdtime %0;"
+ 124:	c01025f3          	rdtime	a1
+ 128:	c8102673          	rdtimeh	a2
+ 12c:	feb42623          	sw	a1,-20(s0)
+ 130:	fec42423          	sw	a2,-24(s0)
+
+00000134 <.L0 >:
+	    "rdtimeh %1 " : "=r" (tvl), "=r" (tvh));
+	tv = ((long long)tvh) << 32 | tvl;
+ 134:	fe842603          	lw	a2,-24(s0)
+ 138:	00060313          	mv	t1,a2
+ 13c:	00000393          	li	t2,0
+
+00000140 <.L0 >:
+ 140:	00031813          	slli	a6,t1,0x0
+ 144:	00000793          	li	a5,0
+
+00000148 <.L0 >:
+ 148:	fec42603          	lw	a2,-20(s0)
+ 14c:	00060693          	mv	a3,a2
+ 150:	00000713          	li	a4,0
+
+00000154 <.L0 >:
+ 154:	00d7e633          	or	a2,a5,a3
+ 158:	fec42023          	sw	a2,-32(s0)
+ 15c:	00e867b3          	or	a5,a6,a4
+ 160:	fef42223          	sw	a5,-28(s0)
+
+00000164 <.L0 >:
+#endif
+	ptimeval->tv_sec = tv / CLOCK_PERIOD;
+ 164:	fe042783          	lw	a5,-32(s0)
+ 168:	fe442803          	lw	a6,-28(s0)
+ 16c:	05f5e637          	lui	a2,0x5f5e
+ 170:	10060613          	addi	a2,a2,256 # 5f5e100 <.LASF15+0x5f5db03>
+ 174:	00000693          	li	a3,0
+ 178:	00078513          	mv	a0,a5
+ 17c:	00080593          	mv	a1,a6
+ 180:	00000097          	auipc	ra,0x0
+			180: R_RISCV_CALL	__divdi3
+			180: R_RISCV_RELAX	*ABS*
+ 184:	000080e7          	jalr	ra # 180 <.L0 +0x1c>
+ 188:	00050793          	mv	a5,a0
+ 18c:	00058813          	mv	a6,a1
+
+00000190 <.L0 >:
+ 190:	fdc42703          	lw	a4,-36(s0)
+ 194:	00f72023          	sw	a5,0(a4)
+ 198:	01072223          	sw	a6,4(a4)
+
+0000019c <.L0 >:
+	ptimeval->tv_usec = tv % CLOCK_PERIOD / (CLOCK_PERIOD / 1000000);
+ 19c:	fe042783          	lw	a5,-32(s0)
+ 1a0:	fe442803          	lw	a6,-28(s0)
+ 1a4:	05f5e637          	lui	a2,0x5f5e
+ 1a8:	10060613          	addi	a2,a2,256 # 5f5e100 <.LASF15+0x5f5db03>
+ 1ac:	00000693          	li	a3,0
+ 1b0:	00078513          	mv	a0,a5
+ 1b4:	00080593          	mv	a1,a6
+ 1b8:	00000097          	auipc	ra,0x0
+			1b8: R_RISCV_CALL	__moddi3
+			1b8: R_RISCV_RELAX	*ABS*
+ 1bc:	000080e7          	jalr	ra # 1b8 <.L0 +0x1c>
+ 1c0:	00050793          	mv	a5,a0
+ 1c4:	00058813          	mv	a6,a1
+
+000001c8 <.L0 >:
+ 1c8:	06400613          	li	a2,100
+ 1cc:	00000693          	li	a3,0
+ 1d0:	00078513          	mv	a0,a5
+ 1d4:	00080593          	mv	a1,a6
+ 1d8:	00000097          	auipc	ra,0x0
+			1d8: R_RISCV_CALL	__divdi3
+			1d8: R_RISCV_RELAX	*ABS*
+ 1dc:	000080e7          	jalr	ra # 1d8 <.L0 +0x10>
+ 1e0:	00050793          	mv	a5,a0
+ 1e4:	00058813          	mv	a6,a1
+
+000001e8 <.L0 >:
+ 1e8:	00078713          	mv	a4,a5
+ 1ec:	fdc42783          	lw	a5,-36(s0)
+ 1f0:	00e7a423          	sw	a4,8(a5)
+
+000001f4 <.L0 >:
+    }
+
+    return 0;
+ 1f4:	00000793          	li	a5,0
+
+000001f8 <.L0 >:
+}
+ 1f8:	00078513          	mv	a0,a5
+ 1fc:	02c12083          	lw	ra,44(sp)
+
+00000200 <.L0 >:
+ 200:	02812403          	lw	s0,40(sp)
+ 204:	03010113          	addi	sp,sp,48
+ 208:	00008067          	ret
+
+0000020c <sleep>:
+
+unsigned int sleep(unsigned int seconds)
+{
+ 20c:	fd010113          	addi	sp,sp,-48
+ 210:	02112623          	sw	ra,44(sp)
+ 214:	02812423          	sw	s0,40(sp)
+ 218:	03212223          	sw	s2,36(sp)
+ 21c:	03312023          	sw	s3,32(sp)
+ 220:	03010413          	addi	s0,sp,48
+
+00000224 <.L0 >:
+ 224:	fca42e23          	sw	a0,-36(s0)
+
+00000228 <.L0 >:
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+ 228:	fe040793          	addi	a5,s0,-32
+ 22c:	00000593          	li	a1,0
+ 230:	00078513          	mv	a0,a5
+ 234:	00000097          	auipc	ra,0x0
+			234: R_RISCV_CALL	gettimeofday
+			234: R_RISCV_RELAX	*ABS*
+ 238:	000080e7          	jalr	ra # 234 <.L0 +0xc>
+
+0000023c <.L0 >:
+    seconds += tv.tv_sec;
+ 23c:	fe042783          	lw	a5,-32(s0)
+ 240:	fe442803          	lw	a6,-28(s0)
+
+00000244 <.L0 >:
+ 244:	00078713          	mv	a4,a5
+ 248:	fdc42783          	lw	a5,-36(s0)
+ 24c:	00e787b3          	add	a5,a5,a4
+ 250:	fcf42e23          	sw	a5,-36(s0)
+
+00000254 <.L0 >:
+
+    while (tv.tv_sec < seconds)
+ 254:	0180006f          	j	26c <.L0 >
+			254: R_RISCV_JAL	.L15
+
+00000258 <.L0 >:
+	gettimeofday(&tv, NULL);
+ 258:	fe040793          	addi	a5,s0,-32
+ 25c:	00000593          	li	a1,0
+ 260:	00078513          	mv	a0,a5
+ 264:	00000097          	auipc	ra,0x0
+			264: R_RISCV_CALL	gettimeofday
+			264: R_RISCV_RELAX	*ABS*
+ 268:	000080e7          	jalr	ra # 264 <.L0 +0xc>
+
+0000026c <.L0 >:
+    while (tv.tv_sec < seconds)
+ 26c:	fe042783          	lw	a5,-32(s0)
+ 270:	fe442803          	lw	a6,-28(s0)
+
+00000274 <.L0 >:
+ 274:	fdc42703          	lw	a4,-36(s0)
+ 278:	00070913          	mv	s2,a4
+ 27c:	00000993          	li	s3,0
+
+00000280 <.L0 >:
+ 280:	00098693          	mv	a3,s3
+ 284:	00080713          	mv	a4,a6
+ 288:	fcd748e3          	blt	a4,a3,258 <.L0 >
+			288: R_RISCV_BRANCH	.L16
+ 28c:	00098693          	mv	a3,s3
+ 290:	00080713          	mv	a4,a6
+ 294:	00e69663          	bne	a3,a4,2a0 <.L0 >
+			294: R_RISCV_BRANCH	.L19
+ 298:	00090713          	mv	a4,s2
+ 29c:	fae7eee3          	bltu	a5,a4,258 <.L0 >
+			29c: R_RISCV_BRANCH	.L16
+
+000002a0 <.L0 >:
+
+    return 0;
+ 2a0:	00000793          	li	a5,0
+
+000002a4 <.L0 >:
+}
+ 2a4:	00078513          	mv	a0,a5
+ 2a8:	02c12083          	lw	ra,44(sp)
+
+000002ac <.L0 >:
+ 2ac:	02812403          	lw	s0,40(sp)
+ 2b0:	02412903          	lw	s2,36(sp)
+ 2b4:	02012983          	lw	s3,32(sp)
+ 2b8:	03010113          	addi	sp,sp,48
+ 2bc:	00008067          	ret
+
+000002c0 <_sbrk>:
+
+// JES drafts:
+
+void *
+_sbrk (int nbytes)
+{
+ 2c0:	fe010113          	addi	sp,sp,-32
+ 2c4:	00112e23          	sw	ra,28(sp)
+ 2c8:	00812c23          	sw	s0,24(sp)
+ 2cc:	02010413          	addi	s0,sp,32
+
+000002d0 <.L0 >:
+ 2d0:	fea42623          	sw	a0,-20(s0)
+
+000002d4 <.L0 >:
+  errno = ENOMEM;
+ 2d4:	00000097          	auipc	ra,0x0
+			2d4: R_RISCV_CALL	__errno
+			2d4: R_RISCV_RELAX	*ABS*
+ 2d8:	000080e7          	jalr	ra # 2d4 <.L0 >
+ 2dc:	00050713          	mv	a4,a0
+
+000002e0 <.L0 >:
+ 2e0:	00c00793          	li	a5,12
+ 2e4:	00f72023          	sw	a5,0(a4)
+
+000002e8 <.L0 >:
+  return  (void *) -1;
+ 2e8:	fff00793          	li	a5,-1
+
+000002ec <.L0 >:
+}
+ 2ec:	00078513          	mv	a0,a5
+ 2f0:	01c12083          	lw	ra,28(sp)
+
+000002f4 <.L0 >:
+ 2f4:	01812403          	lw	s0,24(sp)
+ 2f8:	02010113          	addi	sp,sp,32
+ 2fc:	00008067          	ret
+
+00000300 <_write>:
+  errno = ENOSPC;
+  return -1;
+}
+*/
+
+int _write(int file, char *ptr, int len) {
+ 300:	fd010113          	addi	sp,sp,-48
+ 304:	02112623          	sw	ra,44(sp)
+ 308:	02812423          	sw	s0,40(sp)
+ 30c:	03010413          	addi	s0,sp,48
+
+00000310 <.L0 >:
+ 310:	fca42e23          	sw	a0,-36(s0)
+ 314:	fcb42c23          	sw	a1,-40(s0)
+ 318:	fcc42a23          	sw	a2,-44(s0)
+
+0000031c <.L0 >:
+  int todo;
+
+#ifdef CONSOLE_UART
+  for (todo = 0; todo < len; todo++) {
+ 31c:	fe042623          	sw	zero,-20(s0)
+
+00000320 <.L0 >:
+ 320:	02c0006f          	j	34c <.L0 >
+			320: R_RISCV_JAL	.L23
+
+00000324 <.L0 >:
+    ns16550_txchar (*ptr++);
+ 324:	fd842783          	lw	a5,-40(s0)
+ 328:	00178713          	addi	a4,a5,1
+ 32c:	fce42c23          	sw	a4,-40(s0)
+
+00000330 <.L0 >:
+ 330:	0007c783          	lbu	a5,0(a5)
+
+00000334 <.L0 >:
+ 334:	00078513          	mv	a0,a5
+ 338:	00000097          	auipc	ra,0x0
+			338: R_RISCV_CALL	ns16550_txchar
+			338: R_RISCV_RELAX	*ABS*
+ 33c:	000080e7          	jalr	ra # 338 <.L0 +0x4>
+
+00000340 <.L0 >:
+  for (todo = 0; todo < len; todo++) {
+ 340:	fec42783          	lw	a5,-20(s0)
+ 344:	00178793          	addi	a5,a5,1
+ 348:	fef42623          	sw	a5,-20(s0)
+
+0000034c <.L0 >:
+ 34c:	fec42703          	lw	a4,-20(s0)
+ 350:	fd442783          	lw	a5,-44(s0)
+ 354:	fcf748e3          	blt	a4,a5,324 <.L0 >
+			354: R_RISCV_BRANCH	.L24
+
+00000358 <.L0 >:
+  }
+#endif
+  return len;
+ 358:	fd442783          	lw	a5,-44(s0)
+
+0000035c <.L0 >:
+}
+ 35c:	00078513          	mv	a0,a5
+ 360:	02c12083          	lw	ra,44(sp)
+
+00000364 <.L0 >:
+ 364:	02812403          	lw	s0,40(sp)
+ 368:	03010113          	addi	sp,sp,48
+ 36c:	00008067          	ret
+
+00000370 <_close>:
+
+int _close(
+   int fd
+	   )
+{
+ 370:	fe010113          	addi	sp,sp,-32
+ 374:	00112e23          	sw	ra,28(sp)
+ 378:	00812c23          	sw	s0,24(sp)
+ 37c:	02010413          	addi	s0,sp,32
+
+00000380 <.L0 >:
+ 380:	fea42623          	sw	a0,-20(s0)
+
+00000384 <.L0 >:
+  errno = EBADF;
+ 384:	00000097          	auipc	ra,0x0
+			384: R_RISCV_CALL	__errno
+			384: R_RISCV_RELAX	*ABS*
+ 388:	000080e7          	jalr	ra # 384 <.L0 >
+ 38c:	00050713          	mv	a4,a0
+
+00000390 <.L0 >:
+ 390:	00900793          	li	a5,9
+ 394:	00f72023          	sw	a5,0(a4)
+
+00000398 <.L0 >:
+  return -1;
+ 398:	fff00793          	li	a5,-1
+
+0000039c <.L0 >:
+}
+ 39c:	00078513          	mv	a0,a5
+ 3a0:	01c12083          	lw	ra,28(sp)
+
+000003a4 <.L0 >:
+ 3a4:	01812403          	lw	s0,24(sp)
+ 3a8:	02010113          	addi	sp,sp,32
+ 3ac:	00008067          	ret
+
+000003b0 <_lseek>:
+long _lseek(
+    int fd,
+    long offset,
+    int origin
+)
+{
+ 3b0:	fe010113          	addi	sp,sp,-32
+ 3b4:	00112e23          	sw	ra,28(sp)
+ 3b8:	00812c23          	sw	s0,24(sp)
+ 3bc:	02010413          	addi	s0,sp,32
+
+000003c0 <.L0 >:
+ 3c0:	fea42623          	sw	a0,-20(s0)
+ 3c4:	feb42423          	sw	a1,-24(s0)
+ 3c8:	fec42223          	sw	a2,-28(s0)
+
+000003cc <.L0 >:
+  errno = EBADF;
+ 3cc:	00000097          	auipc	ra,0x0
+			3cc: R_RISCV_CALL	__errno
+			3cc: R_RISCV_RELAX	*ABS*
+ 3d0:	000080e7          	jalr	ra # 3cc <.L0 >
+ 3d4:	00050713          	mv	a4,a0
+
+000003d8 <.L0 >:
+ 3d8:	00900793          	li	a5,9
+ 3dc:	00f72023          	sw	a5,0(a4)
+
+000003e0 <.L0 >:
+  return -1;
+ 3e0:	fff00793          	li	a5,-1
+
+000003e4 <.L0 >:
+}
+ 3e4:	00078513          	mv	a0,a5
+ 3e8:	01c12083          	lw	ra,28(sp)
+
+000003ec <.L0 >:
+ 3ec:	01812403          	lw	s0,24(sp)
+ 3f0:	02010113          	addi	sp,sp,32
+ 3f4:	00008067          	ret
+
+000003f8 <_read>:
+int _read(
+   int fd,
+   void *buffer,
+   unsigned int count
+)
+{
+ 3f8:	fe010113          	addi	sp,sp,-32
+ 3fc:	00112e23          	sw	ra,28(sp)
+ 400:	00812c23          	sw	s0,24(sp)
+
+00000404 <.L0 >:
+ 404:	02010413          	addi	s0,sp,32
+
+00000408 <.L0 >:
+ 408:	fea42623          	sw	a0,-20(s0)
+ 40c:	feb42423          	sw	a1,-24(s0)
+ 410:	fec42223          	sw	a2,-28(s0)
+
+00000414 <.L0 >:
+  errno = EBADF;
+ 414:	00000097          	auipc	ra,0x0
+			414: R_RISCV_CALL	__errno
+			414: R_RISCV_RELAX	*ABS*
+ 418:	000080e7          	jalr	ra # 414 <.L0 >
+ 41c:	00050713          	mv	a4,a0
+
+00000420 <.L0 >:
+ 420:	00900793          	li	a5,9
+ 424:	00f72023          	sw	a5,0(a4)
+
+00000428 <.L0 >:
+  return -1;
+ 428:	fff00793          	li	a5,-1
+
+0000042c <.L0 >:
+}
+ 42c:	00078513          	mv	a0,a5
+ 430:	01c12083          	lw	ra,28(sp)
+
+00000434 <.L0 >:
+ 434:	01812403          	lw	s0,24(sp)
+ 438:	02010113          	addi	sp,sp,32
+ 43c:	00008067          	ret
+
+00000440 <_fstat>:
+
+int _fstat(
+   int fd,
+   struct _stat *buffer
+)
+{
+ 440:	fe010113          	addi	sp,sp,-32
+ 444:	00112e23          	sw	ra,28(sp)
+ 448:	00812c23          	sw	s0,24(sp)
+ 44c:	02010413          	addi	s0,sp,32
+
+00000450 <.L0 >:
+ 450:	fea42623          	sw	a0,-20(s0)
+ 454:	feb42423          	sw	a1,-24(s0)
+
+00000458 <.L0 >:
+  errno = EBADF;
+ 458:	00000097          	auipc	ra,0x0
+			458: R_RISCV_CALL	__errno
+			458: R_RISCV_RELAX	*ABS*
+ 45c:	000080e7          	jalr	ra # 458 <.L0 >
+ 460:	00050713          	mv	a4,a0
+
+00000464 <.L0 >:
+ 464:	00900793          	li	a5,9
+ 468:	00f72023          	sw	a5,0(a4)
+
+0000046c <.L0 >:
+  return -1;
+ 46c:	fff00793          	li	a5,-1
+
+00000470 <.L0 >:
+}
+ 470:	00078513          	mv	a0,a5
+ 474:	01c12083          	lw	ra,28(sp)
+
+00000478 <.L0 >:
+ 478:	01812403          	lw	s0,24(sp)
+ 47c:	02010113          	addi	sp,sp,32
+ 480:	00008067          	ret
+
+00000484 <_isatty>:
+
+int _isatty(
+  int fd
+)
+{
+ 484:	fe010113          	addi	sp,sp,-32
+ 488:	00112e23          	sw	ra,28(sp)
+ 48c:	00812c23          	sw	s0,24(sp)
+ 490:	02010413          	addi	s0,sp,32
+
+00000494 <.L0 >:
+ 494:	fea42623          	sw	a0,-20(s0)
+
+00000498 <.L0 >:
+  errno = EBADF;
+ 498:	00000097          	auipc	ra,0x0
+			498: R_RISCV_CALL	__errno
+			498: R_RISCV_RELAX	*ABS*
+ 49c:	000080e7          	jalr	ra # 498 <.L0 >
+ 4a0:	00050713          	mv	a4,a0
+
+000004a4 <.L0 >:
+ 4a4:	00900793          	li	a5,9
+ 4a8:	00f72023          	sw	a5,0(a4)
+
+000004ac <.L0 >:
+  return 0;
+ 4ac:	00000793          	li	a5,0
+
+000004b0 <.L0 >:
+}
+ 4b0:	00078513          	mv	a0,a5
+ 4b4:	01c12083          	lw	ra,28(sp)
+
+000004b8 <.L0 >:
+ 4b8:	01812403          	lw	s0,24(sp)
+ 4bc:	02010113          	addi	sp,sp,32
+ 4c0:	00008067          	ret
+
+000004c4 <_kill>:
+
+int _kill(
+  int pid,
+  int sig
+)
+{
+ 4c4:	fe010113          	addi	sp,sp,-32
+ 4c8:	00112e23          	sw	ra,28(sp)
+ 4cc:	00812c23          	sw	s0,24(sp)
+ 4d0:	02010413          	addi	s0,sp,32
+
+000004d4 <.L0 >:
+ 4d4:	fea42623          	sw	a0,-20(s0)
+ 4d8:	feb42423          	sw	a1,-24(s0)
+
+000004dc <.L0 >:
+  errno = EBADF;
+ 4dc:	00000097          	auipc	ra,0x0
+			4dc: R_RISCV_CALL	__errno
+			4dc: R_RISCV_RELAX	*ABS*
+ 4e0:	000080e7          	jalr	ra # 4dc <.L0 >
+ 4e4:	00050713          	mv	a4,a0
+
+000004e8 <.L0 >:
+ 4e8:	00900793          	li	a5,9
+ 4ec:	00f72023          	sw	a5,0(a4)
+
+000004f0 <.L0 >:
+  return -1;
+ 4f0:	fff00793          	li	a5,-1
+
+000004f4 <.L0 >:
+}
+ 4f4:	00078513          	mv	a0,a5
+ 4f8:	01c12083          	lw	ra,28(sp)
+
+000004fc <.L0 >:
+ 4fc:	01812403          	lw	s0,24(sp)
+ 500:	02010113          	addi	sp,sp,32
+ 504:	00008067          	ret
+
+00000508 <_getpid>:
+
+int _getpid(
+  int n
+)
+{
+ 508:	fe010113          	addi	sp,sp,-32
+ 50c:	00812e23          	sw	s0,28(sp)
+ 510:	02010413          	addi	s0,sp,32
+ 514:	fea42623          	sw	a0,-20(s0)
+
+00000518 <.L0 >:
+  return 1;
+ 518:	00100793          	li	a5,1
+
+0000051c <.L0 >:
+}
+ 51c:	00078513          	mv	a0,a5
+ 520:	01c12403          	lw	s0,28(sp)
+ 524:	02010113          	addi	sp,sp,32
+ 528:	00008067          	ret

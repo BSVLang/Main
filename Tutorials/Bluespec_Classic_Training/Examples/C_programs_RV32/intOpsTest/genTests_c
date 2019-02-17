@@ -1,0 +1,143 @@
+// Generates a file test_data.h declaring an int array[N][4]
+// where each row contains:
+//     {opcode, arg1, arg2, correct_result}
+// where opcode, arg1 and arg2 are generated randomly.
+
+// The companion program do_tests.c #include's this file,
+// and tests opcode(arg1,arg2) == correct_result?
+// and exits at the first discrepancy, or normally after N tests.
+
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "opcodes.h"
+
+char out_filename[] = "test_data.h";
+
+#define N_VALS 14
+
+// ----------------------------------------------------------------
+// 32-bit values of interest
+
+#define  x32_p 0x00000000
+#define  x32_m 0x80000000
+
+#define  x31_0 0x00000000
+#define  x31_1 0x00000001
+#define  x31_2 0x3FFFFFFF
+#define  x31_3 0x40000000
+#define  x31_4 0x40000001
+#define  x31_5 0x7FFFFFFE
+#define  x31_6 0x7FFFFFFF
+
+uint32_t vals32 [N_VALS] = {
+    (x32_p | x31_0),    (x32_m | x31_0),
+    (x32_p | x31_1),    (x32_m | x31_1),
+    (x32_p | x31_2),    (x32_m | x31_2),
+    (x32_p | x31_3),    (x32_m | x31_3),
+    (x32_p | x31_4),    (x32_m | x31_4),
+    (x32_p | x31_5),    (x32_m | x31_5),
+    (x32_p | x31_6),    (x32_m | x31_6)
+};
+
+// ----------------------------------------------------------------
+// 64-bit values of interest
+
+#define  x64_p 0x0000000000000000llu
+#define  x64_m 0x8000000000000000llu
+
+#define  x63_0 0x0000000000000000llu
+#define  x63_1 0x0000000000000001llu
+#define  x63_2 0x3FFFFFFFFFFFFFFFllu
+#define  x63_3 0x4000000000000000llu
+#define  x63_4 0x4000000000000001llu
+#define  x63_5 0x7FFFFFFFFFFFFFFEllu
+#define  x63_6 0x7FFFFFFFFFFFFFFFllu
+
+
+uint64_t vals64 [N_VALS] = {
+    (x64_p | x63_0),    (x64_m | x63_0),
+    (x64_p | x63_1),    (x64_m | x63_1),
+    (x64_p | x63_2),    (x64_m | x63_2),
+    (x64_p | x63_3),    (x64_m | x63_3),
+    (x64_p | x63_4),    (x64_m | x63_4),
+    (x64_p | x63_5),    (x64_m | x63_5),
+    (x64_p | x63_6),    (x64_m | x63_6)
+};
+
+// ----------------------------------------------------------------
+
+int main (int argc, char *argv[])
+{
+    FILE *fp;
+    uint32_t  n, ja, jb, op, shamt, noop;
+    uint32_t  u32a, u32b, result32;
+    uint64_t  u64a, u64b, result64;
+
+    fp = fopen (out_filename, "w");
+    if (fp == NULL) {
+	fprintf (stderr, "ERROR: could not open file %s for writing\n", out_filename);
+	exit (1);
+    }
+
+    printf ("Generating tests into file %s\n", out_filename);
+
+    fprintf (fp, "#define N %0d\n\n", N_OPS * N_VALS * N_VALS);
+
+    // ----------------------------------------------------------------
+    // 32-bit arithmetic tests
+
+    fprintf (fp, "uint32_t test_data32 [N][4] = {\n");
+
+    n = 0;
+    for (op = 0; op < N_OPS; op++)
+	for (ja = 0; ja < N_VALS; ja++) {
+	    u32a = vals32 [ja];
+	    for (jb=0; jb < N_VALS; jb++) {
+		u32b = vals32 [jb];
+		shamt = (u32b & 0x1F);  // <= 31
+		compute32 (op, shamt, u32a, u32b, & noop, & result32);
+		if (! noop) {
+		    fprintf (fp, "  {0x%02x, 0x%08lxlu, 0x%08lxlu, 0x%08lxlu}, // %0d\n",
+			     op, u32a, u32b, result32, n);
+		    n++;
+		}
+	    }
+	}
+    fprintf (fp, "};\n");
+
+    assert (n == N_OPS * N_VALS * N_VALS);
+
+    // ----------------------------------------------------------------
+    // 64-bit arithmetic tests
+
+    fprintf (fp, "uint64_t test_data64 [N][4] = {\n");
+
+    n = 0;
+    for (op = 0; op < N_OPS; op++)
+	for (ja = 0; ja < N_VALS; ja++) {
+	    u64a = vals64 [ja];
+	    for (jb=0; jb < N_VALS; jb++) {
+		u64b = vals64 [jb];
+		shamt = (u64b & 0x3F);  // <= 63
+		compute64 (op, shamt, u64a, u64b, & noop, & result64);
+		if (! noop) {
+		    fprintf (fp, "  {0x%02x, 0x%016llxllu, 0x%016llxllu, 0x%016llxllu}, // %0d\n",
+			     op, u64a, u64b, result64, n);
+		    n++;
+		}
+	    }
+	}
+    fprintf (fp, "};\n");
+
+    assert (n == N_OPS * N_VALS * N_VALS);
+
+    // ----------------------------------------------------------------
+
+    fclose (fp);
+
+    return 0;
+}
