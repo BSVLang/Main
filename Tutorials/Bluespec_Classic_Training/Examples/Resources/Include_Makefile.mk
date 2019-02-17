@@ -38,7 +38,7 @@ RESOURCES_DIR ?= $(DISTRO)/Resources
 TOPFILE   ?= src/Top.bs
 TOPMODULE ?= mkTop
 
-BSC_COMP_FLAGS += -keep-fires  -aggressive-conditions  -no-warn-action-shadowing  -check-assert  -no-show-timestamps -cpp \
+BSC_COMP_FLAGS += -keep-fires  -aggressive-conditions  -no-warn-action-shadowing  -check-assert  -cpp \
 		+RTS -K128M -RTS  -show-range-conflict \
 		$(BSC_COMP_FLAG1)  $(BSC_COMP_FLAG2)  $(BSC_COMP_FLAG3)
 
