@@ -1,0 +1,29 @@
+-- Copyright (c) 2014-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Top where
+
+-- ================================================================
+-- Project imports
+
+import DeepThought
+
+-- ================================================================
+
+{-# verilog mkTop #-}
+
+mkTop :: Module  Empty
+mkTop =
+  module
+    deepThought :: DeepThought_IFC <- mkDeepThought
+
+    rules
+      "rule rl_ask": when True ==> do
+        $display  "Asking the Ultimate Question of Life, The Universe and Everything"
+        deepThought.whatIsTheAnswer
+
+      "rl_print_answer": when True ==> do
+        x <- deepThought.getAnswer
+        $display  "Deep Thought says: Hello, World! The answer is %0d."  x
+        $finish
+
+-- ================================================================

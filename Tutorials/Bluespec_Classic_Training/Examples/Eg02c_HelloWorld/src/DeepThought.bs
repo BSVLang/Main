@@ -1,0 +1,49 @@
+-- Copyright (c) 2014-2019 Bluespec, Inc.  All Rights Reserved.
+
+package DeepThought where
+
+-- ================================================================
+-- Interface definition
+
+interface DeepThought_IFC =
+   whatIsTheAnswer :: Action
+   getAnswer       :: ActionValue (Int 32)
+
+-- ================================================================
+-- Module definition
+
+data State_DT = IDLE | THINKING | ANSWER_READY
+     deriving (Eq, Bits, FShow)
+
+{-# verilog mkDeepThought #-}
+
+mkDeepThought :: Module DeepThought_IFC
+mkDeepThought =
+  module
+    rg_state_dt      :: Reg  State_DT <- mkReg IDLE
+    rg_half_millenia :: Reg  (Bit 4)  <- mkReg 0
+
+    let millenia       = rg_half_millenia [3:1]
+    let half_millenium = rg_half_millenia [0:0]
+
+    rules
+      "rl_think": when (rg_state_dt == THINKING) ==> do
+        $write  "        DeepThought: ... thinking ... (%0d"  millenia
+        if (half_millenium == 1) then $write  ".5" else noAction
+        $display  " million years)"
+        if (rg_half_millenia == 15) then
+            rg_state_dt := ANSWER_READY
+        else
+            rg_half_millenia := rg_half_millenia + 1
+
+    interface
+        whatIsTheAnswer = rg_state_dt := THINKING
+                          when (rg_state_dt == IDLE)
+
+        getAnswer = do
+                        rg_state_dt := IDLE
+                        rg_half_millenia := 0
+                        return 42
+                    when (rg_state_dt == ANSWER_READY)
+
+-- ================================================================

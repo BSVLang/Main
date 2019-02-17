@@ -1,0 +1,25 @@
+-- Copyright (c) 2014-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Top where
+
+-- ================================================================
+-- Project imports
+
+import DeepThought
+
+-- ================================================================
+
+{-# verilog mkTop #-}
+
+mkTop :: Module  Empty
+mkTop =
+  module
+    deepThought <- mkDeepThought    -- (A)
+    rules
+        "rl_print_answer": when True ==> do
+            x <- deepThought.getAnswer
+            $display "\n\n***** Deep Thought says: Hello, World! *****"
+            $display "      And the answer is: %0d (or, in hex: 0x%0h)\n"  x  x
+            $finish
+
+-- ================================================================

@@ -1,0 +1,12 @@
+-- Copyright (c) 2014-2019 Bluespec, Inc.  All Rights Reserved.
+
+package Top where
+
+mkTop :: Module Empty
+mkTop =
+  module
+    rules
+      "rl_print_answer": when True ==> do
+          $display "\n\n***** Deep Thought says: Hello, World! *****"
+          $display "      And the answer is: %0d (or, in hex: 0x%0h)\n"  42  42
+          $finish
