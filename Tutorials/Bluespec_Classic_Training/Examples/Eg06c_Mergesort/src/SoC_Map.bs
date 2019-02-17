@@ -1,0 +1,184 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved
+
+package SoC_Map
+where
+
+-- ================================================================
+-- This module defines the overall 'address map' of the SoC, showing
+-- the addresses serviced by each target IP, and which addresses are
+-- memory vs. I/O.
+
+-- ***** WARNING! WARNING! WARNING! *****
+
+-- During system integration, this address map should be identical to
+-- the system interconnect settings (e.g., routing of requests between
+-- initiators and targets).  This map is also needed by software so that
+-- it knows how to address various IPs.
+
+-- This module contains no state; it just has constants, and so can be
+-- freely instantiated at multiple places in the SoC module hierarchy
+-- at no hardware cost.  It allows this map to be defined in one
+-- place and shared across the SoC.
+
+-- ================================================================
+-- Bluespec library imports
+
+-- None
+
+-- ================================================================
+-- Project imports
+
+import Fabric_Defs       -- Only for type Fabric_Addr
+import Fabric_Req_Rsp    -- Only for type Fabric_Addr
+
+-- ================================================================
+-- Interface and module for the address map
+
+interface SoC_Map_IFC =
+    m_mem0_controller_addr_base :: Fabric_Addr  
+    m_mem0_controller_addr_size :: Fabric_Addr  
+    m_mem0_controller_addr_lim  :: Fabric_Addr  
+
+    m_near_mem_io_addr_base :: Fabric_Addr
+    m_near_mem_io_addr_size :: Fabric_Addr
+    m_near_mem_io_addr_lim  :: Fabric_Addr
+
+    m_accel_0_addr_base :: Fabric_Addr  
+    m_accel_0_addr_size :: Fabric_Addr  
+    m_accel_0_addr_lim  :: Fabric_Addr  
+
+    m_uart_0_addr_base :: Fabric_Addr  
+    m_uart_0_addr_size :: Fabric_Addr  
+    m_uart_0_addr_lim  :: Fabric_Addr  
+
+    -- Address classification predicates
+    m_is_mem_addr         :: Fabric_Addr -> Bool
+    m_is_IO_addr          :: Fabric_Addr -> Bool
+    m_is_near_mem_IO_addr :: Fabric_Addr -> Bool
+
+    m_pc_reset_value :: Bit 64
+
+-- ================================================================
+
+{-# verilog  mkSoC_Map #-}
+mkSoC_Map :: Module  SoC_Map_IFC
+mkSoC_Map =
+  module
+
+    let
+        -- ----------------------------------------------------------------
+        -- Main Mem Controller 0
+
+        mem0_controller_addr_base :: Fabric_Addr = 0x80000000
+        mem0_controller_addr_size :: Fabric_Addr = 0x10000000    -- 256 MB
+        mem0_controller_addr_lim  :: Fabric_Addr = (  mem0_controller_addr_base
+	                                            + mem0_controller_addr_size)
+    
+        fn_is_mem0_controller_addr :: Fabric_Addr -> Bool
+	fn_is_mem0_controller_addr    addr = (   (mem0_controller_addr_base <= addr)
+	                                      && (addr < mem0_controller_addr_lim))
+
+        -- ----------------------------------------------------------------
+        -- Near_Mem_IO (including CLINT, the core-local interruptor)
+
+        near_mem_io_addr_base :: Fabric_Addr = 0x02000000
+        near_mem_io_addr_size :: Fabric_Addr = 0x0000C000    -- 48K
+        near_mem_io_addr_lim  :: Fabric_Addr = (  near_mem_io_addr_base
+	                                        + near_mem_io_addr_size)
+
+        fn_is_near_mem_io_addr :: Fabric_Addr -> Bool
+        fn_is_near_mem_io_addr    addr = (   (near_mem_io_addr_base <= addr)
+	                                  && (addr < near_mem_io_addr_lim))
+
+        -- ----------------------------------------------------------------
+        -- UART 0
+
+        uart_0_addr_base :: Fabric_Addr = 0xC0000000
+        uart_0_addr_size :: Fabric_Addr = 0x00000080    -- 128
+        uart_0_addr_lim  :: Fabric_Addr = (  uart_0_addr_base
+                                           + uart_0_addr_size)
+
+        fn_is_uart_0_addr :: Fabric_Addr -> Bool
+	fn_is_uart_0_addr    addr = (   (uart_0_addr_base <= addr)
+                                     && (addr < uart_0_addr_lim))
+
+        -- ----------------------------------------------------------------
+        -- Accelerator 0
+
+        accel_0_addr_base :: Fabric_Addr = 0xC0000100
+        accel_0_addr_size :: Fabric_Addr = 0x00000080    -- 128
+        accel_0_addr_lim  :: Fabric_Addr = (  accel_0_addr_base
+                                            + accel_0_addr_size)
+
+        fn_is_accel_0_addr :: Fabric_Addr -> Bool
+	fn_is_accel_0_addr    addr = (   (accel_0_addr_base <= addr)
+                                      && (addr < accel_0_addr_lim))
+
+        -- ----------------------------------------------------------------
+        -- Memory address predicate
+        -- Identifies memory addresses.
+        -- (Caches need this information to cache these addresses.)
+
+        fn_is_mem_addr :: Fabric_Addr -> Bool
+        fn_is_mem_addr    addr = fn_is_mem0_controller_addr  addr
+
+        -- ----------------------------------------------------------------
+        -- I/O address predicate
+        -- Identifies I/O addresses
+        -- (Caches need this information to avoid cacheing these addresses.)
+
+        fn_is_IO_addr :: Fabric_Addr -> Bool 
+        fn_is_IO_addr    addr = (   (fn_is_near_mem_io_addr  addr)
+	                         && (fn_is_uart_0_addr       addr)
+	                         && (fn_is_accel_0_addr      addr))
+
+        -- ----------------------------------------------------------------
+        -- PC reset value
+
+        pc_reset_value :: Bit 64 = zeroExtend  mem0_controller_addr_base
+
+    -- ================================================================
+    interface
+
+        m_mem0_controller_addr_base = mem0_controller_addr_base
+        m_mem0_controller_addr_size = mem0_controller_addr_size
+        m_mem0_controller_addr_lim  = mem0_controller_addr_lim
+
+        m_near_mem_io_addr_base = near_mem_io_addr_base
+        m_near_mem_io_addr_size = near_mem_io_addr_size
+        m_near_mem_io_addr_lim  = near_mem_io_addr_lim
+
+        m_uart_0_addr_base = uart_0_addr_base
+        m_uart_0_addr_size = uart_0_addr_size
+        m_uart_0_addr_lim  = uart_0_addr_lim
+
+        m_accel_0_addr_base = accel_0_addr_base
+        m_accel_0_addr_size = accel_0_addr_size
+        m_accel_0_addr_lim  = accel_0_addr_lim
+
+        m_is_mem_addr          addr = fn_is_mem_addr          addr
+        m_is_IO_addr           addr = fn_is_IO_addr           addr
+        m_is_near_mem_IO_addr  addr = fn_is_near_mem_io_addr  addr
+
+        m_pc_reset_value = pc_reset_value
+
+-- ================================================================
+-- Count and initiator-numbers of initiators in the fabric.
+
+type Num_Initiators = 3
+
+imem_initiator_num    :: Integer;  imem_initiator_num    = 0
+dmem_initiator_num    :: Integer;  dmem_initiator_num    = 1
+accel_0_initiator_num :: Integer;  accel_0_initiator_num = 2
+
+-- ================================================================
+-- Count and target-numbers of targets in the fabric.
+
+type Num_Targets = 3
+type Target_Num  = Bit  (TLog  Num_Targets)
+
+mem0_controller_target_num :: Integer;  mem0_controller_target_num = 0
+uart_0_target_num          :: Integer;  uart_0_target_num          = 1
+accel_0_target_num         :: Integer;  accel_0_target_num         = 2
+
+-- ================================================================

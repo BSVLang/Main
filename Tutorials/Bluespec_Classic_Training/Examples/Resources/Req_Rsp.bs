@@ -1,0 +1,58 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Req_Rsp
+where
+
+-- ================================================================
+-- This package defines memory-like Request and Response packets.
+
+-- ================================================================
+-- Requests and responses
+
+-- Operation requested
+data RR_Op = RR_Op_R | RR_Op_W
+    deriving (Eq, Bits, FShow)
+
+-- Size requested
+data RR_Size = RR_Size_8b | RR_Size_16b | RR_Size_32b | RR_Size_64b
+    deriving (Eq, Bits, FShow)
+
+-- Response status
+data RR_Status = RR_Status_OKAY         -- = AXI4 OKAY
+               | RR_Status_RESERVED     -- = AXI4 EXOKAY; here unused
+               | RR_Status_TARGETERR    -- = AXI4 SLVERR (e.g., misaligned)
+               | RR_Status_DECERR       -- = AXI4 DECERR (decode err: no such addr)
+    deriving (Eq, Bits, FShow)
+
+-- ----------------
+-- Requests
+-- Note: wdata is always in the least-significant bits (unlike AXI4!)
+
+struct (RR_Req :: # -> # -> # -> *)  wd_tid  wd_addr  wd_data = {
+    tid   :: Bit  wd_tid;    -- Transaction Id
+    op    :: RR_Op;
+    addr  :: Bit  wd_addr;
+    size  :: RR_Size;
+    wdata :: Bit  wd_data    -- write-data (not relevant for read-requests)
+    }
+    deriving (Bits, FShow)
+
+-- ----------------
+-- Responses
+-- Note: rdata is always in the least-significant bits (unlike AXI4!)
+
+struct (RR_Rsp :: # -> # -> *)  wd_tid  wd_data = {
+    tid    :: Bit  wd_tid;    -- Transaction Id
+    status :: RR_Status;
+    rdata  :: Bit  wd_data;   -- read-data (not relevant for write-responses)
+    op     :: RR_Op           -- For debugging only
+    }
+    deriving (Bits, FShow)
+
+-- ================================================================
+-- Help functions
+
+fn_RR_Size_to_bytes :: RR_Size -> Bit n
+fn_RR_Size_to_bytes    rr_size = (1 << (pack  rr_size))
+
+-- ================================================================

@@ -1,0 +1,253 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Merge_Engine
+where
+
+-- ================================================================
+-- This package is a component of a memory-to-memory mergesort module.
+-- Merges two already sorted segments:
+-- Input segments:
+--     p1 [i0 .. i0+span-1]    and    p1 [i0+span .. i0+2*span-1]
+-- Output segment:
+--     p2 [i0 .. i0+2*span-1]
+
+-- ================================================================
+-- Bluespec library imports
+
+import FIFOF
+import GetPut
+import ClientServer
+
+-- ----------------
+-- Additional libs
+
+-- None
+
+-- ----------------
+-- Project imports
+
+import Utils
+import CReg_Classic
+import Req_Rsp
+import Fabric_Defs
+import Fabric_Req_Rsp
+
+-- ================================================================
+-- Interface
+
+interface Merge_Engine_IFC =
+   -- Initialize the module
+   init :: Action
+
+   -- Start the merge
+   start :: (UInt  16) ->        -- engineId
+            Fabric_Addr ->       -- i0
+	    Fabric_Addr ->       -- span
+	    Fabric_Addr ->       -- p1
+	    Fabric_Addr ->       -- p2
+	    Fabric_Addr ->       -- n
+	    Action
+   done  :: Bool
+
+   -- Interface to access memory
+   mem_bus_ifc :: Client  Fabric_Req  Fabric_Rsp
+
+-- ================================================================
+-- The following is a "tuning" constant that limits how many mem
+-- requests can be in flight between rl_req0 and rl_rsp0, and between
+-- rl_req1 and rl_rsp1.  The FIFOs f_data0 and f_data1 are sized
+-- accordingly.  If not so limited, one can have head-of-line blocking
+-- in the shared FIFO f_memRsps.  The CRegs crg_credits0 and
+-- crg_credits1 are initialized to this value (and must be large
+-- enough to hold this value).
+
+-- The best value will depend on system properties like memory
+-- latency, throughput, how the memory system deals with contention,
+-- etc.  Thus we call it a "tuning" parameter.
+
+max_n_reqs_in_flight :: Integer
+max_n_reqs_in_flight = 8
+
+-- ================================================================
+-- The merge-engine module implementation
+
+{-# verilog mkMerge_Engine #-}
+
+mkMerge_Engine :: Module  Merge_Engine_IFC
+mkMerge_Engine =
+  module
+    let verbosity :: Integer = 0
+
+    -- Allows $displays from multiple engines to be disambiguated
+    rg_engineId :: Reg  (UInt  16)  <- mkRegU
+
+    rg_span     :: Reg  Fabric_Addr <- mkRegU
+    rg_p1       :: Reg  Fabric_Addr <- mkRegU    -- source array pointer
+    rg_p2       :: Reg  Fabric_Addr <- mkRegU    -- destination array pointer
+    rg_n        :: Reg  Fabric_Addr <- mkRegU    -- size of source/destination arrays
+    rg_i0req    :: Reg  Fabric_Addr <- mkRegU    -- index of next i0 request
+    rg_i0rsp    :: Reg  Fabric_Addr <- mkRegU    -- index of next i0 response
+    rg_i0_lim   :: Reg  Fabric_Addr <- mkRegU    -- initialized to i0+span
+    rg_i1req    :: Reg  Fabric_Addr <- mkRegU    -- index of next i1 request
+    rg_i1rsp    :: Reg  Fabric_Addr <- mkRegU    -- index of next i1 response
+    rg_i1_lim   :: Reg  Fabric_Addr <- mkRegU    -- initialized to i0+2*span = i1+span
+    rg_j        :: Reg  Fabric_Addr <- mkRegU    -- index of next output item
+
+    rg_running  :: Reg  Bool <- mkReg False
+
+    f_memReqs :: FIFOF Fabric_Req  <- mkFIFOF    -- to Mem
+    f_memRsps :: FIFOF Fabric_Rsp  <- mkFIFOF    -- from Mem
+
+    crg_credits0  :: Array  (Reg  (UInt  8)) <- mkCRegU  2
+    crg_credits1  :: Array  (Reg  (UInt  8)) <- mkCRegU  2
+
+    -- FIFOs holding responses: must be as deep as allowed # of reqs in flight
+    f_data0 :: FIFOF  Fabric_Data <- mkSizedFIFOF (max_n_reqs_in_flight)
+    f_data1 :: FIFOF  Fabric_Data <- mkSizedFIFOF (max_n_reqs_in_flight)
+
+    let next_rsp :: Fabric_Rsp = f_memRsps.first
+
+    -- ================================================================
+    -- BEHAVIOR
+
+    rules
+	-- ----------------
+        -- Generate read reqs for segment 0
+        "rl_req0" : when  (rg_running
+		    	   && (rg_i0req < rg_i0_lim)
+			   && ((read_CReg  crg_credits0  0) /= 0))
+	 ==> do
+                let req :: Fabric_Req = RR_Req {tid   = 0;
+		                               	op    = RR_Op_R;
+		                           	addr  = rg_p1 + (rg_i0req << 2);
+					   	wdata = _ ;
+					   	size  = RR_Size_32b}
+					   
+                f_memReqs.enq (req)
+                rg_i0req := rg_i0req + 1
+                (select_CReg  crg_credits0  0) := (read_CReg  crg_credits0  0) - 1
+                if1 (verbosity >= 2)
+		    ($display  "%0d: Merge Engine %0d: requesting [i0req = %0d]; credits0 %0d"
+                               cur_cycle  rg_engineId  rg_i0req  (read_CReg  crg_credits0  0))
+
+	-- ----------------
+        -- Receive read rsps for segment 0
+        "rl_rsp0": when  ((next_rsp.op == RR_Op_R) && (next_rsp.tid == 0))
+	 ==> do
+                f_memRsps.deq
+                if1 (verbosity >= 2)
+		    ($display  "%0d: Merge Engine %0d: response [i0rsp] = %0h, credits0 %0d"
+                               cur_cycle  rg_engineId  next_rsp.rdata  (read_CReg  crg_credits0  1))
+                f_data0.enq  next_rsp.rdata
+
+	-- ----------------
+        -- Generate read reqs for segment 1
+        "rl_req1": when  (rg_running && (rg_i1req < rg_i1_lim) && ((read_CReg  crg_credits1  0) /= 0))
+	 ==> do
+                let req :: Fabric_Req = RR_Req {tid   = 1;
+		                                op    = RR_Op_R;
+					   	addr  = rg_p1 + (rg_i1req << 2);
+					   	wdata = _ ;
+					   	size  = RR_Size_32b}
+                f_memReqs.enq (req)
+                rg_i1req := rg_i1req + 1
+                (select_CReg  crg_credits1  0) := (read_CReg  crg_credits1  0) - 1
+                if1 (verbosity >= 2)
+		    ($display  "%0d: Merge Engine %0d: requesting [i1req = %0d]; credits1 %0d"
+                               cur_cycle  rg_engineId  rg_i1req  (read_CReg  crg_credits1  0))
+
+	-- ----------------
+        -- Receive read rsps for segment 1
+        "rl_rsp1" : when  ((next_rsp.op == RR_Op_R) && (next_rsp.tid == 1))
+	 ==> do
+                f_memRsps.deq
+                if1 (verbosity >= 2)
+		    ($display  "%0d: Merge Engine %0d: response [i1rsp] = %0h, credits1 %0d"
+                               cur_cycle  rg_engineId  next_rsp.rdata  (read_CReg  crg_credits1  1))
+                f_data1.enq  next_rsp.rdata
+
+	-- ----------------
+        -- Merge responses into output
+        "rl_merge": when   (rg_running && ((rg_i0rsp < rg_i0_lim) || (rg_i1rsp < rg_i1_lim)))
+	 ==> do
+                let take0 :: Bool = if ((rg_i0rsp < rg_i0_lim) && (rg_i1rsp < rg_i1_lim)) then
+                                       (f_data0.first <= f_data1.first)
+                                    else
+		                       (rg_i0rsp < rg_i0_lim)
+                y :: Fabric_Data <- if (take0) then do
+                                        f_data0.deq
+                                 	rg_i0rsp := rg_i0rsp + 1
+					(select_CReg  crg_credits0  1) := (read_CReg  crg_credits0  1) + 1
+                                 	return  f_data0.first
+                             	    else do
+                                        f_data1.deq
+                                 	rg_i1rsp := rg_i1rsp + 1
+					(select_CReg  crg_credits1  1) := (read_CReg  crg_credits1  1) + 1
+				 	return  f_data1.first
+
+                let req :: Fabric_Req = RR_Req {tid   = _;
+		                                op    = RR_Op_W;
+		                           	addr  = rg_p2 + (rg_j << 2);
+					   	size  = RR_Size_32b;
+					   	wdata = y}
+                f_memReqs.enq  req
+                if1 (verbosity >= 1)
+		    ($display  "%0d: Merge Engine %0d: writing [%0d] := %0h"  cur_cycle  rg_engineId  rg_j  y)
+                rg_j := rg_j + 1
+
+	-- ----------------
+        "rl_drain_write_rsps": when  (next_rsp.op == RR_Op_W)
+	 ==> f_memRsps.deq
+
+	-- ----------------
+        "rl_finish": when   (rg_running && (rg_i0rsp >= rg_i0_lim) && (rg_i1rsp >= rg_i1_lim))
+	 ==> rg_running := False
+
+    -- ================================================================
+    -- INTERFACE
+
+    interface
+	-- ----------------
+        init = do
+            rg_running := False
+            f_memReqs.clear
+            f_memRsps.clear
+            f_data0.clear
+            f_data1.clear
+
+	-- ----------------
+        start  engineId  i0  span  p1  p2  n = do
+            rg_engineId := engineId
+            rg_span := span
+            rg_p1   := p1
+            rg_p2   := p2
+            rg_n    := n
+
+            rg_i0req := i0
+            rg_i0rsp := i0
+
+            let i1 = min  (i0 + span)  n
+            rg_i0_lim := i1
+            rg_i1req  := i1
+            rg_i1rsp  := i1
+            let i1_lim = min (i0 + (span << 1))  n
+            rg_i1_lim := i1_lim
+
+            rg_j := i0
+
+            (select_CReg  crg_credits0  1) := fromInteger (max_n_reqs_in_flight)
+            (select_CReg  crg_credits1  1) := fromInteger (max_n_reqs_in_flight)
+
+            rg_running := True
+            if1 (verbosity >= 1)
+	        ($display  "%0d: Merge Engine %0d: [%0d..%0d][%0d..%0d]"
+                           cur_cycle  engineId  i0  (i1-1)  i1  (i1_lim - 1))
+          when (not rg_running)
+
+	-- ----------------
+        done = (not rg_running)
+
+	-- ----------------
+        mem_bus_ifc = toGPClient  f_memReqs  f_memRsps
+
+-- ================================================================

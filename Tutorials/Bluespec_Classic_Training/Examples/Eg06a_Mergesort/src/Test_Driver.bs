@@ -1,0 +1,160 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Test_Driver
+where
+
+-- ================================================================
+-- mkTest_Driver performs reads and writes on the Mergesort module to
+-- initialize it and do a mergesort.
+
+-- ================================================================
+-- Bluespec libraries
+
+import FIFOF
+import GetPut
+import ClientServer
+
+-- ----------------
+-- Additional libs
+
+import GetPut_Aux
+
+-- ----------------
+-- Project imports
+
+import Utils
+import Req_Rsp
+import Fabric_Defs
+import Fabric_Req_Rsp
+import SoC_Map
+
+-- ================================================================
+-- Testing: sort 29 words starting at address 0x1000
+
+sort_start_offset   :: Fabric_Addr
+sort_start_offset   =  0x1000
+
+n_words             :: Fabric_Addr
+n_words             = 29
+
+sort_scratch_offset :: Fabric_Addr
+sort_scratch_offset = 0x1800
+
+-- ================================================================
+
+interface Test_Driver_IFC =
+    start   :: Action
+    busy    :: Bool
+    bus_ifc :: Client  Fabric_Req  Fabric_Rsp
+
+-- ================================================================
+
+mkTest_Driver :: Module  Test_Driver_IFC
+mkTest_Driver =
+  module
+    soc_map :: SoC_Map_IFC <- mkSoC_Map
+
+    f_reqs :: FIFOF  Fabric_Req <- mkFIFOF
+    f_rsps :: FIFOF  Fabric_Rsp <- mkFIFOF
+
+    rg_step :: Reg  (Bit 8) <- mkReg 0
+
+    rg_start_cycle :: Reg (Bit 32) <- mkRegU
+
+    let sort_start_addr   = soc_map.m_mem0_controller_addr_base + sort_start_offset
+        sort_scratch_addr = soc_map.m_mem0_controller_addr_base + sort_scratch_offset
+
+    -- ----------------------------------------------------------------
+    -- BEHAVIOR
+
+    rules
+        -- Write to accelerator config [1]: addr_A
+        when (rg_step == 1) ==> do
+	    start_cycle <- cur_cycle
+            rg_start_cycle := start_cycle
+	    let req :: Fabric_Req = RR_Req {tid   = _ ;
+                                            op    = RR_Op_W;
+				       	    addr  = soc_map.m_accel_0_addr_base + 0x04;
+				       	    size  = RR_Size_64b;
+				       	    wdata = zeroExtend  sort_start_addr}
+            f_reqs.enq  req
+	    rg_step := 2
+
+        -- Consume write-response; write to accelerator config [2]: addr_B
+        when (rg_step == 2) ==> do
+	    rsp <- pop  f_rsps
+	    let req :: Fabric_Req = RR_Req {tid   = _ ;
+	                                    op    = RR_Op_W;
+				       	    addr  = soc_map.m_accel_0_addr_base + 0x8;
+				       	    wdata = zeroExtend  sort_scratch_addr;
+				       	    size  = RR_Size_64b}
+	    f_reqs.enq  req
+	    rg_step := 3
+
+        -- Consume write-reponse; write to accelerator config [3]: word count
+        when (rg_step == 3) ==> do
+	    rsp <- pop  f_rsps
+	    let req :: Fabric_Req = RR_Req {tid   = _ ;
+	                                    op    = RR_Op_W;
+	    	                       	    addr  = soc_map.m_accel_0_addr_base + 0xc;
+				       	    wdata = zeroExtend  n_words;
+				       	    size  = RR_Size_64b}
+	    f_reqs.enq  req
+	    rg_step := 4
+
+        -- Consume write-reponse, write to accelerator config [0]: 'go' command
+        when (rg_step == 4) ==> do
+	    rsp <- pop  f_rsps
+	    let  req :: Fabric_Req = RR_Req {tid   = _ ;
+	                                     op    = RR_Op_W;
+	    	     	      	             addr  = soc_map.m_accel_0_addr_base + 0x00;
+					     wdata = 1;
+					     size  = RR_Size_64b}
+	    f_reqs.enq  req
+	    rg_step := 5
+
+        -- Consume write-reponse; prepare to poll accelerator for accelerator completion
+        when (rg_step == 5) ==> do
+	    rsp <- pop  f_rsps
+	    rg_step := 6
+
+        -- Delay loop (100 steps) before polling
+        when ((6 <= rg_step) && (rg_step < 106)) ==> do
+	    rg_step := rg_step + 1
+
+        -- After delay loop, poll the accelerator for completion
+        when (rg_step == 106) ==> do
+	    $display  "%0d: Top: polling accelerator for completion"  cur_cycle
+	    let req :: Fabric_Req = RR_Req {tid   = _ ;
+	                                    op    = RR_Op_R;
+	    	       	       	       	    addr  = soc_map.m_accel_0_addr_base;
+				       	    wdata = _ ;
+				       	    size  = RR_Size_64b}
+            f_reqs.enq  req
+	    rg_step := 107
+
+        -- Consume accelerator response; if accel not completed, loop, else back to idle state.
+        when (rg_step == 107) ==> do
+	    rsp <- pop  f_rsps
+	    let accel_0_busy :: Bool = (rsp.rdata /= 0)
+	    if accel_0_busy then do
+	        -- Continue polling
+		$display  "%0d: Top: accelerator is busy"  cur_cycle
+	        rg_step  := 6
+	     else do
+	        -- exit poll loop back to Idle state
+		end_cycle <- cur_cycle
+		let delta_cycles = end_cycle - rg_start_cycle
+	        $display  "%0d: Top: accelerator completed sorting %0d words in %0d cycles"
+		          cur_cycle
+			  n_words
+			  delta_cycles
+		rg_step := 0
+
+    -- ----------------------------------------------------------------
+    interface
+        start   = (rg_step := 1) when (rg_step == 0)
+        busy    = (rg_step /= 0)
+        bus_ifc = toGPClient  f_reqs  f_rsps
+
+-- ================================================================

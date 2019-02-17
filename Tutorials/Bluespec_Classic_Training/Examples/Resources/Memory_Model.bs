@@ -1,0 +1,260 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved
+
+package Memory_Model (Memory_IFC (..),   mkMemory_Model)
+where
+
+-- ================================================================
+-- This package models a Memory serving read/write traffic from a bus.
+
+-- NOTE: this uses a 'RegFile' for the memory.
+-- When synthesizing for FPGAs or ASICs we are likely to replace
+-- it with an SRAM or an external DRAM.
+
+-- ================================================================
+-- Bluespec libraries
+
+import RegFile
+import FIFOF
+import GetPut
+import ClientServer
+import Assert
+
+-- ----------------
+-- Additional libs
+
+-- None
+
+-- ----------------
+-- Project imports
+
+import Utils
+import Req_Rsp
+import Fabric_Defs
+import Fabric_Req_Rsp
+import SoC_Map
+
+-- ================================================================
+-- Memory model interface
+
+interface Memory_IFC =
+   bus_ifc    :: Server  Fabric_Req  Fabric_Rsp
+
+   init :: Fabric_Addr ->  Fabric_Addr -> Action
+   --      base_byte_addr  size_bytes
+
+   -- Dump 32b mem words from start_addr for n_words
+   dump_mem_start :: Fabric_Addr -> Fabric_Addr -> Action
+   --                start_addr     n_words
+   dump_mem_busy  :: Bool
+
+-- ================================================================
+-- Width of address and data words in "raw" memory
+-- Memory is byte-addressed, but it is better to store wider words
+-- since most accesses are 32b and 64b.
+
+-- ----------------
+-- Raw memory addresses
+
+type Bits_per_Raw_Mem_Addr = 32
+
+bits_per_raw_mem_addr :: Integer
+bits_per_raw_mem_addr = valueOf  Bits_per_Raw_Mem_Addr
+
+type Raw_Mem_Addr = Bit  Bits_per_Raw_Mem_Addr
+
+-- ----------------
+-- Raw memory data words
+
+type Bits_per_Raw_Mem_Word            = 32
+type Bytes_per_Raw_Mem_Word           = TDiv  Bits_per_Raw_Mem_Word  8    -- 4
+type Bits_per_Raw_Mem_Word_Bitselect  = TLog  Bits_per_Raw_Mem_Word       -- 5
+type Bits_per_Raw_Mem_Word_Byteselect = TLog  Bytes_per_Raw_Mem_Word      -- 2
+
+bits_per_raw_mem_word :: Integer
+bits_per_raw_mem_word = valueOf  Bits_per_Raw_Mem_Word
+
+bytes_per_raw_mem_word :: Integer
+bytes_per_raw_mem_word = valueOf (Bytes_per_Raw_Mem_Word)
+
+bits_per_raw_mem_word_byteselect :: Integer
+bits_per_raw_mem_word_byteselect = valueOf Bits_per_Raw_Mem_Word_Byteselect
+
+raw_mem_word_byte_index_mask :: Integer
+raw_mem_word_byte_index_mask = (2 ** bits_per_raw_mem_word_byteselect) - 1    -- 0b11
+
+type Raw_Mem_Word            = Bit  Bits_per_Raw_Mem_Word
+type Raw_Mem_Word_Bit_Index  = Bit  Bits_per_Raw_Mem_Word_Bitselect
+type Raw_Mem_Word_Byte_Index = Bit  Bits_per_Raw_Mem_Word_Byteselect
+
+-- ================================================================
+-- Memory model
+-- (see staticAssertions below re. widths of addrs and data)
+
+{-# verilog mkMemory_Model #-}
+
+mkMemory_Model :: Module Memory_IFC
+mkMemory_Model =
+  module
+    let verbosity :: Integer = 0    -- For debugging, set > 0
+
+    staticAssert  (valueOf (Wd_Addr) >= bits_per_raw_mem_addr)
+                   "mkMemoryModel: Mem Addr Width should be <= fabric addr width"
+
+    staticAssert  (valueOf (Wd_Data) <= bits_per_raw_mem_word)
+                   "mkMemoryModel: Mem Word Width should be >= fabric data width"
+
+    -- ----------------
+
+    let last_index :: Raw_Mem_Addr = 0x4000000 - 1    -- 16M Raw_Mem_Words
+                   
+    rf :: RegFile  Raw_Mem_Addr  Raw_Mem_Word <- mkRegFileLoad  "Mem.hex"
+                                                                0
+								last_index
+
+    -- Fifos of incoming memory requests, outgoing responses
+    f_reqs  :: FIFOF  Fabric_Req <- mkFIFOF
+    f_rsps  :: FIFOF  Fabric_Rsp <- mkFIFOF
+
+    -- Memory address parameters (set by 'init' method)
+    rg_base  :: Reg  Fabric_Addr <- mkRegU    -- First legal addr
+    rg_limit :: Reg  Fabric_Addr <- mkRegU    -- First illegal addr above base
+
+    -- Parameters initialized?
+    rg_initialized :: Reg  Bool <- mkReg  False
+
+    -- Regs for memory-dumps
+    rg_dump_busy :: Reg Bool <- mkReg  False
+    rg_dump_addr :: Reg Fabric_Addr <- mkRegU
+    rg_dump_lim  :: Reg Fabric_Addr <- mkRegU
+
+    -- ----------------
+    -- Read 8b, 16b, or 32b data from regfile
+
+    let fn_read :: Fabric_Addr -> RR_Size -> Fabric_Data
+        fn_read    fabric_addr    rr_size =
+            let
+                fabric_addr1 = fabric_addr - rg_base
+		rf_index = truncate  (fabric_addr1 >> bits_per_raw_mem_word_byteselect)
+		rf_data  = rf.sub  rf_index
+            in
+		rf_data
+
+    -- ----------------
+    -- Write 8b, 16b, or 32b data to regfile
+    -- Does a 32b read-modify-write to accommodate 8b and 16b writes
+
+    let fa_write :: Fabric_Addr -> RR_Size -> Fabric_Data -> Action
+        fa_write    fabric_addr    rr_size    wdata = do
+            let
+                fabric_addr1 = fabric_addr - rg_base
+	        rf_index = truncate  (fabric_addr1 >> bits_per_raw_mem_word_byteselect)
+		rf_data  = rf.sub  rf_index
+                byte_in_raw_mem_word = (fabric_addr1 &
+		    			fromInteger raw_mem_word_byte_index_mask)
+		bit_in_raw_mem_word  = byte_in_raw_mem_word << 3
+                shift_amt :: Raw_Mem_Word_Bit_Index = truncate  bit_in_raw_mem_word
+		mask :: Raw_Mem_Word = case rr_size of
+		                           RR_Size_8b  -> 0xFF
+					   RR_Size_16b -> 0xFFFF
+					   RR_Size_32b -> 0xFFFFFFFF
+
+                mask1  = mask  << shift_amt
+		wdata1 = (rf_data & (invert mask1)) | (wdata & mask1)
+
+            rf.upd  rf_index  wdata1
+
+        req = f_reqs.first
+        rsp_base = RR_Rsp {tid    = req.tid;
+			   status = RR_Status_OKAY;
+                           rdata  = _ ;
+                           op     = req.op}
+
+        -- Check for legal address/size (aligned, and in range [base..limit-1])
+        addr_ok :: Bool
+        addr_ok = let
+                    req_num_bytes = fn_RR_Size_to_bytes  req.size
+		    in_range :: Bool = (   (rg_base <= req.addr)
+		                        && (req.addr + req_num_bytes < rg_limit))
+		    aligned :: Bool = case req.size of
+                                        RR_Size_8b  -> True
+                                        RR_Size_16b -> (req.addr & 0x1) == 0
+                                        RR_Size_32b -> (req.addr & 0x3) == 0
+                                        RR_Size_64b -> (req.addr & 0x7) == 0
+                  in
+                    in_range && aligned
+
+        debug_print :: Fabric_Req -> Fabric_Rsp -> Action
+	debug_print    fabric_req    fabric_rsp =
+            if1 (verbosity > 0)
+		action
+                    $display  "%0d: Memory_model:"  cur_cycle
+                    $display    "    "  (fshow  fabric_req)
+		    $display    "    "  (fshow  fabric_rsp)
+
+    -- ----------------
+    -- RULES
+
+    rules
+        "illegal addrs": when (not  addr_ok)
+	 ==> do
+                $display  "%0d: ERROR: Memory_model [%0h..%0h]: req addr out of bounds or misaligned"
+                          cur_cycle  rg_base  rg_limit
+                let rsp :: Fabric_Rsp = rsp_base {status = RR_Status_DECERR}
+		f_reqs.deq
+                f_rsps.enq  rsp
+                $display "    "  (fshow  req)
+                $display "    "  (fshow  rsp)
+
+        "reads": when (addr_ok && req.op == RR_Op_R)
+	 ==> do
+		let x = fn_read  req.addr  req.size
+                    rsp = rsp_base {rdata  = x}
+		f_reqs.deq
+                f_rsps.enq  rsp
+		debug_print  req  rsp
+
+        "writes": when (addr_ok && req.op == RR_Op_W)
+	 ==> do
+                fa_write  req.addr  req.size  req.wdata
+		f_reqs.deq
+                f_rsps.enq  rsp_base
+		debug_print  req  rsp_base
+
+        "other": when (addr_ok && (req.op /= RR_Op_R) && (req.op /= RR_Op_W))
+	 ==> do
+		let rsp = rsp_base {status = RR_Status_TARGETERR}
+		f_reqs.deq
+                f_rsps.enq  rsp
+		debug_print  req  rsp
+
+        "dump mem": when (rg_dump_busy)
+	 ==> do
+                let d = fn_read  rg_dump_addr  RR_Size_32b
+ 		$display  "%016h: %8h"  rg_dump_addr  d
+		let next_addr = rg_dump_addr + 4
+		rg_dump_addr := next_addr
+		rg_dump_busy := (next_addr < rg_dump_lim)
+
+    -- ----------------
+    -- INTERFACE
+
+    interface
+	bus_ifc = toGPServer  f_reqs  f_rsps
+
+        init  base_addr  n_bytes = do
+            rg_base        := base_addr
+            rg_limit       := base_addr + n_bytes
+            rg_initialized := True
+
+        -- Dump mem words from starting address for nwords
+        dump_mem_start  addr  n_words = do
+	    let lim = addr + (n_words << 2)
+	    rg_dump_addr := (addr & (invert 0x3))
+	    rg_dump_lim  := lim
+	    rg_dump_busy := (n_words /= 0)
+            $display  "%0d: dumping memory region 0x%0h to 0x%0h"  cur_cycle  addr  lim
+	  when (not rg_dump_busy)
+
+        dump_mem_busy = rg_dump_busy
+
+-- ================================================================

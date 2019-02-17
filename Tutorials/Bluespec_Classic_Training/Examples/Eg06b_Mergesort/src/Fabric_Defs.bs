@@ -1,0 +1,29 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved
+
+package Fabric_Defs where
+
+-- ================================================================
+-- This package defines widths of various fields in requests and
+-- responses.
+
+-- ================================================================
+-- Bluespec lib imports
+
+-- None
+
+-- ----------------
+-- Project imports
+
+-- None
+
+-- ================================================================
+
+type Wd_Id = 4
+
+type Wd_Addr = 32
+
+type Wd_Data = 32
+
+type Wd_User = 0
+
+-- ================================================================

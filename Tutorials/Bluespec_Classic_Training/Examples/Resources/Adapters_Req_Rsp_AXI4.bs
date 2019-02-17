@@ -1,0 +1,212 @@
+-- Copyright (c) 2019 Bluespec, Inc. All Rights Reserved.
+
+package Adapters_Req_Rsp_AXI4
+where
+
+-- ================================================================
+-- This package defines adapters from the memory Req and Rsp structs
+-- to AXI4 Master and Slave interfaces.
+
+-- WARNING: this is a simplistic version that assumes data bus width
+-- of 32b and all accesses are for 32b data, naturally aligned.
+-- (full version will have to take into account byte-lane alignment,
+--  strobes, etc.)
+
+-- ================================================================
+-- Bluespec library imports
+
+import GetPut
+import ClientServer
+
+-- ----------------
+-- Project imports
+
+import Utils
+import Req_Rsp
+
+import Semi_FIFOF
+import AXI4_Types
+
+-- ================================================================
+-- Default values for unused AXI4 fields
+
+axlock_default :: AXI4_Lock
+axlock_default = axlock_normal
+
+arcache_default :: AXI4_Cache
+arcache_default = arcache_dev_nonbuf
+
+awcache_default :: AXI4_Cache
+awcache_default = awcache_dev_nonbuf
+
+axprot_default :: AXI4_Prot
+axprot_default = axprot_0_unpriv ++ axprot_1_non_secure ++ axprot_2_data
+
+axqos_default :: AXI4_QoS
+axqos_default = 0
+
+axregion_default :: AXI4_Region
+axregion_default = 0
+
+-- ================================================================
+-- Conversion of codings of certain fields
+
+fn_rr_size_to_axi4_size :: RR_Size -> AXI4_Size
+fn_rr_size_to_axi4_size    RR_Size_8b  = axsize_1
+fn_rr_size_to_axi4_size    RR_Size_16b = axsize_2
+fn_rr_size_to_axi4_size    RR_Size_32b = axsize_4
+fn_rr_size_to_axi4_size    RR_Size_64b = axsize_8
+
+fn_axi4_size_to_rr_size :: AXI4_Size -> RR_Size
+fn_axi4_size_to_rr_size    axsize =
+    if      (axsize == axsize_1) then RR_Size_8b
+    else if (axsize == axsize_2) then RR_Size_16b
+    else if (axsize == axsize_4) then RR_Size_32b
+    else if (axsize == axsize_8) then RR_Size_64b
+    else                              RR_Size_64b
+
+fn_axresp_to_rr_status :: AXI4_Resp -> RR_Status
+fn_axresp_to_rr_status    axi4_resp =
+    if      axi4_resp == axi4_resp_okay   then RR_Status_OKAY
+    else if axi4_resp == axi4_resp_slverr then RR_Status_TARGETERR
+    else if axi4_resp == axi4_resp_decerr then RR_Status_DECERR
+    else                                       RR_Status_DECERR
+
+fn_rr_status_to_axresp :: RR_Status -> AXI4_Resp
+fn_rr_status_to_axresp    RR_Status_OKAY      = axi4_resp_okay
+fn_rr_status_to_axresp    RR_Status_TARGETERR = axi4_resp_slverr
+fn_rr_status_to_axresp    RR_Status_DECERR    = axi4_resp_decerr
+
+-- ================================================================
+-- Transactor to convert a Req_Rsp client to an AXI4 master.
+-- This function is applied to an Req_Rsp client
+-- and instantiates a module that presents an AXI4 master interface
+
+mkReq_Rsp_to_AXI4_Master :: Client  (RR_Req  wd_tid  wd_addr  32)
+                                    (RR_Rsp  wd_tid           32)
+                             -> Module  (AXI4_Master_IFC  wd_tid  wd_addr  32  wd_user)
+mkReq_Rsp_to_AXI4_Master  rr_client =
+  module
+    axi4_master_xactor <- mkAXI4_Master_Xactor;
+
+    -- ================================================================
+    rules
+        "RR_Req to AXI4 Req": when True
+	 ==> do
+	         req <- rr_client.request.get
+		 if req.op == RR_Op_R then do
+		     let rda = AXI4_Rd_Addr {arid     = req.tid;
+		     	   	             araddr   = req.addr;
+				             arlen    = 0;    -- burst length = 0+1
+				             arsize   = fn_rr_size_to_axi4_size  req.size;
+				             arburst  = axburst_fixed;
+				             arlock   = axlock_default;
+				             arcache  = arcache_default;
+				             arprot   = axprot_default;
+				             arqos    = axqos_default;
+				             arregion = axregion_default;
+				             aruser   = _ }
+
+		     axi4_master_xactor.i_rd_addr.enq  rda
+
+		 else do -- req.op == RR_Op_W
+		     let wra = AXI4_Wr_Addr {awid     = req.tid;
+		     	   	             awaddr   = req.addr;
+				             awlen    = 0;            -- burst length = 0+1
+				             awsize   = axsize_4;     -- WARNING: 32b only
+				             awburst  = axburst_fixed;
+				             awlock   = axlock_default;
+				             awcache  = awcache_default;
+				             awprot   = axprot_default;
+				             awqos    = axqos_default;
+				             awregion = axregion_default;
+				             awuser   = _ }
+
+		         wrd = AXI4_Wr_Data {wid      = req.tid;
+		                             wdata    = req.wdata;    -- WARNING: 32b only
+					     wstrb    = 0xF;          -- WARNING: 32b only
+					     wlast    = True;
+					     wuser    = _ }
+
+		     axi4_master_xactor.i_wr_addr.enq  wra
+		     axi4_master_xactor.i_wr_data.enq  wrd
+
+        "AXI4 Rd Resp to RR_Rsp": when True
+	 ==> do
+	         axi4_rd_resp <- pop_o  axi4_master_xactor.o_rd_data
+		 let rr_rsp = RR_Rsp {tid    = axi4_rd_resp.rid;
+		                      status = fn_axresp_to_rr_status  axi4_rd_resp.rresp;
+				      rdata  = axi4_rd_resp.rdata;    -- WARNING: 32b only
+				      op     = RR_Op_R}
+		 rr_client.response.put  rr_rsp
+
+        "AXI4 Wr Resp to RR_Rsp": when True
+	 ==> do
+	         axi4_wr_resp <- pop_o  axi4_master_xactor.o_wr_resp
+		 let rr_rsp = RR_Rsp {tid    = axi4_wr_resp.bid;
+		                      status = fn_axresp_to_rr_status  axi4_wr_resp.bresp;
+				      rdata  = _ ;
+				      op     = RR_Op_W}
+		 rr_client.response.put  rr_rsp
+
+    -- ================================================================
+
+    return  axi4_master_xactor.axi_side
+
+-- ================================================================
+-- Transactor to convert a Req_Rsp server to an AXI4 slave.
+-- This function is applied to an Req_Rsp server
+-- and instantiates a module that presents an AXI4 slave interface
+
+mkReq_Rsp_to_AXI4_Slave :: Server  (RR_Req  wd_tid  wd_addr  32)
+                                   (RR_Rsp  wd_tid           32)
+                            -> Module  (AXI4_Slave_IFC  wd_tid  wd_addr  32  wd_user)
+mkReq_Rsp_to_AXI4_Slave  rr_server =
+  module
+    axi4_slave_xactor <- mkAXI4_Slave_Xactor;
+
+    -- ================================================================
+    rules
+        "AXI4 Rd Req to RR_Req": when True
+	 ==> do
+                rda <- pop_o  axi4_slave_xactor.o_rd_addr
+		let rr_req = RR_Req {tid   = rda.arid;
+		    	             op    = RR_Op_R;
+				     addr  = rda.araddr;
+				     size  = fn_axi4_size_to_rr_size  rda.arsize;
+				     wdata = _ }
+		rr_server.request.put  rr_req
+
+        "AXI4 Wd Req to RR_Req": when True
+	 ==> do
+                wra <- pop_o  axi4_slave_xactor.o_wr_addr
+                wrd <- pop_o  axi4_slave_xactor.o_wr_data
+		let rr_req = RR_Req {tid   = wra.awid;
+		    	             op    = RR_Op_W;
+				     addr  = wra.awaddr;
+				     size  = fn_axi4_size_to_rr_size  wra.awsize;
+				     wdata = wrd.wdata }
+		rr_server.request.put  rr_req
+
+        "RR_Rsp to AXI4 Rd and Wr Responses": when True
+	 ==> do
+                rr_rsp <- rr_server.response.get
+		if (rr_rsp.op == RR_Op_R) then do
+                    let rd_data = AXI4_Rd_Data {rid   = rr_rsp.tid;
+		       	       	 	        rdata = rr_rsp.rdata;
+					        rresp = fn_rr_status_to_axresp  rr_rsp.status;
+					        rlast = False;
+					        ruser = _ }
+		    axi4_slave_xactor.i_rd_data.enq  rd_data
+
+                else do -- rr_rsp.op == RR_Op_W
+                    let wr_resp = AXI4_Wr_Resp {bid   = rr_rsp.tid;
+					        bresp = fn_rr_status_to_axresp  rr_rsp.status;
+					        buser = _ }
+		    axi4_slave_xactor.i_wr_resp.enq  wr_resp
+
+    -- ================================================================
+
+    return  axi4_slave_xactor.axi_side
+
+-- ================================================================

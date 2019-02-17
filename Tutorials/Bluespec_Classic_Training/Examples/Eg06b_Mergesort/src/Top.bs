@@ -1,0 +1,112 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Top
+where
+
+-- ================================================================
+-- Top module for Mergesort example.
+-- Instantiates test driver, mergesort, memory, connects them.
+-- Dumps a memory region (unsorted).
+-- Starts the test driver, waits for completion
+-- Dumps the memory region (sorted).
+
+-- ================================================================
+-- Bluespec libraries
+
+import Vector
+import FIFOF
+import GetPut
+import ClientServer
+import Connectable
+
+-- ================================================================
+-- Project imports
+
+import Utils
+
+import SoC_Map
+import AXI4_Types
+import AXI4_Fabric
+import Fabric_Defs
+import SoC_Fabric
+
+import Req_Rsp
+import Adapters_Req_Rsp_AXI4
+
+import Test_Driver
+import Memory_Model
+import Mergesort
+
+-- ================================================================
+-- Top module
+
+{-# verilog mkTop #-}
+
+mkTop :: Module  Empty
+mkTop =
+  module
+    soc_map     :: SoC_Map_IFC     <- mkSoC_Map
+
+    test_driver :: Test_Driver_IFC <- mkTest_Driver
+    mem         :: Memory_IFC      <- mkMemory_Model
+    mergesort   :: Mergesort_IFC   <- mkMergesort
+    soc_fabric  :: SoC_Fabric_IFC  <- mkSoC_Fabric
+
+    -- ----------------
+    -- Connect test_driver (initiator) to AXI4 fabric[0] (target)
+    test_driver_master :: SoC_Fabric_Initiator_IFC <- mkReq_Rsp_to_AXI4_Master  test_driver.bus_ifc
+    mkConnection  test_driver_master  (soc_fabric.v_from_masters !! test_driver_initiator_num)
+
+    -- ----------------
+    -- Connect mergesort mem port (initiator)  to AXI4 fabric[1] (target)
+
+    mergesort_master :: SoC_Fabric_Initiator_IFC <- mkReq_Rsp_to_AXI4_Master  mergesort.mem_bus_ifc
+    mkConnection  mergesort_master  (soc_fabric.v_from_masters !! accel_0_initiator_num)
+
+    -- ----------------
+    -- Connect AXI4 fabric[0] (initiator) to mem (target)
+
+    mem_target :: SoC_Fabric_Target_IFC  <- mkReq_Rsp_to_AXI4_Slave   mem.bus_ifc
+    mkConnection  (soc_fabric.v_to_slaves !! mem0_controller_target_num)  mem_target
+
+    -- ----------------
+    -- Connect AXI4 fabric[1] (initiator) to mergesort config port (target)
+
+    mergesort_target    :: SoC_Fabric_Target_IFC  <- mkReq_Rsp_to_AXI4_Slave   mergesort.config_bus_ifc
+    mkConnection  (soc_fabric.v_to_slaves !! accel_0_target_num)  mergesort_target
+
+    -- ================================================================
+    -- Run the test driver
+
+    rg_step :: Reg  (Bit 3) <- mkReg 0
+
+    rules
+        -- Initialize memory and mergesort module
+        when (rg_step == 0) ==> do
+	    $display  "Top: Initializing memory: base 0x%0h size 0x%0h"
+	              soc_map.m_mem0_controller_addr_base
+		      soc_map.m_mem0_controller_addr_size
+	    mem.init  soc_map.m_mem0_controller_addr_base  soc_map.m_mem0_controller_addr_size
+	    mergesort.init  soc_map.m_accel_0_addr_base
+	    rg_step := 1
+
+        -- Dump memory (before sorting)
+        when (rg_step == 1) ==> do
+	    mem.dump_mem_start  (soc_map.m_mem0_controller_addr_base + sort_start_offset)  n_words
+	    rg_step := 2
+
+        -- After dump memory region (unsorted), start test driver
+        when ((rg_step == 2) && (not mem.dump_mem_busy)) ==> do
+            test_driver.start
+	    rg_step := 3
+
+        -- After test driver has finished, dump memory (after sorting)
+        when ((rg_step == 3) && (not test_driver.busy)) ==> do
+	    mem.dump_mem_start  (soc_map.m_mem0_controller_addr_base + sort_start_offset)  n_words
+	    rg_step := 4
+
+        -- After dump memory (sorted), stop
+        when ((rg_step == 4) && (not mem.dump_mem_busy)) ==> do
+            $finish 0
+
+-- ================================================================

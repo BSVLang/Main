@@ -1,0 +1,120 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Top
+where
+
+-- ================================================================
+-- Top module for Mergesort example.
+-- Instantiates Piccolo CPU core, mergesort, memory, connects them.
+
+-- ================================================================
+-- Bluespec libraries
+
+import Vector
+import FIFOF
+import GetPut
+import ClientServer
+import Connectable
+
+-- ================================================================
+-- Project imports
+
+import Utils
+
+import SoC_Map
+import AXI4_Types
+import AXI4_Fabric
+import Fabric_Defs
+import SoC_Fabric
+
+import Req_Rsp
+import Adapters_Req_Rsp_AXI4
+
+import Memory_Model
+import Mergesort
+
+import Core_IFC
+import Core
+import UART_Model
+
+-- ================================================================
+-- Top module
+
+{-# verilog mkTop #-}
+
+mkTop :: Module  Empty
+mkTop =
+  module
+    soc_map     :: SoC_Map_IFC     <- mkSoC_Map
+
+    cpu_core    :: Core_IFC        <- mkCore
+    mem         :: Memory_IFC      <- mkMemory_Model
+    mergesort   :: Mergesort_IFC   <- mkMergesort
+    soc_fabric  :: SoC_Fabric_IFC  <- mkSoC_Fabric
+    uart        :: UART_IFC        <- mkUART
+
+    -- ================================================================
+    -- Connect CPU core (Initiators) to AXI4 fabric[0] and [1] (Target)
+
+    mkConnection  cpu_core.cpu_imem_master  (soc_fabric.v_from_masters !! imem_initiator_num)
+    mkConnection  cpu_core.cpu_dmem_master  (soc_fabric.v_from_masters !! dmem_initiator_num)
+
+    -- Tie-off CPU back-door target
+
+    let dummy_initiator :: SoC_Fabric_Initiator_IFC = dummy_AXI4_Master_ifc
+    mkConnection  dummy_initiator  cpu_core.cpu_slave;
+
+    -- ----------------
+    -- Connect mergesort (Initiator)  to AXI4 fabric[2] (Target)
+
+    mergesort_master :: SoC_Fabric_Initiator_IFC <- mkReq_Rsp_to_AXI4_Master  mergesort.mem_bus_ifc
+    mkConnection  mergesort_master  (soc_fabric.v_from_masters !! accel_0_initiator_num)
+
+    -- ----------------
+    -- Connect AXI4 fabric[0] (Initiator) to mem (Target)
+
+    mem_target :: SoC_Fabric_Target_IFC  <- mkReq_Rsp_to_AXI4_Slave   mem.bus_ifc
+    mkConnection  (soc_fabric.v_to_slaves !! mem0_controller_target_num)  mem_target
+
+    -- ----------------
+    -- Connect AXI4 fabric[1] (Initiator) to mergesort config (Target)
+
+    mergesort_target :: SoC_Fabric_Target_IFC  <- mkReq_Rsp_to_AXI4_Slave   mergesort.config_bus_ifc
+    mkConnection  (soc_fabric.v_to_slaves !! accel_0_target_num)  mergesort_target
+
+    -- ----------------
+    -- Connect AXI4 fabric[2] (Initiator) to UART (Target)
+
+    mkConnection  (soc_fabric.v_to_slaves !! uart_0_target_num)  uart.slave
+
+    -- ================================================================
+
+    rg_step :: Reg  (Bit 2) <- mkReg 0
+
+    rules
+        "Tie off CPU external interrupt req": when True ==>
+	  cpu_core.cpu_external_interrupt_req  False
+
+        "Relay console output": when True ==> do
+	    ch <- uart.get_to_console.get
+	    $write  "%c"  ch
+	    $fflush  stdout
+
+        when (rg_step == 0) ==> do
+	    $display  "Top: Initializing memory: base 0x%0h size 0x%0h"
+	              soc_map.m_mem0_controller_addr_base
+		      soc_map.m_mem0_controller_addr_size
+	    mem.init  soc_map.m_mem0_controller_addr_base  soc_map.m_mem0_controller_addr_size
+	    mergesort.init  soc_map.m_accel_0_addr_base
+            cpu_core.cpu_reset_server.request.put  _
+            uart.server_reset.request.put  _
+	    uart.set_addr_map  soc_map.m_uart_0_addr_base  soc_map.m_uart_0_addr_lim
+            rg_step := 1
+
+        when (rg_step == 1) ==> do
+            _  <- cpu_core.cpu_reset_server.response.get
+            _  <- uart.server_reset.response.get
+            cpu_core.set_verbosity  0  0
+            rg_step := 2
+
+-- ================================================================

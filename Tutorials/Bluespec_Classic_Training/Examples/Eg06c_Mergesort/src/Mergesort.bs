@@ -1,0 +1,236 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved.
+
+package Mergesort
+where
+
+-- ================================================================
+-- This package defines a memory-to-memory binary merge-sort module
+-- Inputs: A:    the array to sort (array of 32b signed integers)
+--         n:    number of elements in A
+--         B:    another array, same size as A, for intermediate storage
+-- Repeatedly merges adjacent already-sorted 'spans' of size 1, 2, 4, 8, ...
+-- back and forth between the two arrays until the span size >= n.
+-- If the final sorted data is in array B, copies it back to A.
+-- Each merge is performed by a mergeEngine
+
+-- ================================================================
+-- Bluespec library imports
+
+import Vector
+import FIFOF
+import GetPut
+import ClientServer
+import Assert
+
+-- ----------------
+-- Additional libs
+
+-- None
+
+-- ----------------
+-- Project imports
+
+import Utils
+import Req_Rsp
+import Fabric_Defs
+import Fabric_Req_Rsp
+import Merge_Engine
+
+-- ================================================================
+-- Local names for N_Accel_... types
+
+-- Number of configuration registers (each is 32b)
+-- They are placed at address offsets 0, 4, 8, ...
+
+type N_CSRs = 4
+
+n_config_regs :: Integer
+n_config_regs = valueOf (N_CSRs)
+
+-- ================================================================
+-- Interface of Mergesort module
+-- The init arg 'addr_base' is the base address in an SoC for its config regs
+
+interface Mergesort_IFC =
+    init           :: Fabric_Addr -> Action 
+    config_bus_ifc :: Server  Fabric_Req  Fabric_Rsp
+    mem_bus_ifc    :: Client  Fabric_Req  Fabric_Rsp
+
+-- ================================================================
+-- The Mergesort module
+
+{-# verilog  mkMergesort  #-}
+
+mkMergesort :: Module Mergesort_IFC
+mkMergesort =
+  module
+    -- Increase verbosity to get more $display debugging outputs
+    let verbosity :: Integer = 0
+
+    staticAssert  (valueOf (Wd_Data) == 32)
+    		  "ERROR: mkMergeSort is designed for 32-bit fabrics only"
+
+    -- Base address for this block's CSRs (Control and Status Registers)
+    rg_addr_base :: Reg  Fabric_Addr <- mkRegU
+
+    -- ================================================================
+    -- Section: Configuration
+
+    -- FIFOs for config requests and responses
+    f_configReqs :: FIFOF  Fabric_Req <- mkFIFOF    -- config requests
+    f_configRsps :: FIFOF  Fabric_Rsp <- mkFIFOF    -- config responses
+
+    -- Vector of CSRs (Config and Status Regs)
+    v_csr :: Vector  N_CSRs  (Reg  Fabric_Addr) <- replicateM  (mkReg 0)
+
+    -- Symbolic names for CSR indexes
+    let run    :: Integer = 0    -- 0:stop, 1:run
+        addr_A :: Integer = 1    -- base of array to be sorted
+        addr_B :: Integer = 2    -- workspace array
+        n      :: Integer = 3    -- number of items to be sorted
+
+    rules
+        "rl_handle_configReq": when True
+	 ==> do
+                let req :: Fabric_Req = f_configReqs.first
+                f_configReqs.deq;
+		let rsp_base = RR_Rsp {tid    = req.tid;
+                                       rdata  = _ ;
+				       status = RR_Status_OKAY;
+				       op     = req.op}
+
+                    -- byte offset to csr index (4-byte stride)
+                    csr_index = (req.addr - rg_addr_base) >> 2
+
+                rsp :: Fabric_Rsp <-
+                    if (   (req.addr < rg_addr_base)
+		        || (csr_index >= fromInteger  n_config_regs)) then
+			-- Address below or above csr addr range
+	                return (rsp_base {status = RR_Status_DECERR})
+
+	            else if (req.op == RR_Op_R) then
+		        return (rsp_base {rdata = (select  v_csr  csr_index)._read})
+
+		    else if (req.op == RR_Op_W) then
+		        do
+	                    (select  v_csr  csr_index) :=  req.wdata
+			    return  rsp_base
+		    else
+			return (rsp_base {status = RR_Status_TARGETERR})
+
+                f_configRsps.enq  rsp
+
+                -- For debugging
+                if1 (verbosity >= 1)
+		    action
+                        $display  "%0d: Mergesort: rl_handle_configReq: "  cur_cycle
+			$display  "    "  (fshow  req)
+			$display  "    "  (fshow  rsp)
+
+    -- ================================================================
+    -- Section: Merge sort behavior
+
+    -- Other local state
+    merge_engine :: Merge_Engine_IFC <- mkMerge_Engine
+
+    -- 'span' starts at 1, and doubles on each merge pass
+    rg_span :: Reg  Fabric_Addr <- mkRegU
+
+    -- p1 and p2 point at the two vectors, alternating between A and B after each pass
+    rg_p1   :: Reg  Fabric_Addr <- mkRegU
+    rg_p2   :: Reg  Fabric_Addr <- mkRegU
+
+    -- On each pass, i is index of next pair of spans to be merged
+    rg_i    :: Reg  Fabric_Addr <- mkRegU
+
+    -- The following rules encode this "process" (state machine)
+    --         while True 
+    --             L0: when c0 action0
+    --             L1: while (c1)
+    --                 L2: action2
+    --                 L3: while (c3)
+    --                         L4: action4
+    --                 L5: action5
+    --             L6: action6
+    --             L7: action7
+
+    rg_step :: Reg  (Bit  8) <- mkReg (0)
+
+    rules
+        "L0": when ((rg_step == 0) && ((v_csr !! run)._read /= 0))
+	 ==> do
+                rg_span := 1
+	        rg_p1   := (v_csr !! addr_A)._read
+	        rg_p2   := (v_csr !! addr_B)._read
+		rg_step := 1
+
+        -- For span = 1, 2, 4, ... until >= n
+	"L1": when (rg_step == 1)
+	 ==> rg_step := if (rg_span < (v_csr !! n)._read) then 2 else 6
+
+        "L2": when (rg_step == 2)
+	 ==> do
+                if1 (verbosity >= 1)
+		    ($display  "%0d: Mergesort: span = %0d"  cur_cycle  rg_span)
+		rg_i := 0
+		rg_step := 3
+
+	"L3": when (rg_step == 3)
+	 ==> rg_step := if (rg_i < (v_csr !! n)._read) then 4 else 5
+
+        -- Generate tasks to merge p1 [i..i+span-1] and p1 [i+span..i+2*span-1]
+        -- into p2 [i..i+2*span-1]
+        "L4": when (rg_step == 4)
+	 ==> do
+                if1 (verbosity > 1)
+		    ($display  "%0d: Mergesort: dispatching task i %0d, span %0d, to engine"
+		               cur_cycle  rg_i  rg_span)
+		merge_engine.start  0  rg_i  rg_span  rg_p1  rg_p2  (v_csr !! n)._read
+		rg_i := rg_i + (rg_span << 1)
+		rg_step := 3
+
+        -- Exchange p1 and p2, double the span
+        "L5": when (rg_step == 5)
+	 ==> do
+		rg_p1   := rg_p2
+		rg_p2   := rg_p1
+		rg_span := rg_span << 1
+	        rg_step := 1
+
+        -- If final sorted array is in B, copy it back to A
+        "L6": when (rg_step == 6)
+	 ==> do
+                if (rg_p1 == (v_csr !! addr_B)._read) then do
+                    if1 (verbosity > 0)
+                        ($display  "%0d: Mergesort: Final copy back to original array"
+			           cur_cycle)
+                    merge_engine.start  0  0  (v_csr !! n)._read  rg_p1  rg_p2  (v_csr !! n)._read
+                 else
+	            if1 (verbosity > 0)
+		        ($display  "%0d: Mergesort: No final copy to original array necessary"
+			           cur_cycle)
+                rg_step := 7
+
+        -- Wait until task queue is empty and all merge engines are done
+        "L7": when ((rg_step == 7) && merge_engine.done)
+	 ==> do
+                (v_csr !! run) := 0
+		rg_step := 0
+
+    -- ----------------------------------------------------------------
+    -- INTERFACE
+
+    interface
+        init  addr_base = do
+	    rg_step        := 0
+            rg_addr_base   := addr_base
+            (v_csr !! run) := 0
+            f_configReqs.clear
+            f_configRsps.clear
+            merge_engine.init
+
+        config_bus_ifc = toGPServer  f_configReqs  f_configRsps
+
+        mem_bus_ifc    = merge_engine.mem_bus_ifc
+
+-- ================================================================

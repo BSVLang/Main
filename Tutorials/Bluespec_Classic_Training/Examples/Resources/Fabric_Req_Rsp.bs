@@ -1,0 +1,35 @@
+-- Copyright (c) 2013-2019 Bluespec, Inc. All Rights Reserved
+
+package Fabric_Req_Rsp where
+
+-- ================================================================
+-- This package defines types of entities that flow across a fabric
+-- between initiators and targets.
+
+-- ================================================================
+-- Bluespec lib imports
+
+-- None
+
+-- ----------------
+-- Project imports
+
+import Req_Rsp
+import Fabric_Defs    -- Only for type Fabric_Addr
+
+-- ================================================================
+-- Names for types of certain request/response fields
+
+type Fabric_Id   = Bit  Wd_Id
+type Fabric_Addr = Bit  Wd_Addr
+type Fabric_Data = Bit  Wd_Data
+type Fabric_User = Bit  Wd_User
+
+-- ================================================================
+-- Fabric requests, responses
+-- (specializations of the generic RR_Req and RR_Rsp)
+
+type Fabric_Req = RR_Req  Wd_Id  Wd_Addr  Wd_Data
+type Fabric_Rsp = RR_Rsp  Wd_Id           Wd_Data
+
+-- ================================================================
