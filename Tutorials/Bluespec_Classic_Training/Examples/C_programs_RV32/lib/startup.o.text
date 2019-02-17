@@ -21,7 +21,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   6 .debug_aranges 00000020  00000000  00000000  00000108  2**3
                   CONTENTS, RELOC, READONLY, DEBUGGING
-  7 .debug_str    00000049  00000000  00000000  00000128  2**0
+  7 .debug_str    0000007a  00000000  00000000  00000128  2**0
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
@@ -42,7 +42,7 @@ SYMBOL TABLE:
 00000028 l       .text	00000000 .L0 
 00000000 l       .debug_str	00000000 .L0 
 0000000e l       .debug_str	00000000 .L0 
-0000003b l       .debug_str	00000000 .L0 
+0000006c l       .debug_str	00000000 .L0 
 00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
 00000000 l    d  .debug_line	00000000 .debug_line
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
@@ -69,7 +69,7 @@ _reset:
 	sd	zero, -8(sp)
 #else
 	sw	zero, 0(sp)
-   4:	00012023          	sw	zero,0(sp) # 800f0000 <.L0 +0x800effc5>
+   4:	00012023          	sw	zero,0(sp) # 800f0000 <.L0 +0x800eff94>
 
 00000008 <.L0 >:
 	sw	zero, -4(sp)
@@ -82,7 +82,7 @@ _reset:
 	// Set FS to 2 = Dirty
 	li      s0, 0x600a
    c:	00006437          	lui	s0,0x6
-  10:	00a40413          	addi	s0,s0,10 # 600a <.L0 +0x5fcf>
+  10:	00a40413          	addi	s0,s0,10 # 600a <.L0 +0x5f9e>
 
 00000014 <.L0 >:
 	csrw    mstatus, s0
@@ -100,7 +100,7 @@ _reset:
 	sd	zero, 0xC0(s0)
 #else
 	sw	zero, 0xC0(s0)
-  1c:	0c042023          	sw	zero,192(s0) # 800f00c0 <.L0 +0x800f0085>
+  1c:	0c042023          	sw	zero,192(s0) # 800f00c0 <.L0 +0x800f0054>
 
 00000020 <.L0 >:
 #endif

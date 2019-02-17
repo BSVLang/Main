@@ -1,0 +1,98 @@
+Copyright (c) 2017-2019 Bluespec, Inc.  All Rights Reserved.
+
+Each program sub-directory like 'hello' and 'mergesort' contains a C
+program to be compiled for "bare-metal" RISC-V (no OS) in Bluespec's
+"bare-metal" configuration:
+ - Memory starts at 0x_8000_0000
+      (defined in lib/bare.lds)
+ - Stdio is directed towards an NS16550 UART at 0x_C000_0000 with UART
+      registers having 4-byte address stride.
+      (defined in lib/ns16550.h)
+ - 'mergesort' has a hardware accelerator at 0x_C000_0100
+      (defined in mergesort/mergesort.c)
+ 
+In the hello/ and mergesort/ directories we have pre-compiled ELF
+files and Mem.hex files, so you can use them directly for a demo.
+
+The rest of this README describes how those ELF and Mem.hex files were
+created, in case you want to re-create them, or if you want to compile
+a different C program into ELF and Mem.hex files.
+
+>================================================================
+Prerequisite: RISC-V Toolchain (gcc and friends)
+
+You must have a RISC-V toolchain installed and on on your PATH.
+Example:
+
+    export RISCV=$HOME/Projects/RISCV/Toolchain/RV32IMA/riscv
+    export PATH=$RISCV/bin:$PATH
+
+The RISC-V Toolchain can be downloaded and built by starting with this step:
+
+    $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+
+and following its README directions.
+
+Note, when you run .configure in the toolchain repo directory, you
+should use the 'medany' option.  Example:
+
+    $ ./configure --prefix=$RISCV --with-arch=rv32ima  --with-cmodel=medany
+
+>================================================================
+Creating ELF files for each test.
+
+The following 'make' calls invoke the RISC-V cross compiler (gcc) in
+each test sub-directory to create the corresponding ELF file.  It will
+also produce the link map (.map file) and an objdump dissasembly
+(.text file).
+
+To build tests for RV32:
+make 
+make install
+
+To build tests for RV64:
+make XLEN=64
+make install XLEN=64
+
+If you are building tests for both RV32 and RV64, please complete both steps for
+one setting of XLEN before proceeding to the next
+
+To clean all RV32 binaries from the individual test directories
+make clean
+
+To clean all RV32 binaries including does installed
+make full_clean
+
+To clean all RV64 binaries from the individual test directories
+make clean RV_XLEN=64
+
+To clean all RV64 binaries including does installed
+make full_clean XLEN=64
+
+>================================================================
+Creating Mem.hex files from ELF files
+
+../Resources/elf_to_hex/elf_to_hex.c is a small C program that reads
+an ELF file and writes out a Mem.hex file.  Please go to that
+directory and 'make' to create an elf_to_hex executable.
+
+Then, here is how we create the Mem.hex file for an example:
+
+    $ cd hello
+    $ ../../Resources/elf_to_hex/elf_to_hex  hello  hello_Mem.hex
+
+>================================================================
+# Creating a new RV32 test
+
+1. Create a new 'foo_dir/' directory for your test containing your C source code file 'foo.c'
+
+2. Add 'foo_dir' to the SUBDIRS list in the Makefile (after 'hello', 'mergesort', ...)
+
+3. Run 'make' in this directory (C_programs_RV32)
+    This will create the executable  foo_dir/foo
+
+4. To create the foo_Mem.hex file for this program:
+    $ cd foo
+    $ ../../Resources/elf_to_hex/elf_to_hex  foo  foo_Mem.hex
+
+>================================================================

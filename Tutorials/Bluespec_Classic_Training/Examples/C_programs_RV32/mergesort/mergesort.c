@@ -136,11 +136,7 @@ void run (bool accelerated, int *pA, int *pB, int n)
     if (sorted)
 	fprintf (stdout, "Verified %0d words sorted\n", n);
 
-    if (accelerated)
-	fprintf (stdout, "    Accelerated:");
-    else
-	fprintf (stdout, "    Software:   ");
-    fprintf (stdout, " %8d cycles\n", c1 - c0);
+    fprintf (stdout, " Sorting took %8d cycles\n", c1 - c0);
 }
 
 // ================================================================
@@ -152,6 +148,12 @@ int n = 3000;
 int main (int argc, char *argv[])
 {
     bool accelerated = true;
+
+    fprintf (stdout, "Running C function for mergesort\n");
     run (! accelerated, A, B, n);
+    fprintf (stdout, "Done\n");
+
+    fprintf (stdout, "Running hardware-accelerated mergesort\n");
     run (accelerated, A, B, n);
+    fprintf (stdout, "Done\n");
 }

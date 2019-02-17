@@ -1,4 +1,0 @@
-TOPDIR = ..
-
-include ../Makefile
-

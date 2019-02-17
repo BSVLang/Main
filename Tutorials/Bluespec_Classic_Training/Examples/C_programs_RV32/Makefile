@@ -17,18 +17,8 @@ TEST_PREFIX	= rv64-
 endif
 
 TOPDIR             ?= .
-SUBDIRS             = cat \
-                      filters \
-                      fpTest0 \
-                      fpTest1 \
-                      hello \
-                      mergesort \
-                      paranoia \
-                      print \
-                      fclass \
-                      sysuser \
-                      intOpsTest \
-                      wc
+SUBDIRS             = hello \
+                      mergesort
 
 # Cross compile programs
 AR                  = $(CROSS_COMPILE)ar
