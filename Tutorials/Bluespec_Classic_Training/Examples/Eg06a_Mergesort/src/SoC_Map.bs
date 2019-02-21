@@ -28,28 +28,28 @@ where
 -- ================================================================
 -- Project imports
 
-import Fabric_Defs       -- Only for type Fabric_Addr
+import Fabric_Defs
 import Fabric_Req_Rsp    -- Only for type Fabric_Addr
 
 -- ================================================================
 -- Interface and module for the address map
 
 interface SoC_Map_IFC =
-    m_mem0_controller_addr_base :: Fabric_Addr  
-    m_mem0_controller_addr_size :: Fabric_Addr  
-    m_mem0_controller_addr_lim  :: Fabric_Addr  
+    m_mem0_controller_addr_base :: Fabric_Addr
+    m_mem0_controller_addr_size :: Fabric_Addr
+    m_mem0_controller_addr_lim  :: Fabric_Addr
 
     m_near_mem_io_addr_base :: Fabric_Addr
     m_near_mem_io_addr_size :: Fabric_Addr
     m_near_mem_io_addr_lim  :: Fabric_Addr
 
-    m_accel_0_addr_base :: Fabric_Addr  
-    m_accel_0_addr_size :: Fabric_Addr  
-    m_accel_0_addr_lim  :: Fabric_Addr  
+    m_accel_0_addr_base :: Fabric_Addr
+    m_accel_0_addr_size :: Fabric_Addr
+    m_accel_0_addr_lim  :: Fabric_Addr
 
-    m_uart_0_addr_base :: Fabric_Addr  
-    m_uart_0_addr_size :: Fabric_Addr  
-    m_uart_0_addr_lim  :: Fabric_Addr  
+    m_uart_0_addr_base :: Fabric_Addr
+    m_uart_0_addr_size :: Fabric_Addr
+    m_uart_0_addr_lim  :: Fabric_Addr
 
     -- Address classification predicates
     m_is_mem_addr         :: Fabric_Addr -> Bool
