@@ -11,6 +11,6 @@
 package CReg_Classic;
 
 function Reg #(t) select_CReg (Array #(Reg #(t)) creg, Integer j) = creg [j];
-function t        read_CReg   (Array #(Reg #(t)) creg, Integer j) = creg [j];
+function t        read_CReg   (Array #(Reg #(t)) creg, Integer j) = creg [j]._read;
 
 endpackage
