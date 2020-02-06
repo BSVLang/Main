@@ -5,7 +5,6 @@
 **January 31 2020 bulletin:** On January 31, 2020, Bluespec, Inc.
 released the _bsc_ compiler for
 [BSV/BH](https://github.com/B-Lang-org/bsc) in free, open-source form.
-
 The contents of this repository will move there soon (a month or so).
 
 ---
@@ -27,7 +26,7 @@ years, everybody only used BSV, not BH.  Recently there has been a
 renewed interest in BH, and we plan to support BSV and BH as equal
 partners, we plan to bring the BH material up to par with the BSV
 material (Q1 2020).  In the meanwhile, if you are using BH, you may be
-able to answer any question you have by looking at corresponding the
+able to answer any question you have by looking at the corresponding
 BSV material (it's the same language, just a different syntax).
 
 Thank you for your patience.
