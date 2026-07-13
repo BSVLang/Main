@@ -2,22 +2,20 @@
 
 ---
 
-**January 31 2020 bulletin:** On January 31, 2020, Bluespec, Inc.
-released the _bsc_ compiler for the BSV and BH High-Level Hardware
-Design Languages (HL-HDLs) in _free, open-source_ form.  The language
-and the compiler are now maintained actively by a group of enthusiasts
-and volunteers.
-
-The _bsc_ compiler can be downloaded from the following public GitHub
-repository
+On January 31, 2020, Bluespec, Inc.  released the _bsc_ compiler for
+the BSV and BH High-Level Hardware Design Languages (HL-HDLs) in
+_free, open-source_ form.  The language and the compiler are now
+maintained actively by a group of enthusiasts and volunteers, and can
+be found at
 [https://github.com/B-Lang-org/bsc](https://github.com/B-Lang-org/bsc).
 That repository contains the full source code of the _bsc_ compiler,
 documents defining the BSV and BH languages, the libraries, a user
-guide, and more.
+guide, and more.  It also contains pre-built downloads of the compiler
+and documents, available for a number of operating systems (various
+recent versions of Linux and MacOS).
 
----
-
-This repo contains auxiliary materials, primarily tutorials (slides, exercises).
+This repo contains some auxiliary materials, primarily old tutorials
+(slides, exercises) and historical documents.
 
 ---
 
@@ -40,7 +38,6 @@ This repo contains auxiliary materials, primarily tutorials (slides, exercises).
 * The CTSRD-CHERI team at U.Cambridge, UK, are very active users of
   BSV/BH, and have many open-source materials on their GitHub site:
   [https://github.com/CTSRD-CHERI](https://github.com/CTSRD-CHERI)
-
   Their work includes the CHERI "capabilities" extension to the RISC-V
   specification, including a full implementation in BSV in the
   _Toooba_ processor, see below.
@@ -76,7 +73,7 @@ Bluespec BSV and and BH are one High Level Hardware Design Language
 You can freely mix-and-match syntaxes at the file (package)
 granularity.
 
-The language was developed at Bluespec, Inc. (www.bluespec.com) and
+The language was developed at [Bluespec, Inc.](https://www.bluespec.com) and
 previously at Sandburst Corp., with roots in research at MIT in the
 1990s.  It draws its primary inspirations from:
 
@@ -84,18 +81,20 @@ previously at Sandburst Corp., with roots in research at MIT in the
 
 - Haskell (to express complex, strongly-typed structure).
 
-On Feb 26, 2010, at a "SystemVerilog Requirements Gathering Meeting"
-conducted by the IEEE P1800 SystemVerilog Standards Committee in San
-Jose, Bluespec, Inc. offered to donate the entire BSV Language for
-incorporation into the next revision of the SystemVerilog standard,
-but the offer did not meet the priority threshold of the members
-present. [See Bluespec's offer in the [<tt>Historical/</tt>](Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf).]
+**Offer to merge into IEEE SystemVerilog**: On Feb 26, 2010, at a
+"SystemVerilog Requirements Gathering Meeting" conducted by the IEEE
+P1800 SystemVerilog Standards Committee in San Jose, Bluespec,
+Inc. offered to donate the entire BSV Language for incorporation into
+the next revision of the SystemVerilog standard, but the offer did not
+meet the priority threshold of the members present. [See Bluespec's
+offer in the
+[<tt>Historical/</tt>](Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf).]
 directory here.
 
-In the 20-teens, Bluespec, Inc. used to offer a product called
-**emVM** (suggesting Emulation Virtual Machine) for emulating hardware
-designs, pre-ASIC, on PCIe-attached off-the-shelf FPGA boards. It
-included a complete implementation of the [Accelera SCE-MI
+In the 20-teens, Bluespec, Inc. offered a product called **emVM**
+(suggesting Emulation Virtual Machine) for emulating hardware designs,
+pre-ASIC, on PCIe-attached off-the-shelf FPGA boards. It included a
+complete implementation of the [Accelera SCE-MI
 standard](https://www.accellera.org/downloads/standards/sce-mi),
 implemented in BSV.  That IP was sold by Bluespec, Inc. to some of the
 EDA majors.  An historical PDF of the emVM User Manual can be found in
