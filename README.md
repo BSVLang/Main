@@ -88,7 +88,7 @@ Inc. offered to donate the entire BSV Language for incorporation into
 the next revision of the SystemVerilog standard, but the offer did not
 meet the priority threshold of the members present. [See Bluespec's
 offer in the
-[<tt>Historical/</tt>](Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf).]
+[<tt>Historical/</tt>](Historical/Bluespec_Offer_to_Donate_BSV_to_IEEE_P1800_SystemVerilog.pdf)]
 directory here.
 
 In the 20-teens, Bluespec, Inc. offered a product called **emVM**
